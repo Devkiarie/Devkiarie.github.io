@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club Kiboko Case Study | Dev Kiarie</title>
+
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <meta property="og:title" content="Building Club Kiboko - A 2-Player Canvas Game">
+  <meta property="og:description" content="Case study of Club Kiboko, a multiplayer web-based fighting game">
+  <meta property="og:image" content="/assets/img/project-1.jpg">
+  <meta property="og:url" content="https://yourdomain.com/blog-clubkiboko.html">
+</head>
+
+<body>
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-circle">B</span>
+        <span class="nav__logo-name">Dev Blog.</span>
+      </a>
+
+      <div class="nav__menu" id="nav-menu">
+        <span class="nav__title">Blog Menu</span>
+        <h3 class="nav__name">Technical Insights</h3>
+
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html" class="nav__link">Portfolio</a></li>
+          <li class="nav__item"><a href="blog.html" class="nav__link active-link">All Articles</a></li>
+          <li class="nav__item"><a href="#web-dev" class="nav__link">Web Dev</a></li>
+          <li class="nav__item"><a href="#games" class="nav__link">Games</a></li>
+          <li class="nav__item"><a href="index.html#contact" class="nav__link nav__link-button">Contact</a></li>
+        </ul>
+
+        <div class="nav__close" id="nav-close">
+          <i class="ri-close-line"></i>
+        </div>
+      </div>
+
+      <div class="nav__buttons">
+        <i class="ri-moon-line change-theme" id="theme-button"></i>
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="ri-menu-4-line"></i>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main" id="games">
+    <article class="blog-post-single section">
+      <div class="blog-post-single__container container">
+        <div class="blog-post-single__header">
+          <div class="blog-post-single__meta">
+            <span class="blog-post-single__date">May 15, 2024</span>
+            <span class="blog-post-single__readtime">12 min read</span>
+          </div>
+          <h1 class="blog-post-single__title">Building Club Kiboko – A 2-Player Canvas Game</h1>
+          <div class="blog-post-single__tags">
+            <span class="blog-post-single__tag">HTML Canvas</span>
+            <span class="blog-post-single__tag">JavaScript</span>
+            <span class="blog-post-single__tag">Game Dev</span>
+            <span class="blog-post-single__tag">Multiplayer</span>
+          </div>
+        </div>
+
+        <div class="blog-post-single__image">
+          <img src="/assets/img/project-1.jpg" alt="Club Kiboko Game">
+        </div>
+
+        <div class="blog-post-single__content">
+          <h2>Project Overview</h2>
+          <p>Club Kiboko is a lightweight, browser-based 2-player fighting game built entirely using the HTML5 canvas
+            API, custom JavaScript logic, and creative CSS animations. The game pits two animal-inspired warriors in a
+            duel, and is designed for keyboard combat with real-time animations, hit detection, and a health system.
+            <br><br>
+
+            Designed as a passion project (and a break from saving Gotham), the aim was to build a fun, responsive, and
+            retro-style game that works across devices without any frameworks. Here's how it came together: <br><br>
+
+            <b>Key Features Implemented:</b> <br><br>
+
+            <b>Canvas-Based Rendering</b> <br>
+            The game world is rendered entirely within an HTML canvas element using 2D drawing APIs. From sprite
+            animations to health bars and stage design, everything is drawn and animated frame-by-frame. <br><br>
+
+            <b>2-Player Keyboard Controls</b> <br>
+            Both players use the keyboard (WASD vs Arrow keys) to control movement, jumps, and attacks. Real-time key
+            listeners handle simultaneous inputs.<br><br>
+
+            <b>Collision Detection System</b> <br>
+            A custom logic checks for overlapping bounding boxes to detect hits between characters and apply damage,
+            trigger knockbacks, or block moves.<br><br>
+
+            <b>Dynamic Health Bars</b> <br>
+            Each player has a health bar that updates live as damage is taken. When one player’s HP hits zero, the game
+            declares a winner and offers a restart.<br><br>
+
+            <b>Pixel Art Characters</b> <br>
+            Sprites were created using Piskel, an open-source sprite editor, then animated manually through sprite
+            sheets and canvas `drawImage()` operations.<br><br>
+          </p>
+
+          <h2>Technical Stack</h2>
+          <ul>
+            <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript (vanilla)</li>
+            <li><strong>Game Engine:</strong> Custom (no frameworks)</li>
+            <li><strong>Graphics:</strong> Canvas API, Piskel sprites</li>
+            <li><strong>Hosting:</strong> GitHub Pages / Vercel</li>
+          </ul>
+
+          <h2>Key Challenges</h2>
+          <p>One of the main challenges was building a responsive and reliable collision system without using external
+            physics libraries.</p>
+          <pre><code class="language-javascript">
+// Simple collision check
+function isColliding(rect1, rect2) {
+    return (
+        rect1.x < rect2.x + rect2.width &&
+        rect1.x + rect1.width > rect2.x &&
+        rect1.y < rect2.y + rect2.height &&
+        rect1.y + rect1.height > rect2.y
+    );
+}
+          </code></pre>
+
+          <h2>Lessons Learned</h2>
+          <p>Developing Club Kiboko taught me a lot about game loops, frame optimization, handling simultaneous key
+            presses, and keeping state organized. Most importantly, I learned to prioritize simplicity and performance
+            in browser-based games.<br><br>
+
+            The final version of the game offers a nostalgic, arcade-style battle experience playable directly in the
+            browser—no installs, no lag, just action.
+          </p>
+        </div>
+
+        <div class="blog-post-single__footer">
+          <a href="https://clubkiboko.vercel.app" class="button" target="_blank">
+            <i class="ri-external-link-line"></i> Play Live
+          </a>
+          <div class="blog-post-single__share">
+            <span>Share:</span>
+            <a href="https://x.com/Dev_kiarie/"><i class="ri-twitter-fill"></i></a>
+            <a href="https://www.linkedin.com/in/ian-kiarie-72a26a26a"><i class="ri-linkedin-fill"></i></a>
+            <a href="#" class="copy-link" onclick="copyToClipboard(event)" title="Copy link">
+              <i class="ri-link"></i>
+              <span class="tooltip">Copy link</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <section class="related-posts section">
+      <div class="related-posts__container container">
+        <h2 class="related-posts__title">More Case Studies</h2>
+        <div class="related-posts__grid grid"id="related-posts-container">
+          <!-- Related projects go here -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container container grid">
+      <ul class="footer__links">
+        <li><a href="index.html" class="footer__link">Portfolio</a></li>
+        <li><a href="blog.html" class="footer__link">Blog</a></li>
+        <li><a href="index.html#contact" class="footer__link">Contact</a></li>
+      </ul>
+      <span class="footer__copy">
+        © <span id="year"></span> All Rights Reserved
+        <a href="#">Dev Kiarie.</a>
+      </span>
+    </div>
+  </footer>
+
+  <a href="#" class="scrollup" id="scroll-up">
+    <i class="ri-arrow-up-s-line"></i>
+  </a>
+
+  <script src="/assets/js/scrollreveal.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterButtons = document.querySelectorAll('.blog-categories__button');
+      const blogPosts = document.querySelectorAll('.blog-post');
+
+      if (filterButtons.length) {
+        filterButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const filter = button.dataset.filter;
+
+            blogPosts.forEach(post => {
+              post.style.display = (filter === 'all' || post.dataset.category === filter) ? 'block' : 'none';
+            });
+          });
+        });
+      }
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+</body>
+
+</html>

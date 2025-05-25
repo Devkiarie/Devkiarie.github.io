@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head section same as previous example, with updated meta tags -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everything Fabulous Case Study | Dev Kiarie</title>
+    <meta property="og:title" content="Mastering Responsive Sliders">
+    <meta property="og:description" content="How I built dynamic product sliders for Everything Fabulous">
+    <meta property="og:image" content="/assets/img/project-5.jpg">
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <!-- Header same as previous example -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                <span class="nav__logo-circle">B</span>
+                <span class="nav__logo-name">Dev Blog.</span>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <span class="nav__title">Blog Menu</span>
+                <h3 class="nav__name">Technical Insights</h3>
+
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Portfolio</a></li>
+                    <li class="nav__item"><a href="blog.html" class="nav__link active-link">All Articles</a></li>
+                    <li class="nav__item"><a href="#web-dev" class="nav__link">Web Dev</a></li>
+                    <li class="nav__item"><a href="#python" class="nav__link">Python/C</a></li>
+                    <li class="nav__item"><a href="index.html#contact" class="nav__link nav__link-button">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+
+            <div class="nav__buttons">
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-4-line"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main" id="web-dev">
+        <article class="blog-post-single section">
+            <div class="blog-post-single__container container">
+                <div class="blog-post-single__header">
+                    <div class="blog-post-single__meta">
+                        <span class="blog-post-single__date">August 22, 2022</span>
+                        <span class="blog-post-single__readtime">14 min read</span>
+                    </div>
+                    <h1 class="blog-post-single__title">Everything Fabulous: The Slider Revolution</h1>
+                    <div class="blog-post-single__tags">
+                        <span class="blog-post-single__tag">CSS Animations</span>
+                        <span class="blog-post-single__tag">JavaScript</span>
+                        <span class="blog-post-single__tag">UI/UX</span>
+                    </div>
+                </div>
+
+                <div class="blog-post-single__image">
+                    <img src="/assets/img/project-5.jpg" alt="Everything Fabulous Sliders">
+                </div>
+
+                <div class="blog-post-single__content">
+                    <h2>The Fashion Slider Challenge</h2>
+                    <p>Everything Fabulous was a fashion e-commerce project that demanded visually stunning product
+                        displays. The client wanted:<br><br>
+
+                        - Hero sliders for featured collections<br>
+                        - Product category sliders with smooth transitions<br>
+                        - Mobile-friendly touch controls<br>
+                        - Performance optimization for image-heavy content<br><br>
+
+                        After researching libraries like Swiper.js, I decided to build custom solutions to fully
+                        understand slider mechanics. This decision led to one of my most educational projects.</p>
+
+                    <h2>Building Sliders From Scratch</h2>
+                    <p>The development process became an intense learning experience:<br><br>
+
+                        <b>1. CSS Transitions:</b> I experimented with transform properties to create smooth slides<br>
+                        <b>2. JavaScript Timing:</b> Perfecting the animation timing required numerous iterations<br>
+                        <b>3. Responsive Breakpoints:</b> Each slider needed different behavior on mobile vs desktop<br>
+                        <b>4. Touch Events:</b> Implementing swipe gestures was particularly challenging<br><br>
+
+                        The breakthrough came when I developed a reusable slider class that could be initialized with
+                        different configurations. This taught me the power of object-oriented JavaScript for UI
+                        components.
+                    </p>
+
+                    <h2>Technical Stack</h2>
+                    <ul>
+                        <li><strong>Core Technologies:</strong> HTML5, CSS3, JavaScript</li>
+                        <li><strong>Animations:</strong> CSS transitions combined with JavaScript timing</li>
+                        <li><strong>Touch Support:</strong> Hammer.js for touch gestures</li>
+                        <li><strong>Performance:</strong> Intersection Observer for lazy loading</li>
+                    </ul>
+
+                    <h2>Key Lessons Learned</h2>
+                    <p>This project fundamentally changed how I approach frontend development:<br><br>
+
+                        - <b>Performance Matters:</b> I learned to optimize repaints and reflows during animations<br>
+                        - <b>Mobile-First Mindset:</b> Touch events behave differently across devices<br>
+                        - <b>Accessibility:</b> Added keyboard navigation and ARIA labels<br>
+                        - <b>Code Reusability:</b> Created a slider framework I reused in later projects<br><br>
+
+                        The Everything Fabulous sliders might seem simple now, but they represent a turning point where
+                        I transitioned from following tutorials to creating custom solutions.</p>
+                </div>
+
+                <div class="blog-post-single__footer">
+                    <a href="https://devkiarie.github.io/everything-fabulous/" class="button" target="_blank">
+                        <i class="ri-external-link-line"></i> View Live Project
+                    </a>
+                    <div class="blog-post-single__share">
+                        <span>Share:</span>
+                        <a href="https://x.com/Dev_kiarie/"><i class="ri-twitter-fill"></i></a>
+                        <a href="https://www.linkedin.com/in/ian-kiarie-72a26a26a"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" class="copy-link" onclick="copyToClipboard(event)" title="Copy link">
+                            <i class="ri-link"></i>
+                            <span class="tooltip">Copy link</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!--==================== RELATED POSTS ====================-->
+        <section class="related-posts section">
+            <div class="related-posts__container container">
+                <h2 class="related-posts__title">More Projects</h2>
+                <div class="related-posts__grid grid" id="related-posts-container">
+                    <!-- Similar to blog.html but filtered for related posts -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__container container grid">
+            <ul class="footer__links">
+                <li><a href="index.html" class="footer__link">Portfolio</a></li>
+                <li><a href="blog.html" class="footer__link">Blog</a></li>
+                <li><a href="index.html#contact" class="footer__link">Contact</a></li>
+            </ul>
+            <span class="footer__copy">
+                © <span id="year"></span> All Rights Reserved
+                <a href="#">Dev Kiarie.</a>
+            </span>
+        </div>
+    </footer>
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-s-line"></i>
+    </a>
+
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="/assets/js/scrollreveal.min.js"></script>
+
+    <!--=============== EMAIL JS ===============-->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+
+    <!--=============== BLOG FILTER JS ===============-->
+    <script>
+        // Filter blog posts by category
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.blog-categories__button');
+            const blogPosts = document.querySelectorAll('.blog-post');
+
+            if (filterButtons.length) {
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+
+                        const filter = button.dataset.filter;
+
+                        blogPosts.forEach(post => {
+                            if (filter === 'all' || post.dataset.category === filter) {
+                                post.style.display = 'block';
+                            } else {
+                                post.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            }
+
+            // Update copyright year
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
+    <!--=============== PRISM JS FOR CODE HIGHLIGHTING ===============-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+</body>
+
+</html>

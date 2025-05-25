@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Head section same as previous example, with updated meta tags -->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mass Movers Case Study | Dev Kiarie</title>
-
+    <title>Munchy Case Study | Dev Kiarie</title>
+    <meta property="og:title" content="Modern Auth with ClerkJS in Munchy">
+    <meta property="og:description" content="Building a meat ordering platform with React and Clerk">
+    <meta property="og:image" content="/assets/img/project-6.jpg">
     <!--=============== FAVICON ===============-->
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
@@ -14,12 +17,6 @@
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css">
-
-    <!--=============== OPEN GRAPH META TAGS ===============-->
-    <meta property="og:title" content="Building a Fullstack Logistics Platform">
-    <meta property="og:description" content="Case study of Mass Movers Limited's logistics system">
-    <meta property="og:image" content="/assets/img/project-8.jpg">
-    <meta property="og:url" content="https://yourdomain.com/blog-massmovers.html">
 </head>
 
 <body>
@@ -57,131 +54,79 @@
             </div>
         </nav>
     </header>
-
-    <!--==================== BLOG POST ====================-->
     <main class="main" id="web-dev">
         <article class="blog-post-single section">
             <div class="blog-post-single__container container">
                 <div class="blog-post-single__header">
                     <div class="blog-post-single__meta">
-                        <span class="blog-post-single__date">May 15, 2024</span>
-                        <span class="blog-post-single__readtime">15 min read</span>
+                        <span class="blog-post-single__date">January 20, 2024</span>
+                        <span class="blog-post-single__readtime">20 min read</span>
                     </div>
-                    <h1 class="blog-post-single__title">Building a Fullstack Logistics Platform</h1>
+                    <h1 class="blog-post-single__title">Munchy: Modern Auth & Payments</h1>
                     <div class="blog-post-single__tags">
-                        <span class="blog-post-single__tag">Vite</span>
-                        <span class="blog-post-single__tag">Node.js</span>
-                        <span class="blog-post-single__tag">Firebase</span>
+                        <span class="blog-post-single__tag">React</span>
+                        <span class="blog-post-single__tag">ClerkJS</span>
                         <span class="blog-post-single__tag">Paystack</span>
                     </div>
                 </div>
 
                 <div class="blog-post-single__image">
-                    <img src="/assets/img/project-8.jpg" alt="Mass Movers Platform">
+                    <img src="/assets/img/project-6.jpg" alt="Munchy Meat Ordering">
                 </div>
 
                 <div class="blog-post-single__content">
-                    <h2>Project Overview</h2>
-                    <p>Mass Movers Limited required a comprehensive logistics management platform to support their
-                        rapidly expanding operations. The primary goal was to build a responsive and intuitive web
-                        application that would allow seamless interaction between the company’s administrators and its
-                        users, while offering a range of tools to optimize order handling and customer engagement.
-                        <br><br>
+                    <h2>The Meat Ordering Revolution</h2>
+                    <p>Munchy represented my most sophisticated React project to date, featuring:<br><br>
 
-                        To meet these needs, I developed a React-based web application powered by Vite, which offers
-                        lightning-fast development and build times thanks to its native ES module support. Here's how
-                        the system was structured: <br><br>
+                        - Complete user authentication with ClerkJS<br>
+                        - Payment processing via Paystack<br>
+                        - Real-time order tracking<br>
+                        - Complex product variations (cuts, weights, etc.)<br><br>
 
-                        <b>Key Features Implemented:</b> <br> <br>
-                        <b>Order Management System </b><br>
-                        Users can easily place orders and track their current status (e.g., dispatched, released, etc.).
-                        The backend integrates with the frontend to ensure real-time updates using RESTful APIs.
-                        <br><br>
+                        This project solidified my full-stack capabilities.</p>
 
-                        <b>Admin Dashboard </b> <br>
-                        Built with modular React components, the admin interface allows: <br>
+                    <h2>Implementing ClerkJS Authentication</h2>
+                    <p>The authentication flow was a highlight of this project:<br><br>
 
-                        1. <i>Adding/removing products </i> <br>
+                        1. <b>Multi-factor Setup:</b> Implemented email and SMS verification flows<br>
+                        2. <b>Social Logins:</b> Integrated Google and Apple authentication<br>
+                        3. <b>User Management:</b> Created admin views for customer management<br>
+                        4. <b>Session Control:</b> Implemented idle timeout and security checks<br><br>
 
-                        2. <i>Editing prices and inventory</i> <br>
+                        ClerkJS amazed me with its simplicity compared to traditional auth solutions.</p>
 
-                        3. <i>Categorizing items dynamically</i> <br>
+                    <h2>Paystack Payment Integration</h2>
+                    <p>The payment system required:<br><br>
 
-                        4. <i>Viewing user subscriptions and order logs</i> <br> <br>
+                        - Handling multiple payment methods (cards, bank transfers)<br>
+                        - Secure transaction verification<br>
+                        - Receipt generation<br>
+                        - Failed payment recovery flows<br><br>
 
-                        <b>User-Facing Interface</b> <br>
-                        The UI focuses on accessibility and performance. Users can: <br>
-
-                        1. <i>Filter available products by category, price, or availability</i> <br>
-
-                        2. <i>View detailed product pages</i> <br>
-
-                        3. <i>Subscribe to newsletters and updates</i> <br> <br>
-
-                        <b>Advanced Filtering System</b> <br>
-                        A custom filter logic was implemented to allow users to refine their product search dynamically
-                        using React state hooks and form inputs tied to product metadata. <br><br>
-
-                        <b>Chatbot Integration</b> <br>
-                        A lightweight chatbot was included using a custom-built React component. It retrieves
-                        admin-curated responses or product FAQs and guides users through common queries. <br><br>
-
-                        <b>Newsletter & Email Service</b> <br>
-                        The system uses a mailing service (e.g., EmailJS or a backend API with Nodemailer) to send bulk
-                        or individual emails to users subscribed via the frontend. Admins can draft and send these
-                        directly from the dashboard.
-                    </p>
+                        Implementing Paystack taught me the importance of thorough payment testing.</p>
 
                     <h2>Technical Stack</h2>
                     <ul>
-                        <li><strong>Frontend:</strong> Vite, React, </li>
-                        <li><strong>Backend:</strong> Node.js, Express</li>
-                        <li><strong>Database:</strong> Firebase, cloudinary</li>
-                        <li><strong>financial:</strong> Paystack for finance management</li>
-                        <li><strong>Email:</strong> EmailJS</li>
-                        <li><strong>Deployment:</strong> vercel</li>
+                        <li><strong>Frontend:</strong> React with Vite</li>
+                        <li><strong>Authentication:</strong> ClerkJS</li>
+                        <li><strong>Payments:</strong> Paystack API</li>
+                        <li><strong>State Management:</strong> Zustand</li>
+                        <li><strong>Hosting:</strong> Vercel</li>
                     </ul>
 
-                    <h2>Key Challenges</h2>
-                    <p>One of the main challenges was implementing a chatbot...</p>
-                    <pre><code class="language-javascript">
-// AI-powered chatbot endpoint
-app.post("/api/chatbot", async (req, res) => {
-    const { userInput } = req.body;
+                    <h2>Lessons in Modern Development</h2>
+                    <p>Munchy taught me:<br><br>
 
-    if (!userInput || userInput.trim() === "") {
-    return res.json({ answer: "Please ask me something!" });
-    }
-                      
-    const lowerUserInput = userInput.toLowerCase();
-                      
-    // Step 1: Check predefined simple responses
-    const predefinedResponses = {
-    "hi": "Hello! How can I assist you today?",
-    "hello": "Hi there! Need any help?",
-    "hey": "Hey! What can I do for you?",
-    "who are you": "I'm your friendly chatbot here to assist you!",
-    "what is your name": "I'm ChatHelper, your virtual assistant.",
-    "how are you": "I'm just a bot, but I'm always ready to help!"
-    };
-                      
-    if (predefinedResponses[lowerUserInput]) {
-    return res.json({ answer: predefinedResponses[lowerUserInput] });
-    }
-               </code></pre>
+                        - <b>Auth Best Practices:</b> Proper session handling and security<br>
+                        - <b>Payment Flows:</b> How to design resilient transaction systems<br>
+                        - <b>Error Handling:</b> Creating user-friendly error states<br>
+                        - <b>Performance:</b> Code-splitting for auth-heavy applications<br><br>
 
-                    <h2>Lessons Learned</h2>
-                    <p>This project taught me how to arrange projects, and sort files, and also how to Implement
-                        AI into your projects. By doing this the project is easily scalable... <br><br></p>
-                    <p>
-                        The final product delivered a fast, secure, and scalable logistics platform tailored for Mass
-                        Movers Limited. The intuitive UI and automated workflows significantly improved both admin
-                        efficiency and user satisfaction, aligning the tech with the company’s operational goals.
-                    </p>
+                        This project represents my current pinnacle of React application development.</p>
                 </div>
 
                 <div class="blog-post-single__footer">
-                    <a href="https://massmoverslimited.vercel.app" class="button" target="_blank">
+                    <a href="https://munchy-meatshop.vercel.app/" class="button" target="_blank">
                         <i class="ri-external-link-line"></i> View Live Project
                     </a>
                     <div class="blog-post-single__share">
@@ -200,14 +145,12 @@ app.post("/api/chatbot", async (req, res) => {
         <!--==================== RELATED POSTS ====================-->
         <section class="related-posts section">
             <div class="related-posts__container container">
-                <h2 class="related-posts__title">More Case Studies</h2>
+                <h2 class="related-posts__title">More Projects</h2>
                 <div class="related-posts__grid grid" id="related-posts-container">
                     <!-- Similar to blog.html but filtered for related posts -->
                 </div>
             </div>
         </section>
-
-        <!--==================== BLOG CTA (Same as blog.html) ===============-->
     </main>
 
     <!--==================== FOOTER ====================-->

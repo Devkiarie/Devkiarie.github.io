@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head section same as previous example, with updated meta tags -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WatchShop Theme System | Dev Kiarie</title>
+    <meta property="og:title" content="Implementing Dark Mode in WatchShop">
+    <meta property="og:description" content="Case study of theme system implementation">
+    <meta property="og:image" content="/assets/img/project-4.jpg">
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <!-- Header same as previous example -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                <span class="nav__logo-circle">B</span>
+                <span class="nav__logo-name">Dev Blog.</span>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <span class="nav__title">Blog Menu</span>
+                <h3 class="nav__name">Technical Insights</h3>
+
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Portfolio</a></li>
+                    <li class="nav__item"><a href="blog.html" class="nav__link active-link">All Articles</a></li>
+                    <li class="nav__item"><a href="#web-dev" class="nav__link">Web Dev</a></li>
+                    <li class="nav__item"><a href="#python" class="nav__link">Python/C</a></li>
+                    <li class="nav__item"><a href="index.html#contact" class="nav__link nav__link-button">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+
+            <div class="nav__buttons">
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-4-line"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main" id="web-dev">
+        <article class="blog-post-single section">
+            <div class="blog-post-single__container container">
+                <div class="blog-post-single__header">
+                    <div class="blog-post-single__meta">
+                        <span class="blog-post-single__date">February 15, 2023</span>
+                        <span class="blog-post-single__readtime">16 min read</span>
+                    </div>
+                    <h1 class="blog-post-single__title">WatchShop: Mastering Dark Mode</h1>
+                    <div class="blog-post-single__tags">
+                        <span class="blog-post-single__tag">CSS Variables</span>
+                        <span class="blog-post-single__tag">LocalStorage</span>
+                        <span class="blog-post-single__tag">UI Themes</span>
+                    </div>
+                </div>
+
+                <div class="blog-post-single__image">
+                    <img src="/assets/img/project-4.jpg" alt="WatchShop Dark Mode">
+                </div>
+
+                <div class="blog-post-single__content">
+                    <h2>The Theme System Challenge</h2>
+                    <p>WatchShop was a luxury timepiece e-commerce site that demanded premium aesthetics. The client
+                        wanted:<br><br>
+
+                        - Seamless light/dark mode switching<br>
+                        - Theme persistence across sessions<br>
+                        - Custom accent colors for different product lines<br>
+                        - Smooth transitions between themes<br><br>
+
+                        This became my deepest dive into CSS variables and browser storage APIs.</p>
+
+                    <h2>Implementing the Theme Engine</h2>
+                    <p>The solution involved multiple interconnected systems:<br><br>
+
+                        <b>1. CSS Variable Architecture:</b><br>
+                        Created a comprehensive set of design tokens:<br>
+                    <pre>
+:root {
+    --primary: #0066cc;
+    --text: #333333;
+    --background: #ffffff;
+    /* etc. */
+}
+
+[data-theme="dark"] {
+    --primary: #3399ff;
+    --text: #f0f0f0;
+    --background: #121212;
+}</pre><br>
+
+                    <b>2. JavaScript Theme Manager:</b><br>
+                    Built a class to handle:<br>
+                    - System preference detection (prefers-color-scheme)<br>
+                    - User preference storage (localStorage)<br>
+                    - Theme switching without flashes<br><br>
+
+                    <b>3. UI Controls:</b><br>
+                    Designed an elegant theme switcher component that reflected the current state.</p>
+
+                    <h2>Technical Stack</h2>
+                    <ul>
+                        <li><strong>Core:</strong> React with TypeScript</li>
+                        <li><strong>Styling:</strong> CSS Modules with variables</li>
+                        <li><strong>State Management:</strong> Context API for theme</li>
+                        <li><strong>Persistence:</strong> localStorage API</li>
+                    </ul>
+
+                    <h2>Lessons That Transformed My Approach</h2>
+                    <p>This project taught me invaluable lessons about design systems:<br><br>
+
+                        - <b>Design Tokens:</b> Learned to abstract colors, spacing, etc. into variables<br>
+                        - <b>Performance:</b> Discovered how to prevent layout thrashing during theme changes<br>
+                        - <b>User Preference:</b> Implemented system-level preference detection<br>
+                        - <b>Accessibility:</b> Ensured proper contrast ratios in both themes<br><br>
+
+                        The WatchShop theme system became a foundational pattern I've reused in every project since.</p>
+                </div>
+
+                <div class="blog-post-single__footer">
+                    <a href="https://devkiarie.github.io/sage-watches/" class="button" target="_blank">
+                        <i class="ri-external-link-line"></i> View Live Project
+                    </a>
+                    <div class="blog-post-single__share">
+                        <span>Share:</span>
+                        <a href="https://x.com/Dev_kiarie/"><i class="ri-twitter-fill"></i></a>
+                        <a href="https://www.linkedin.com/in/ian-kiarie-72a26a26a"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" class="copy-link" onclick="copyToClipboard(event)" title="Copy link">
+                            <i class="ri-link"></i>
+                            <span class="tooltip">Copy link</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!--==================== RELATED POSTS ====================-->
+        <section class="related-posts section">
+            <div class="related-posts__container container">
+                <h2 class="related-posts__title">Related Projects</h2>
+                <div class="related-posts__grid grid" id="related-posts-container">
+                    <!-- Similar to blog.html but filtered for related posts -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__container container grid">
+            <ul class="footer__links">
+                <li><a href="index.html" class="footer__link">Portfolio</a></li>
+                <li><a href="blog.html" class="footer__link">Blog</a></li>
+                <li><a href="index.html#contact" class="footer__link">Contact</a></li>
+            </ul>
+            <span class="footer__copy">
+                © <span id="year"></span> All Rights Reserved
+                <a href="#">Dev Kiarie.</a>
+            </span>
+        </div>
+    </footer>
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-s-line"></i>
+    </a>
+
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="/assets/js/scrollreveal.min.js"></script>
+
+    <!--=============== EMAIL JS ===============-->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+
+    <!--=============== BLOG FILTER JS ===============-->
+    <script>
+        // Filter blog posts by category
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.blog-categories__button');
+            const blogPosts = document.querySelectorAll('.blog-post');
+
+            if (filterButtons.length) {
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+
+                        const filter = button.dataset.filter;
+
+                        blogPosts.forEach(post => {
+                            if (filter === 'all' || post.dataset.category === filter) {
+                                post.style.display = 'block';
+                            } else {
+                                post.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            }
+
+            // Update copyright year
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
+    <!--=============== PRISM JS FOR CODE HIGHLIGHTING ===============-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+</body>
+
+</html>

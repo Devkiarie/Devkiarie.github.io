@@ -1847,7 +1847,6 @@ body.dark-theme {
   min-height: 1.5rem;
 }
 
-/* Add to :root in your CSS */
 
 /*==================== AUTHOR BIO ====================*/
 .author-bio {
@@ -2121,4 +2120,136 @@ body.dark-theme {
 .related-post p {
    color: var(--text-color-light);
    font-size: var(--small-font-size);
+}
+
+.copy-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+}
+
+.copy-link:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.copy-link.copied .tooltip {
+    content: 'Copied!';
+    background: #4CAF50;
+}
+
+
+
+
+/* ====================== LINE CLAMP UTILITY ====================== */
+/* For modern browsers that support the standard property */
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    
+    /* Standard property (still in draft, not widely supported yet) */
+    line-clamp: 2;
+    /* Firefox fallback (uses max-height with em units) */
+    @supports not (-webkit-line-clamp: 2) {
+        display: block;
+        max-height: 3em; /* line-height × number of lines */
+        line-height: 1.5em;
+    }
+}
+
+/* Specific line clamp variations */
+.line-clamp-1 {
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    @supports not (-webkit-line-clamp: 1) {
+        max-height: 1.5em;
+    }
+}
+
+.line-clamp-2 {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    @supports not (-webkit-line-clamp: 2) {
+        max-height: 3em;
+    }
+}
+
+.line-clamp-3 {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    @supports not (-webkit-line-clamp: 3) {
+        max-height: 4.5em;
+    }
+}
+
+/* Apply to your related posts description */
+.related-post__description {
+    /* Existing styles... */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-clamp: 2;
+    
+    /* Firefox fallback */
+    @supports not (-webkit-line-clamp: 2) {
+        display: block;
+        max-height: 3em; /* Assuming line-height of 1.5em */
+        line-height: 1.5em;
+    }
+}
+
+.related-post__image {
+  position: relative;
+}
+
+.related-post__date {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: var(--first-color);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.related-post__meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.related-post__tech {
+  background: var(--container-color-alt);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: var(--text-color-light);
+}
+
+.related-post__link{
+  background: var(--container-color-alt);
+  padding: 0.1rem 0.0rem;
+  border-radius: 4px;
+  color: white;
 }

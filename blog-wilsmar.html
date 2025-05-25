@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Head section same as previous example, with updated meta tags -->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mass Movers Case Study | Dev Kiarie</title>
-
+    <title>Wilsmar Case Study | Dev Kiarie</title>
+    <meta property="og:title" content="MERN Stack Mastery with Wilsmar">
+    <meta property="og:description" content="Building a fullstack drink ordering system">
+    <meta property="og:image" content="/assets/img/project-7.jpg">
     <!--=============== FAVICON ===============-->
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
@@ -14,12 +17,6 @@
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css">
-
-    <!--=============== OPEN GRAPH META TAGS ===============-->
-    <meta property="og:title" content="Building a Fullstack Logistics Platform">
-    <meta property="og:description" content="Case study of Mass Movers Limited's logistics system">
-    <meta property="og:image" content="/assets/img/project-8.jpg">
-    <meta property="og:url" content="https://yourdomain.com/blog-massmovers.html">
 </head>
 
 <body>
@@ -57,131 +54,82 @@
             </div>
         </nav>
     </header>
-
-    <!--==================== BLOG POST ====================-->
     <main class="main" id="web-dev">
         <article class="blog-post-single section">
             <div class="blog-post-single__container container">
                 <div class="blog-post-single__header">
                     <div class="blog-post-single__meta">
-                        <span class="blog-post-single__date">May 15, 2024</span>
-                        <span class="blog-post-single__readtime">15 min read</span>
+                        <span class="blog-post-single__date">September 8, 2023</span>
+                        <span class="blog-post-single__readtime">22 min read</span>
                     </div>
-                    <h1 class="blog-post-single__title">Building a Fullstack Logistics Platform</h1>
+                    <h1 class="blog-post-single__title">Wilsmar: Conquering the MERN Stack</h1>
                     <div class="blog-post-single__tags">
-                        <span class="blog-post-single__tag">Vite</span>
+                        <span class="blog-post-single__tag">MongoDB</span>
+                        <span class="blog-post-single__tag">Express</span>
+                        <span class="blog-post-single__tag">React</span>
                         <span class="blog-post-single__tag">Node.js</span>
-                        <span class="blog-post-single__tag">Firebase</span>
-                        <span class="blog-post-single__tag">Paystack</span>
                     </div>
                 </div>
 
                 <div class="blog-post-single__image">
-                    <img src="/assets/img/project-8.jpg" alt="Mass Movers Platform">
+                    <img src="/assets/img/project-7.jpg" alt="Wilsmar Wines & Spirits">
                 </div>
 
                 <div class="blog-post-single__content">
-                    <h2>Project Overview</h2>
-                    <p>Mass Movers Limited required a comprehensive logistics management platform to support their
-                        rapidly expanding operations. The primary goal was to build a responsive and intuitive web
-                        application that would allow seamless interaction between the company’s administrators and its
-                        users, while offering a range of tools to optimize order handling and customer engagement.
-                        <br><br>
+                    <h2>The Fullstack Challenge</h2>
+                    <p>Wilsmar Wines & Spirits was my first complete MERN stack application, featuring:<br><br>
 
-                        To meet these needs, I developed a React-based web application powered by Vite, which offers
-                        lightning-fast development and build times thanks to its native ES module support. Here's how
-                        the system was structured: <br><br>
+                        - Custom backend API with Express<br>
+                        - MongoDB database with complex product relationships<br>
+                        - React frontend with admin dashboard<br>
+                        - User authentication with JWT<br><br>
 
-                        <b>Key Features Implemented:</b> <br> <br>
-                        <b>Order Management System </b><br>
-                        Users can easily place orders and track their current status (e.g., dispatched, released, etc.).
-                        The backend integrates with the frontend to ensure real-time updates using RESTful APIs.
-                        <br><br>
+                        This project marked my transition from frontend to fullstack development.</p>
 
-                        <b>Admin Dashboard </b> <br>
-                        Built with modular React components, the admin interface allows: <br>
+                    <h2>Building the Backend Architecture</h2>
+                    <p>The backend development was particularly educational:<br><br>
 
-                        1. <i>Adding/removing products </i> <br>
+                        <b>1. API Design:</b> Created RESTful endpoints for all operations<br>
+                        <b>2. Database Modeling:</b> Designed schemas for products, users, orders<br>
+                        <b>3. Authentication:</b> Implemented JWT with proper security<br>
+                        <b>4. Error Handling:</b> Built comprehensive error middleware<br><br>
 
-                        2. <i>Editing prices and inventory</i> <br>
-
-                        3. <i>Categorizing items dynamically</i> <br>
-
-                        4. <i>Viewing user subscriptions and order logs</i> <br> <br>
-
-                        <b>User-Facing Interface</b> <br>
-                        The UI focuses on accessibility and performance. Users can: <br>
-
-                        1. <i>Filter available products by category, price, or availability</i> <br>
-
-                        2. <i>View detailed product pages</i> <br>
-
-                        3. <i>Subscribe to newsletters and updates</i> <br> <br>
-
-                        <b>Advanced Filtering System</b> <br>
-                        A custom filter logic was implemented to allow users to refine their product search dynamically
-                        using React state hooks and form inputs tied to product metadata. <br><br>
-
-                        <b>Chatbot Integration</b> <br>
-                        A lightweight chatbot was included using a custom-built React component. It retrieves
-                        admin-curated responses or product FAQs and guides users through common queries. <br><br>
-
-                        <b>Newsletter & Email Service</b> <br>
-                        The system uses a mailing service (e.g., EmailJS or a backend API with Nodemailer) to send bulk
-                        or individual emails to users subscribed via the frontend. Admins can draft and send these
-                        directly from the dashboard.
+                        The process of connecting frontend to backend taught me the importance of clear API
+                        documentation.
                     </p>
+
+                    <h2>Frontend-Backend Integration</h2>
+                    <p>Key integration challenges included:<br><br>
+
+                        - Managing authentication state across the app<br>
+                        - Handling loading and error states for API calls<br>
+                        - Implementing optimistic UI updates<br>
+                        - Securing admin routes<br><br>
+
+                        This experience fundamentally improved my understanding of client-server communication.</p>
 
                     <h2>Technical Stack</h2>
                     <ul>
-                        <li><strong>Frontend:</strong> Vite, React, </li>
-                        <li><strong>Backend:</strong> Node.js, Express</li>
-                        <li><strong>Database:</strong> Firebase, cloudinary</li>
-                        <li><strong>financial:</strong> Paystack for finance management</li>
-                        <li><strong>Email:</strong> EmailJS</li>
-                        <li><strong>Deployment:</strong> vercel</li>
+                        <li><strong>Frontend:</strong> React with Vite</li>
+                        <li><strong>Backend:</strong> Node.js with Express</li>
+                        <li><strong>Database:</strong> MongoDB with Mongoose</li>
+                        <li><strong>Authentication:</strong> JWT with HTTP-only cookies</li>
+                        <li><strong>Deployment:</strong> Render for backend, Vercel for frontend</li>
                     </ul>
 
-                    <h2>Key Challenges</h2>
-                    <p>One of the main challenges was implementing a chatbot...</p>
-                    <pre><code class="language-javascript">
-// AI-powered chatbot endpoint
-app.post("/api/chatbot", async (req, res) => {
-    const { userInput } = req.body;
+                    <h2>Lessons in Fullstack Development</h2>
+                    <p>Wilsmar taught me:<br><br>
 
-    if (!userInput || userInput.trim() === "") {
-    return res.json({ answer: "Please ask me something!" });
-    }
-                      
-    const lowerUserInput = userInput.toLowerCase();
-                      
-    // Step 1: Check predefined simple responses
-    const predefinedResponses = {
-    "hi": "Hello! How can I assist you today?",
-    "hello": "Hi there! Need any help?",
-    "hey": "Hey! What can I do for you?",
-    "who are you": "I'm your friendly chatbot here to assist you!",
-    "what is your name": "I'm ChatHelper, your virtual assistant.",
-    "how are you": "I'm just a bot, but I'm always ready to help!"
-    };
-                      
-    if (predefinedResponses[lowerUserInput]) {
-    return res.json({ answer: predefinedResponses[lowerUserInput] });
-    }
-               </code></pre>
+                        - <b>API Design:</b> How to structure endpoints logically<br>
+                        - <b>Database Relations:</b> Modeling complex product relationships<br>
+                        - <b>Security:</b> Proper authentication implementation<br>
+                        - <b>DevOps:</b> Managing separate frontend/backend deployments<br><br>
 
-                    <h2>Lessons Learned</h2>
-                    <p>This project taught me how to arrange projects, and sort files, and also how to Implement
-                        AI into your projects. By doing this the project is easily scalable... <br><br></p>
-                    <p>
-                        The final product delivered a fast, secure, and scalable logistics platform tailored for Mass
-                        Movers Limited. The intuitive UI and automated workflows significantly improved both admin
-                        efficiency and user satisfaction, aligning the tech with the company’s operational goals.
-                    </p>
+                        This project remains my most comprehensive fullstack implementation to date.</p>
                 </div>
 
                 <div class="blog-post-single__footer">
-                    <a href="https://massmoverslimited.vercel.app" class="button" target="_blank">
+                    <a href="https://wilsmar-frontend.onrender.com/" class="button" target="_blank">
                         <i class="ri-external-link-line"></i> View Live Project
                     </a>
                     <div class="blog-post-single__share">
@@ -200,14 +148,12 @@ app.post("/api/chatbot", async (req, res) => {
         <!--==================== RELATED POSTS ====================-->
         <section class="related-posts section">
             <div class="related-posts__container container">
-                <h2 class="related-posts__title">More Case Studies</h2>
+                <h2 class="related-posts__title">More Projects</h2>
                 <div class="related-posts__grid grid" id="related-posts-container">
                     <!-- Similar to blog.html but filtered for related posts -->
                 </div>
             </div>
         </section>
-
-        <!--==================== BLOG CTA (Same as blog.html) ===============-->
     </main>
 
     <!--==================== FOOTER ====================-->

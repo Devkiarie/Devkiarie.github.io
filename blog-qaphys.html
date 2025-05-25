@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QAPhys E-commerce Case Study | Dev Kiarie</title>
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!--=============== OPEN GRAPH META TAGS ===============-->
+    <meta property="og:title" content="Building QAPhys E-commerce Platform">
+    <meta property="og:description" content="Case study of my first e-commerce project with email integration">
+    <meta property="og:image" content="/assets/img/project-2.jpg">
+    <meta property="og:url" content="https://yourdomain.com/blog-qaphys.html">
+</head>
+
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                <span class="nav__logo-circle">B</span>
+                <span class="nav__logo-name">Dev Blog.</span>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <span class="nav__title">Blog Menu</span>
+                <h3 class="nav__name">Technical Insights</h3>
+
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Portfolio</a></li>
+                    <li class="nav__item"><a href="blog.html" class="nav__link active-link">All Articles</a></li>
+                    <li class="nav__item"><a href="#web-dev" class="nav__link">Web Dev</a></li>
+                    <li class="nav__item"><a href="#python" class="nav__link">Python/C</a></li>
+                    <li class="nav__item"><a href="index.html#contact" class="nav__link nav__link-button">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+
+            <div class="nav__buttons">
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-4-line"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== BLOG POST ====================-->
+    <main class="main" id="web-dev">
+        <article class="blog-post-single section">
+            <div class="blog-post-single__container container">
+                <div class="blog-post-single__header">
+                    <div class="blog-post-single__meta">
+                        <span class="blog-post-single__date">March 10, 2022</span>
+                        <span class="blog-post-single__readtime">12 min read</span>
+                    </div>
+                    <h1 class="blog-post-single__title">QAPhys: My First E-commerce Venture</h1>
+                    <div class="blog-post-single__tags">
+                        <span class="blog-post-single__tag">JavaScript</span>
+                        <span class="blog-post-single__tag">EmailJS</span>
+                        <span class="blog-post-single__tag">E-commerce</span>
+                    </div>
+                </div>
+
+                <div class="blog-post-single__image">
+                    <img src="/assets/img/project-2.jpg" alt="QAPhys E-commerce Platform">
+                </div>
+
+                <div class="blog-post-single__content">
+                    <h2>The Beginning of My E-commerce Journey</h2>
+                    <p>QAPhys was my first serious attempt at building a complete e-commerce platform from scratch. The
+                        project began when a local physics equipment supplier needed an online presence to showcase
+                        their laboratory instruments. At this early stage in my development career, every feature
+                        implementation felt like solving a complex puzzle.<br><br>
+
+                        The client needed three core functionalities: <br>
+                        1. A product display system that could handle various equipment categories<br>
+                        2. An inquiry system where potential buyers could request quotes<br>
+                        3. Automated email confirmations for successful inquiries<br><br>
+
+                        <b>The JavaScript Product Display Challenge</b><br>
+                        Creating a dynamic product grid was my first major hurdle. I remember spending nights debugging
+                        why products wouldn't render properly. The breakthrough came when I implemented a modular
+                        JavaScript approach:<br><br>
+
+                        - Created product objects with consistent properties (name, image, category, etc.)<br>
+                        - Wrote rendering functions that could adapt to different display layouts<br>
+                        - Implemented category filtering that didn't require page reloads<br><br>
+
+                        This experience taught me the importance of data structure planning before coding begins.
+                    </p>
+
+                    <h2>Email Integration Breakthrough</h2>
+                    <p>The email functionality was what truly transformed this project. I discovered EmailJS and was
+                        amazed at how it could connect frontend forms to email services without backend code. The
+                        implementation process:<br><br>
+
+                        1. Designed responsive inquiry forms with field validation<br>
+                        2. Connected to EmailJS with their JavaScript library<br>
+                        3. Created email templates that would auto-populate with user data<br>
+                        4. Added success/error messages to guide users<br><br>
+
+                        When the first test email arrived in my inbox from the live site, it felt like magic. This
+                        experience sparked my ongoing interest in communication APIs and services.</p>
+
+                    <h2>Technical Stack</h2>
+                    <ul>
+                        <li><strong>Frontend:</strong> HTML5, CSS3, Vanilla JavaScript</li>
+                        <li><strong>Email Service:</strong> EmailJS integration</li>
+                        <li><strong>Hosting:</strong> Netlify static hosting</li>
+                        <li><strong>Product Data:</strong> JSON files managed through JavaScript</li>
+                    </ul>
+
+                    <h2>Lessons That Shaped My Career</h2>
+                    <p>Looking back at QAPhys with two years of perspective, I realize how foundational this project
+                        was:<br><br>
+
+                        - <b>User Flow Matters:</b> I learned to map out complete user journeys before coding<br>
+                        - <b>Error Handling is Crucial:</b> My early forms had no validation - a mistake I've never
+                        repeated<br>
+                        - <b>Performance Optimization:</b> Image loading issues taught me about lazy loading<br><br>
+
+                        While the code might look primitive to my current eyes, QAPhys remains special as the project
+                        where I discovered my passion for creating functional, user-friendly web applications.</p>
+                </div>
+
+                <div class="blog-post-single__footer">
+                    <a href="https://devkiarie.github.io/qaphys.co/" class="button" target="_blank">
+                        <i class="ri-external-link-line"></i> View Live Project
+                    </a>
+                    <div class="blog-post-single__share">
+                        <span>Share:</span>
+                        <a href="https://x.com/Dev_kiarie/"><i class="ri-twitter-fill"></i></a>
+                        <a href="https://www.linkedin.com/in/ian-kiarie-72a26a26a"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" class="copy-link" onclick="copyToClipboard(event)" title="Copy link">
+                            <i class="ri-link"></i>
+                            <span class="tooltip">Copy link</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!--==================== RELATED POSTS ====================-->
+        <section class="related-posts section">
+            <div class="related-posts__container container">
+                <h2 class="related-posts__title">More Projects</h2>
+                <div class="related-posts__grid grid" id="related-posts-container">
+                    <!-- Similar to blog.html but filtered for related posts -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__container container grid">
+            <ul class="footer__links">
+                <li><a href="index.html" class="footer__link">Portfolio</a></li>
+                <li><a href="blog.html" class="footer__link">Blog</a></li>
+                <li><a href="index.html#contact" class="footer__link">Contact</a></li>
+            </ul>
+            <span class="footer__copy">
+                © <span id="year"></span> All Rights Reserved
+                <a href="#">Dev Kiarie.</a>
+            </span>
+        </div>
+    </footer>
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-s-line"></i>
+    </a>
+
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="/assets/js/scrollreveal.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+
+    <!--=============== BLOG FILTER JS ===============-->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Update copyright year
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+
+</html>

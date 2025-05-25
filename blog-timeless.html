@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head section same as previous example, with updated meta tags -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChronoAnimate Case Study | Dev Kiarie</title>
+    <meta property="og:title" content="Advanced CSS Animations in ChronoAnimate">
+    <meta property="og:description" content="How I brought watches to life with CSS">
+    <meta property="og:image" content="/assets/img/project-3.jpg">
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <!-- Header same as previous example -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                <span class="nav__logo-circle">B</span>
+                <span class="nav__logo-name">Dev Blog.</span>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <span class="nav__title">Blog Menu</span>
+                <h3 class="nav__name">Technical Insights</h3>
+
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Portfolio</a></li>
+                    <li class="nav__item"><a href="blog.html" class="nav__link active-link">All Articles</a></li>
+                    <li class="nav__item"><a href="#web-dev" class="nav__link">Web Dev</a></li>
+                    <li class="nav__item"><a href="#python" class="nav__link">Python/C</a></li>
+                    <li class="nav__item"><a href="index.html#contact" class="nav__link nav__link-button">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+
+            <div class="nav__buttons">
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-4-line"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main" id="web-dev">
+        <article class="blog-post-single section">
+            <div class="blog-post-single__container container">
+                <div class="blog-post-single__header">
+                    <div class="blog-post-single__meta">
+                        <span class="blog-post-single__date">November 5, 2022</span>
+                        <span class="blog-post-single__readtime">18 min read</span>
+                    </div>
+                    <h1 class="blog-post-single__title">ChronoAnimate: The Art of CSS Motion</h1>
+                    <div class="blog-post-single__tags">
+                        <span class="blog-post-single__tag">CSS Animations</span>
+                        <span class="blog-post-single__tag">3D Transforms</span>
+                        <span class="blog-post-single__tag">Performance</span>
+                    </div>
+                </div>
+
+                <div class="blog-post-single__image">
+                    <img src="/assets/img/project-3.jpg" alt="ChronoAnimate Watch Animations">
+                </div>
+
+                <div class="blog-post-single__content">
+                    <h2>Animating Luxury Timepieces</h2>
+                    <p>ChronoAnimate was a groundbreaking project where I pushed CSS animations to their limits. The
+                        goal was to create:<br><br>
+
+                        - Realistic 3D watch rotations<br>
+                        - Smooth second-hand movements<br>
+                        - Interactive hover effects<br>
+                        - Animated product transitions<br><br>
+
+                        This project changed how I viewed the capabilities of pure CSS.</p>
+
+                    <h2>The Animation Breakthroughs</h2>
+                    <p>Several techniques combined to create the final effects:<br><br>
+
+                        <b>1. 3D Watch Faces:</b><br>
+                        Used CSS transforms with perspective to create depth:<br>
+                    <pre>
+.watch-face {
+    transform-style: preserve-3d;
+    transition: transform 1.5s ease-in-out;
+}
+
+.watch-face:hover {
+    transform: rotateY(15deg);
+}</pre><br>
+
+                    <b>2. Moving Watch Hands:</b><br>
+                    Created realistic ticking with keyframe animations:<br>
+                    <pre>
+@keyframes tick {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.second-hand {
+    animation: tick 60s linear infinite;
+}</pre><br>
+
+                    <b>3. Performance Optimization:</b><br>
+                    Learned to use will-change and transform properties to prevent jank.</p>
+
+                    <h2>Technical Stack</h2>
+                    <ul>
+                        <li><strong>Core:</strong> HTML5, CSS3, JavaScript</li>
+                        <li><strong>Animations:</strong> CSS keyframes and transitions</li>
+                        <li><strong>3D Effects:</strong> CSS transforms with perspective</li>
+                        <li><strong>Interactivity:</strong> JavaScript event listeners</li>
+                    </ul>
+
+                    <h2>Lessons That Changed My Animation Approach</h2>
+                    <p>ChronoAnimate taught me:<br><br>
+
+                        - <b>Hardware Acceleration:</b> How to leverage GPU for smooth animations<br>
+                        - <b>Timing Functions:</b> The art of easing for natural motion<br>
+                        - <b>User Experience:</b> Balancing wow-factor with usability<br>
+                        - <b>Fallbacks:</b> Graceful degradation for older browsers<br><br>
+
+                        These animation techniques became part of my core skillset, influencing all subsequent projects.
+                    </p>
+                </div>
+
+                <div class="blog-post-single__footer">
+                    <a href="https://devkiarie.github.io/Timeless-/" class="button" target="_blank">
+                        <i class="ri-external-link-line"></i> View Live Project
+                    </a>
+                    <div class="blog-post-single__share">
+                        <span>Share:</span>
+                        <a href="https://x.com/Dev_kiarie/"><i class="ri-twitter-fill"></i></a>
+                        <a href="https://www.linkedin.com/in/ian-kiarie-72a26a26a"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" class="copy-link" onclick="copyToClipboard(event)" title="Copy link">
+                            <i class="ri-link"></i>
+                            <span class="tooltip">Copy link</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!--==================== RELATED POSTS ====================-->
+        <section class="related-posts section">
+            <div class="related-posts__container container">
+                <h2 class="related-posts__title">More Projects</h2>
+                <div class="related-posts__grid grid" id="related-posts-container">
+                    <!-- Similar to blog.html but filtered for related posts -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__container container grid">
+            <ul class="footer__links">
+                <li><a href="index.html" class="footer__link">Portfolio</a></li>
+                <li><a href="blog.html" class="footer__link">Blog</a></li>
+                <li><a href="index.html#contact" class="footer__link">Contact</a></li>
+            </ul>
+            <span class="footer__copy">
+                © <span id="year"></span> All Rights Reserved
+                <a href="#">Dev Kiarie.</a>
+            </span>
+        </div>
+    </footer>
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-s-line"></i>
+    </a>
+
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="/assets/js/scrollreveal.min.js"></script>
+
+    <!--=============== EMAIL JS ===============-->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+
+    <!--=============== BLOG FILTER JS ===============-->
+    <script>
+        // Filter blog posts by category
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.blog-categories__button');
+            const blogPosts = document.querySelectorAll('.blog-post');
+
+            if (filterButtons.length) {
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+
+                        const filter = button.dataset.filter;
+
+                        blogPosts.forEach(post => {
+                            if (filter === 'all' || post.dataset.category === filter) {
+                                post.style.display = 'block';
+                            } else {
+                                post.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            }
+
+            // Update copyright year
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
+    <!--=============== PRISM JS FOR CODE HIGHLIGHTING ===============-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+</body>
+
+</html>

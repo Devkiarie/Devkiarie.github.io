@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description"
+      content="Ian Kiarie's development blog - Detailed project walkthroughs and technical insights">
+
+   <!--=============== FAVICON ===============-->
+   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+   <!--=============== REMIXICONS ===============-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" href="assets/css/styles.css">
+
+   <title>Technical Blog | Dev Kiarie</title>
+</head>
+
+<body>
+   <!--==================== HEADER ====================-->
+   <header class="header" id="header">
+      <nav class="nav container">
+         <a href="index.html" class="nav__logo">
+            <span class="nav__logo-circle">B</span>
+            <span class="nav__logo-name">Dev Blog.</span>
+         </a>
+
+         <div class="nav__menu" id="nav-menu">
+            <span class="nav__title">Blog Menu</span>
+            <h3 class="nav__name">Technical Insights</h3>
+
+            <ul class="nav__list">
+               <li class="nav__item"><a href="index.html" class="nav__link">Portfolio</a></li>
+               <li class="nav__item"><a href="blog.html" class="nav__link active-link">All Articles</a></li>
+               <li class="nav__item"><a href="#web-dev" class="nav__link">Web Dev</a></li>
+               <li class="nav__item"><a href="#python" class="nav__link">Python/C</a></li>
+               <li class="nav__item"><a href="#contact" class="nav__link nav__link-button">Contact</a></li>
+            </ul>
+
+            <div class="nav__close" id="nav-close">
+               <i class="ri-close-line"></i>
+            </div>
+         </div>
+
+         <div class="nav__buttons">
+            <i class="ri-moon-line change-theme" id="theme-button"></i>
+            <div class="nav__toggle" id="nav-toggle">
+               <i class="ri-menu-4-line"></i>
+            </div>
+         </div>
+      </nav>
+   </header>
+
+   <!--==================== MAIN ====================-->
+   <main class="main">
+      <!--==================== BLOG HERO ====================-->
+      <section class="blog-hero section">
+         <div class="blog-hero__container container">
+            <h1 class="blog-hero__title">Technical Blog</h1>
+            <p class="blog-hero__description">
+               Detailed walkthroughs of my projects, architecture decisions, and problem-solving approaches
+            </p>
+            <div class="blog-hero__stats">
+               <div class="blog-hero__stat">
+                  <span class="blog-hero__number">8</span>
+                  <span class="blog-hero__label">Projects</span>
+               </div>
+               <div class="blog-hero__stat">
+                  <span class="blog-hero__number">5+</span>
+                  <span class="blog-hero__label">Tech Stacks</span>
+               </div>
+               <div class="blog-hero__stat">
+                  <span class="blog-hero__number">10k+</span>
+                  <span class="blog-hero__label">Lines of Code</span>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!--==================== BLOG CATEGORIES ====================-->
+      <section class="blog-categories section">
+         <div class="blog-categories__container container">
+            <div class="blog-categories__buttons">
+               <button class="blog-categories__button active" data-filter="all">All Projects</button>
+               <button class="blog-categories__button" data-filter="web">Web Development</button>
+               <button class="blog-categories__button" data-filter="mobile">Mobile</button>
+               <button class="blog-categories__button" data-filter="python">Python/C</button>
+            </div>
+         </div>
+      </section>
+
+      <!--==================== BLOG POSTS ====================-->
+      <section class="blog-posts section">
+         <div class="blog-posts__container container grid">
+            <!-- Mass Movers Project -->
+            <article class="blog-post" data-category="web">
+               <div class="blog-post__image">
+                  <img src="/assets/img/project-8.jpg" alt="Mass Movers Project" class="blog-post__img">
+                  <div class="blog-post__date">May 2024</div>
+                  <div class="blog-post__readtime">15 min read</div>
+               </div>
+               <div class="blog-post__content">
+                  <h2 class="blog-post__title">Building a Fullstack Logistics Platform</h2>
+                  <p class="blog-post__description">
+                     Complete architecture of Mass Movers Limited's system with Node.js backend, React frontend, and
+                     MongoDB.
+                  </p>
+                  <div class="blog-post__meta">
+                     <span class="blog-post__tech">Next.js</span>
+                     <span class="blog-post__tech">Node.js</span>
+                     <span class="blog-post__tech">MongoDB</span>
+                     <span class="blog-post__tech">Sentry</span>
+                  </div>
+                  <div class="blog-post__footer">
+                     <a href="blog-massmovers.html" class="blog-post__link button button--flex">
+                        Read Case Study <i class="ri-arrow-right-line"></i>
+                     </a>
+                     <a href="https://massmoverslimited.vercel.app" target="_blank" rel="noopener noreferrer"
+                        class="blog-post__demo">
+                        <i class="ri-external-link-line"></i> Live Demo
+                     </a>
+                  </div>
+               </div>
+            </article>
+
+            <!-- Munchy Meatshop -->
+            <article class="blog-post" data-category="web">
+               <div class="blog-post__image">
+                  <img src="/assets/img/project-6.jpg" alt="Munchy Meatshop" class="blog-post__img">
+                  <div class="blog-post__date">April 2024</div>
+                  <div class="blog-post__readtime">12 min read</div>
+               </div>
+               <div class="blog-post__content">
+                  <h2 class="blog-post__title">E-commerce with React & Firebase</h2>
+                  <p class="blog-post__description">
+                     Developing a meat ordering platform with real-time inventory management and cart functionality.
+                  </p>
+                  <div class="blog-post__meta">
+                     <span class="blog-post__tech">React</span>
+                     <span class="blog-post__tech">Firebase</span>
+                     <span class="blog-post__tech">Redux</span>
+                     <span class="blog-post__tech">Stripe</span>
+                  </div>
+                  <div class="blog-post__footer">
+                     <a href="blog-munchy.html" class="blog-post__link button button--flex">
+                        Read Case Study <i class="ri-arrow-right-line"></i>
+                     </a>
+                     <a href="https://munchy-meatshop.vercel.app/" target="_blank" rel="noopener noreferrer"
+                        class="blog-post__demo">
+                        <i class="ri-external-link-line"></i> Live Demo
+                     </a>
+                  </div>
+               </div>
+            </article>
+
+            <!-- Wilsmar Drinks -->
+            <article class="blog-post" data-category="web">
+               <div class="blog-post__image">
+                  <img src="/assets/img/project-7.jpg" alt="Wilsmar Drinks" class="blog-post__img">
+                  <div class="blog-post__date">March 2024</div>
+                  <div class="blog-post__readtime">10 min read</div>
+               </div>
+               <div class="blog-post__content">
+                  <h2 class="blog-post__title">Real-time Order System with WebSockets</h2>
+                  <p class="blog-post__description">
+                     Implementing instant updates for a beverage ordering system using Socket.io and React.
+                  </p>
+                  <div class="blog-post__meta">
+                     <span class="blog-post__tech">Socket.io</span>
+                     <span class="blog-post__tech">Express</span>
+                     <span class="blog-post__tech">React</span>
+                     <span class="blog-post__tech">JWT</span>
+                  </div>
+                  <div class="blog-post__footer">
+                     <a href="blog-wilsmar.html" class="blog-post__link button button--flex">
+                        Read Case Study <i class="ri-arrow-right-line"></i>
+                     </a>
+                     <a href="https://wilsmar-frontend.onrender.com/" target="_blank" rel="noopener noreferrer"
+                        class="blog-post__demo">
+                        <i class="ri-external-link-line"></i> Live Demo
+                     </a>
+                  </div>
+               </div>
+            </article>
+
+            <!-- Fighter Game -->
+            <article class="blog-post" data-category="web">
+               <div class="blog-post__image">
+                  <img src="/assets/img/project-1.jpg" alt="Fighter Game" class="blog-post__img">
+                  <div class="blog-post__date">February 2024</div>
+                  <div class="blog-post__readtime">8 min read</div>
+               </div>
+               <div class="blog-post__content">
+                  <h2 class="blog-post__title">2D Fighter Game with Pure JavaScript</h2>
+                  <p class="blog-post__description">
+                     Creating a browser-based fighting game using Canvas API and game physics fundamentals.
+                  </p>
+                  <div class="blog-post__meta">
+                     <span class="blog-post__tech">JavaScript</span>
+                     <span class="blog-post__tech">Canvas API</span>
+                     <span class="blog-post__tech">Game Dev</span>
+                  </div>
+                  <div class="blog-post__footer">
+                     <a href="blog-fighter.html" class="blog-post__link button button--flex">
+                        Read Case Study <i class="ri-arrow-right-line"></i>
+                     </a>
+                     <a href="https://club-kiboko.netlify.app" target="_blank" rel="noopener noreferrer"
+                        class="blog-post__demo">
+                        <i class="ri-external-link-line"></i> Live Demo
+                     </a>
+                  </div>
+               </div>
+            </article>
+
+            <!-- QA Phys E-commerce -->
+            <article class="blog-post" data-category="web">
+               <div class="blog-post__image">
+                  <img src="/assets/img/project-2.jpg" alt="QA Phys E-commerce" class="blog-post__img">
+                  <div class="blog-post__date">January 2024</div>
+                  <div class="blog-post__readtime">14 min read</div>
+               </div>
+               <div class="blog-post__content">
+                  <h2 class="blog-post__title">E-commerce Architecture with Microservices</h2>
+                  <p class="blog-post__description">
+                     Building a scalable e-commerce platform with separated services for products, cart, and payments.
+                  </p>
+                  <div class="blog-post__meta">
+                     <span class="blog-post__tech">Microservices</span>
+                     <span class="blog-post__tech">Node.js</span>
+                     <span class="blog-post__tech">React</span>
+                     <span class="blog-post__tech">Docker</span>
+                  </div>
+                  <div class="blog-post__footer">
+                     <a href="blog-qaphys.html" class="blog-post__link button button--flex">
+                        Read Case Study <i class="ri-arrow-right-line"></i>
+                     </a>
+                     <a href="https://devkiarie.github.io/qaphys.co/" target="_blank" rel="noopener noreferrer"
+                        class="blog-post__demo">
+                        <i class="ri-external-link-line"></i> Live Demo
+                     </a>
+                  </div>
+               </div>
+            </article>
+
+            <!-- Timeless Watches -->
+            <article class="blog-post" data-category="web">
+               <div class="blog-post__image">
+                  <img src="/assets/img/project-3.jpg" alt="Timeless Watches" class="blog-post__img">
+                  <div class="blog-post__date">December 2023</div>
+                  <div class="blog-post__readtime">9 min read</div>
+               </div>
+               <div class="blog-post__content">
+                  <h2 class="blog-post__title">Luxury Product Showcase with Three.js</h2>
+                  <p class="blog-post__description">
+                     Implementing 3D product visualization for a high-end watch retailer website.
+                  </p>
+                  <div class="blog-post__meta">
+                     <span class="blog-post__tech">Three.js</span>
+                     <span class="blog-post__tech">GSAP</span>
+                     <span class="blog-post__tech">CSS Animations</span>
+                  </div>
+                  <div class="blog-post__footer">
+                     <a href="blog-timeless.html" class="blog-post__link button button--flex">
+                        Read Case Study <i class="ri-arrow-right-line"></i>
+                     </a>
+                     <a href="https://devkiarie.github.io/Timeless-/" target="_blank" rel="noopener noreferrer"
+                        class="blog-post__demo">
+                        <i class="ri-external-link-line"></i> Live Demo
+                     </a>
+                  </div>
+               </div>
+            </article>
+
+            <!-- Sage Watches -->
+            <article class="blog-post" data-category="web">
+               <div class="blog-post__image">
+                  <img src="/assets/img/project-4.jpg" alt="Sage Watches" class="blog-post__img">
+                  <div class="blog-post__date">November 2023</div>
+                  <div class="blog-post__readtime">11 min read</div>
+               </div>
+               <div class="blog-post__content">
+                  <h2 class="blog-post__title">Implementing Custom CMS for Watch Store</h2>
+                  <p class="blog-post__description">
+                     Developing a custom content management system for a watch company's product catalog.
+                  </p>
+                  <div class="blog-post__meta">
+                     <span class="blog-post__tech">Node.js</span>
+                     <span class="blog-post__tech">MongoDB</span>
+                     <span class="blog-post__tech">AdminJS</span>
+                  </div>
+                  <div class="blog-post__footer">
+                     <a href="blog-sage.html" class="blog-post__link button button--flex">
+                        Read Case Study <i class="ri-arrow-right-line"></i>
+                     </a>
+                     <a href="https://devkiarie.github.io/sage-watches/" target="_blank" rel="noopener noreferrer"
+                        class="blog-post__demo">
+                        <i class="ri-external-link-line"></i> Live Demo
+                     </a>
+                  </div>
+               </div>
+            </article>
+
+            <!-- Everything Fabulous -->
+            <article class="blog-post" data-category="web">
+               <div class="blog-post__image">
+                  <img src="/assets/img/project-5.jpg" alt="Everything Fabulous" class="blog-post__img">
+                  <div class="blog-post__date">October 2023</div>
+                  <div class="blog-post__readtime">13 min read</div>
+               </div>
+               <div class="blog-post__content">
+                  <h2 class="blog-post__title">E-commerce Optimization Techniques</h2>
+                  <p class="blog-post__description">
+                     Performance optimization strategies for a complex e-commerce site with 1000+ products.
+                  </p>
+                  <div class="blog-post__meta">
+                     <span class="blog-post__tech">React</span>
+                     <span class="blog-post__tech">Lazy Loading</span>
+                     <span class="blog-post__tech">Image Optimization</span>
+                     <span class="blog-post__tech">PWA</span>
+                  </div>
+                  <div class="blog-post__footer">
+                     <a href="blog-fabulous.html" class="blog-post__link button button--flex">
+                        Read Case Study <i class="ri-arrow-right-line"></i>
+                     </a>
+                     <a href="https://devkiarie.github.io/everything-fabulous/" target="_blank"
+                        rel="noopener noreferrer" class="blog-post__demo">
+                        <i class="ri-external-link-line"></i> Live Demo
+                     </a>
+                  </div>
+               </div>
+            </article>
+         </div>
+      </section>
+
+      <!--==================== POPULAR TAGS ====================-->
+      <section class="popular-tags section">
+         <div class="popular-tags__container container">
+            <h2 class="popular-tags__title">Popular Technologies</h2>
+            <div class="popular-tags__tags">
+               <a href="#" class="popular-tags__tag">React</a>
+               <a href="#" class="popular-tags__tag">Next.js</a>
+               <a href="#" class="popular-tags__tag">Node.js</a>
+               <a href="#" class="popular-tags__tag">Python</a>
+               <a href="#" class="popular-tags__tag">C Programming</a>
+               <a href="#" class="popular-tags__tag">MongoDB</a>
+               <a href="#" class="popular-tags__tag">Plaid API</a>
+               <a href="#" class="popular-tags__tag">Sentry</a>
+            </div>
+         </div>
+      </section>
+
+      <!--==================== BLOG CTA ====================-->
+      <section class="blog-cta section">
+         <div class="blog-cta__container container">
+            <h2 class="blog-cta__title">Want More Technical Details?</h2>
+            <p class="blog-cta__description">
+               Subscribe to get notified when I publish new case studies and technical deep dives.
+            </p>
+            <form id="newsletter-form" class="blog-cta__form">
+               <input type="email" name="user_email" placeholder="Your email address" class="blog-cta__input" required>
+               <button type="submit" class="blog-cta__button button">Subscribe</button>
+            </form>
+            <p id="newsletter-message" class="blog-cta__message"></p>
+         </div>
+      </section>
+
+      <!--==================== AUTHOR BIO ====================-->
+      <section class="author-bio section">
+         <div class="author-bio__container container grid">
+            <div class="author-bio__image">
+               <img src="/assets/img/about2.jpg" alt="Ian Kiarie" class="author-bio__img">
+            </div>
+            <div class="author-bio__content">
+               <h2 class="author-bio__title">About the Author</h2>
+               <p class="author-bio__description">
+                  I'm Ian Kiarie, a Full Stack Developer passionate about creating efficient,
+                  scalable web applications. Through this blog, I share my journey, technical
+                  challenges, and solutions I've discovered while building projects.
+               </p>
+               <div class="author-bio__links">
+                  <a href="index.html" class="author-bio__link button button--flex">
+                     View Portfolio <i class="ri-arrow-right-line"></i>
+                  </a>
+                  <a href="index.html#contact" class="author-bio__link button button--flex button--ghost">
+                     Contact Me <i class="ri-send-plane-line"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!--==================== FOOTER ====================-->
+      <footer class="footer">
+         <div class="footer__container container grid">
+            <ul class="footer__links">
+               <li><a href="index.html" class="footer__link">Portfolio</a></li>
+               <li><a href="blog.html" class="footer__link">Blog</a></li>
+               <li><a href="index.html#contact" class="footer__link">Contact</a></li>
+            </ul>
+            <span class="footer__copy">
+               © <span id="year"></span> All Rights Reserved
+               <a href="#">Dev Kiarie.</a>
+            </span>
+         </div>
+      </footer>
+
+      <!--========== SCROLL UP ==========-->
+      <a href="#" class="scrollup" id="scroll-up">
+         <i class="ri-arrow-up-s-line"></i>
+      </a>
+
+      <!--=============== SCROLLREVEAL ===============-->
+      <script src="/assets/js/scrollreveal.min.js"></script>
+
+      <!--=============== EMAIL JS ===============-->
+      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+      <!--=============== MAIN JS ===============-->
+      <script src="assets/js/main.js"></script>
+
+      <!--=============== BLOG JS ===============-->
+      <script>
+         // Theme switcher functionality
+         const themeButton = document.getElementById('theme-button');
+         const darkTheme = 'dark-theme';
+         const iconTheme = 'ri-sun-line';
+
+         // Retrieve current theme from localStorage
+         const selectedTheme = localStorage.getItem('selected-theme');
+         const selectedIcon = localStorage.getItem('selected-icon');
+
+         // Apply stored theme on page load
+         if (selectedTheme) {
+            document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+            themeButton.classList[selectedIcon === 'ri-moon-line' ? 'add' : 'remove'](iconTheme);
+         }
+
+         // Toggle theme on button click
+         themeButton.addEventListener('click', () => {
+            document.body.classList.toggle(darkTheme);
+            themeButton.classList.toggle(iconTheme);
+            localStorage.setItem('selected-theme', getCurrentTheme());
+            localStorage.setItem('selected-icon', getCurrentIcon());
+         });
+
+         // Helper functions
+         function getCurrentTheme() {
+            return document.body.classList.contains(darkTheme) ? 'dark' : 'light';
+         }
+
+         function getCurrentIcon() {
+            return themeButton.classList.contains(iconTheme) ? 'ri-moon-line' : 'ri-sun-line';
+         }
+
+         // Rest of your blog JS...
+         // Newsletter functionality
+         document.addEventListener('DOMContentLoaded', () => {
+            // Initialize EmailJS (use your actual User ID)
+            emailjs.init('YOUR_EMAILJS_USER_ID');
+
+            const newsletterForm = document.getElementById('newsletter-form');
+            const newsletterMessage = document.getElementById('newsletter-message');
+
+            newsletterForm.addEventListener('submit', (e) => {
+               e.preventDefault();
+
+               const submitBtn = newsletterForm.querySelector('button');
+               submitBtn.disabled = true;
+               submitBtn.textContent = 'Sending...';
+
+               emailjs.sendForm('YOUR_EMAILJS_SERVICE_ID', 'YOUR_EMAILJS_TEMPLATE_ID', newsletterForm)
+                  .then(() => {
+                     newsletterMessage.textContent = 'Thanks for subscribing! You\'ll hear from me soon.';
+                     newsletterMessage.style.color = 'var(--first-color)';
+                     newsletterForm.reset();
+                  })
+                  .catch((error) => {
+                     newsletterMessage.textContent = 'Oops! Something went wrong. Please try again later.';
+                     newsletterMessage.style.color = 'var(--error-color)';
+                     console.error('Newsletter error:', error);
+                  })
+                  .finally(() => {
+                     submitBtn.disabled = false;
+                     submitBtn.textContent = 'Subscribe';
+
+                     // Hide message after 5 seconds
+                     setTimeout(() => {
+                        newsletterMessage.textContent = '';
+                     }, 5000);
+                  });
+            });
+         });
+      </script>
+      <a href="#" class="scrollup" id="scroll-up">
+         <i class="ri-arrow-up-s-line"></i>
+      </a>
+
+      <!--=============== SCROLLREVEAL ===============-->
+      <script src="/assets/js/scrollreveal.min.js"></script>
+
+      <!--=============== EMAIL JS ===============-->
+      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+      <!--=============== MAIN JS ===============-->
+      <script src="assets/js/main.js"></script>
+      <script>
+         // Update copyright year automatically
+         document.getElementById('year').textContent = new Date().getFullYear();
+      </script>
+</body>
+
+</html>

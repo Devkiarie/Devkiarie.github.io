@@ -1,196 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Mass Movers Case Study | Dev Kiarie</title>
-   
-   <!--=============== FAVICON ===============-->
-   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mass Movers Case Study | Dev Kiarie</title>
 
-   <!--=============== REMIXICONS ===============-->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
-   <!--=============== CSS ===============-->
-   <link rel="stylesheet" href="assets/css/styles.css">
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
 
-   <!--=============== OPEN GRAPH META TAGS ===============-->
-   <meta property="og:title" content="Building a Fullstack Logistics Platform">
-   <meta property="og:description" content="Case study of Mass Movers Limited's logistics system">
-   <meta property="og:image" content="/assets/img/project-8.jpg">
-   <meta property="og:url" content="https://yourdomain.com/blog-massmovers.html">
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!--=============== OPEN GRAPH META TAGS ===============-->
+    <meta property="og:title" content="Building a Fullstack Logistics Platform">
+    <meta property="og:description" content="Case study of Mass Movers Limited's logistics system">
+    <meta property="og:image" content="/assets/img/project-8.jpg">
+    <meta property="og:url" content="https://yourdomain.com/blog-massmovers.html">
 </head>
+
 <body>
-   <!--==================== HEADER ====================-->
-   <header class="header" id="header">
-      <nav class="nav container">
-         <a href="index.html" class="nav__logo">
-            <span class="nav__logo-circle">B</span>
-            <span class="nav__logo-name">Dev Blog.</span>
-         </a>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                <span class="nav__logo-circle">B</span>
+                <span class="nav__logo-name">Dev Blog.</span>
+            </a>
 
-         <div class="nav__menu" id="nav-menu">
-            <span class="nav__title">Blog Menu</span>
-            <h3 class="nav__name">Technical Insights</h3>
+            <div class="nav__menu" id="nav-menu">
+                <span class="nav__title">Blog Menu</span>
+                <h3 class="nav__name">Technical Insights</h3>
 
-            <ul class="nav__list">
-               <li class="nav__item"><a href="index.html" class="nav__link">Portfolio</a></li>
-               <li class="nav__item"><a href="blog.html" class="nav__link active-link">All Articles</a></li>
-               <li class="nav__item"><a href="#web-dev" class="nav__link">Web Dev</a></li>
-               <li class="nav__item"><a href="#python" class="nav__link">Python/C</a></li>
-               <li class="nav__item"><a href="index.html#contact" class="nav__link nav__link-button">Contact</a></li>
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Portfolio</a></li>
+                    <li class="nav__item"><a href="blog.html" class="nav__link active-link">All Articles</a></li>
+                    <li class="nav__item"><a href="#web-dev" class="nav__link">Web Dev</a></li>
+                    <li class="nav__item"><a href="#python" class="nav__link">Python/C</a></li>
+                    <li class="nav__item"><a href="index.html#contact" class="nav__link nav__link-button">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+
+            <div class="nav__buttons">
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-4-line"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== BLOG POST ====================-->
+    <main class="main">
+        <article class="blog-post-single section">
+            <div class="blog-post-single__container container">
+                <div class="blog-post-single__header">
+                    <div class="blog-post-single__meta">
+                        <span class="blog-post-single__date">May 15, 2024</span>
+                        <span class="blog-post-single__readtime">15 min read</span>
+                    </div>
+                    <h1 class="blog-post-single__title">Building a Fullstack Logistics Platform</h1>
+                    <div class="blog-post-single__tags">
+                        <span class="blog-post-single__tag">Next.js</span>
+                        <span class="blog-post-single__tag">Node.js</span>
+                        <span class="blog-post-single__tag">MongoDB</span>
+                        <span class="blog-post-single__tag">Sentry</span>
+                    </div>
+                </div>
+
+                <div class="blog-post-single__image">
+                    <img src="/assets/img/project-8.jpg" alt="Mass Movers Platform">
+                </div>
+
+                <div class="blog-post-single__content">
+                    <h2>Project Overview</h2>
+                    <p>Mass Movers Limited required a comprehensive logistics management platform to support their
+                        rapidly expanding operations. The primary goal was to build a responsive and intuitive web
+                        application that would allow seamless interaction between the company’s administrators and its
+                        users, while offering a range of tools to optimize order handling and customer engagement. <br><br>
+
+                        To meet these needs, I developed a React-based web application powered by Vite, which offers
+                        lightning-fast development and build times thanks to its native ES module support. Here's how
+                        the system was structured: <br><br>
+
+                         <b>Key Features Implemented:</b> <br> <br>
+                        <b>Order Management System </b><br>
+                        Users can easily place orders and track their current status (e.g., dispatched, released, etc.).
+                        The backend integrates with the frontend to ensure real-time updates using RESTful APIs. <br><br>
+
+                        <b>Admin Dashboard </b> <br>
+                        Built with modular React components, the admin interface allows: <br>
+
+                        1. <i>Adding/removing products </i> <br>
+
+                        2. <i>Editing prices and inventory</i> <br>
+
+                        3. <i>Categorizing items dynamically</i> <br>
+
+                        4. <i>Viewing user subscriptions and order logs</i> <br> <br>
+
+                        <b>User-Facing Interface</b> <br>
+                        The UI focuses on accessibility and performance. Users can: <br>
+
+                        1. <i>Filter available products by category, price, or availability</i>  <br>
+
+                        2. <i>View detailed product pages</i>  <br>
+
+                        3. <i>Subscribe to newsletters and updates</i>  <br> <br>
+
+                        <b>Advanced Filtering System</b> <br>
+                        A custom filter logic was implemented to allow users to refine their product search dynamically
+                        using React state hooks and form inputs tied to product metadata. <br><br>
+
+                        <b>Chatbot Integration</b> <br>
+                        A lightweight chatbot was included using a custom-built React component. It retrieves
+                        admin-curated responses or product FAQs and guides users through common queries. <br><br>
+
+                        <b>Newsletter & Email Service</b> <br>
+                        The system uses a mailing service (e.g., EmailJS or a backend API with Nodemailer) to send bulk
+                        or individual emails to users subscribed via the frontend. Admins can draft and send these
+                        directly from the dashboard.
+                    </p>
+
+                    <h2>Technical Stack</h2>
+                    <ul>
+                        <li><strong>Frontend:</strong> Vite, React, </li>
+                        <li><strong>Backend:</strong> Node.js, Express</li>
+                        <li><strong>Database:</strong> Firebase, cloudinary</li>
+                        <li><strong>financial:</strong> Paystack for finance management</li>
+                        <li><strong>Email:</strong> EmailJS</li>
+                        <li><strong>Deployment:</strong> vercel</li>
+                    </ul>
+
+                    <h2>Key Challenges</h2>
+                    <p>One of the main challenges was implementing a chatbot...</p>
+                    <pre><code class="language-javascript">
+// AI-powered chatbot endpoint
+app.post("/api/chatbot", async (req, res) => {
+    const { userInput } = req.body;
+
+    if (!userInput || userInput.trim() === "") {
+    return res.json({ answer: "Please ask me something!" });
+    }
+                      
+    const lowerUserInput = userInput.toLowerCase();
+                      
+    // Step 1: Check predefined simple responses
+    const predefinedResponses = {
+    "hi": "Hello! How can I assist you today?",
+    "hello": "Hi there! Need any help?",
+    "hey": "Hey! What can I do for you?",
+    "who are you": "I'm your friendly chatbot here to assist you!",
+    "what is your name": "I'm ChatHelper, your virtual assistant.",
+    "how are you": "I'm just a bot, but I'm always ready to help!"
+    };
+                      
+    if (predefinedResponses[lowerUserInput]) {
+    return res.json({ answer: predefinedResponses[lowerUserInput] });
+    }
+               </code></pre>
+
+                    <h2>Lessons Learned</h2>
+                    <p>This project taught me how to arrange projects, and sort files, and also how to Implement
+                        AI into your projects. By doing this the project is easily scalable... <br><br></p>
+                    <p>
+                        The final product delivered a fast, secure, and scalable logistics platform tailored for Mass
+                        Movers Limited. The intuitive UI and automated workflows significantly improved both admin
+                        efficiency and user satisfaction, aligning the tech with the company’s operational goals.
+                    </p>
+                </div>
+
+                <div class="blog-post-single__footer">
+                    <a href="https://massmoverslimited.vercel.app" class="button" target="_blank">
+                        <i class="ri-external-link-line"></i> View Live Project
+                    </a>
+                    <div class="blog-post-single__share">
+                        <span>Share:</span>
+                        <a href="#"><i class="ri-twitter-fill"></i></a>
+                        <a href="#"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#"><i class="ri-link"></i></a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!--==================== RELATED POSTS ====================-->
+        <section class="related-posts section">
+            <div class="related-posts__container container">
+                <h2 class="related-posts__title">More Case Studies</h2>
+                <div class="related-posts__grid grid">
+                    <!-- Similar to blog.html but filtered for related posts -->
+                </div>
+            </div>
+        </section>
+
+        <!--==================== BLOG CTA (Same as blog.html) ===============-->
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__container container grid">
+            <ul class="footer__links">
+                <li><a href="index.html" class="footer__link">Portfolio</a></li>
+                <li><a href="blog.html" class="footer__link">Blog</a></li>
+                <li><a href="index.html#contact" class="footer__link">Contact</a></li>
             </ul>
+            <span class="footer__copy">
+                © <span id="year"></span> All Rights Reserved
+                <a href="#">Dev Kiarie.</a>
+            </span>
+        </div>
+    </footer>
 
-            <div class="nav__close" id="nav-close">
-               <i class="ri-close-line"></i>
-            </div>
-         </div>
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-s-line"></i>
+    </a>
 
-         <div class="nav__buttons">
-            <i class="ri-moon-line change-theme" id="theme-button"></i>
-            <div class="nav__toggle" id="nav-toggle">
-               <i class="ri-menu-4-line"></i>
-            </div>
-         </div>
-      </nav>
-   </header>
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="/assets/js/scrollreveal.min.js"></script>
 
-   <!--==================== BLOG POST ====================-->
-   <main class="main">
-      <article class="blog-post-single section">
-         <div class="blog-post-single__container container">
-            <div class="blog-post-single__header">
-               <div class="blog-post-single__meta">
-                  <span class="blog-post-single__date">May 15, 2024</span>
-                  <span class="blog-post-single__readtime">15 min read</span>
-               </div>
-               <h1 class="blog-post-single__title">Building a Fullstack Logistics Platform</h1>
-               <div class="blog-post-single__tags">
-                  <span class="blog-post-single__tag">Next.js</span>
-                  <span class="blog-post-single__tag">Node.js</span>
-                  <span class="blog-post-single__tag">MongoDB</span>
-                  <span class="blog-post-single__tag">Sentry</span>
-               </div>
-            </div>
+    <!--=============== EMAIL JS ===============-->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-            <div class="blog-post-single__image">
-               <img src="/assets/img/project-8.jpg" alt="Mass Movers Platform">
-            </div>
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
 
-            <div class="blog-post-single__content">
-               <h2>Project Overview</h2>
-               <p>Mass Movers Limited needed a comprehensive logistics management system to handle their growing operations...</p>
-               
-               <h2>Technical Stack</h2>
-               <ul>
-                  <li><strong>Frontend:</strong> Next.js, React, Chart.js</li>
-                  <li><strong>Backend:</strong> Node.js, Express</li>
-                  <li><strong>Database:</strong> MongoDB with Mongoose</li>
-                  <li><strong>Monitoring:</strong> Sentry for error tracking</li>
-               </ul>
+    <!--=============== BLOG FILTER JS ===============-->
+    <script>
+        // Filter blog posts by category
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.blog-categories__button');
+            const blogPosts = document.querySelectorAll('.blog-post');
 
-               <h2>Key Challenges</h2>
-               <p>One of the main challenges was implementing real-time tracking...</p>
-               <pre><code class="language-javascript">// Sample code snippet
-function updateLocation(truckId, coords) {
-   return Truck.findByIdAndUpdate(
-      truckId,
-      { $set: { location: coords } },
-      { new: true }
-   );
-}</code></pre>
+            if (filterButtons.length) {
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
 
-               <h2>Lessons Learned</h2>
-               <p>This project taught me the importance of proper error handling...</p>
-            </div>
+                        const filter = button.dataset.filter;
 
-            <div class="blog-post-single__footer">
-               <a href="https://massmoverslimited.vercel.app" class="button" target="_blank">
-                  <i class="ri-external-link-line"></i> View Live Project
-               </a>
-               <div class="blog-post-single__share">
-                  <span>Share:</span>
-                  <a href="#"><i class="ri-twitter-fill"></i></a>
-                  <a href="#"><i class="ri-linkedin-fill"></i></a>
-                  <a href="#"><i class="ri-link"></i></a>
-               </div>
-            </div>
-         </div>
-      </article>
+                        blogPosts.forEach(post => {
+                            if (filter === 'all' || post.dataset.category === filter) {
+                                post.style.display = 'block';
+                            } else {
+                                post.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            }
 
-      <!--==================== RELATED POSTS ====================-->
-      <section class="related-posts section">
-         <div class="related-posts__container container">
-            <h2 class="related-posts__title">More Case Studies</h2>
-            <div class="related-posts__grid grid">
-               <!-- Similar to blog.html but filtered for related posts -->
-            </div>
-         </div>
-      </section>
-
-      <!--==================== BLOG CTA (Same as blog.html) ===============-->
-   </main>
-
-   <!--==================== FOOTER ====================-->
-   <footer class="footer">
-      <div class="footer__container container grid">
-         <ul class="footer__links">
-            <li><a href="index.html" class="footer__link">Portfolio</a></li>
-            <li><a href="blog.html" class="footer__link">Blog</a></li>
-            <li><a href="index.html#contact" class="footer__link">Contact</a></li>
-         </ul>
-         <span class="footer__copy">
-            © <span id="year"></span> All Rights Reserved  
-            <a href="#">Dev Kiarie.</a>
-         </span>
-      </div>
-   </footer>
-
-   <!--========== SCROLL UP ==========-->
-   <a href="#" class="scrollup" id="scroll-up">
-      <i class="ri-arrow-up-s-line"></i>
-   </a>
-
-   <!--=============== SCROLLREVEAL ===============-->
-   <script src="/assets/js/scrollreveal.min.js"></script>
-   
-   <!--=============== EMAIL JS ===============-->
-   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-   <!--=============== MAIN JS ===============-->
-   <script src="assets/js/main.js"></script>
-
-   <!--=============== BLOG FILTER JS ===============-->
-   <script>
-      // Filter blog posts by category
-      document.addEventListener('DOMContentLoaded', () => {
-         const filterButtons = document.querySelectorAll('.blog-categories__button');
-         const blogPosts = document.querySelectorAll('.blog-post');
-
-         if(filterButtons.length) {
-            filterButtons.forEach(button => {
-               button.addEventListener('click', () => {
-                  filterButtons.forEach(btn => btn.classList.remove('active'));
-                  button.classList.add('active');
-                  
-                  const filter = button.dataset.filter;
-                  
-                  blogPosts.forEach(post => {
-                     if (filter === 'all' || post.dataset.category === filter) {
-                        post.style.display = 'block';
-                     } else {
-                        post.style.display = 'none';
-                     }
-                  });
-               });
-            });
-         }
-
-         // Update copyright year
-         document.getElementById('year').textContent = new Date().getFullYear();
-      });
-   </script>
-   <!--=============== PRISM JS FOR CODE HIGHLIGHTING ===============-->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+            // Update copyright year
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+    </script>
+    <!--=============== PRISM JS FOR CODE HIGHLIGHTING ===============-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
 </body>
+
 </html>

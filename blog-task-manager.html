@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task Manager CLI Case Study | Dev Portfolio</title>
+        <meta property="og:title" content="Building a Priority Task Manager with Python">
+        <meta property="og:description" content="How I created a command-line task management system with priority queues">
+        <meta property="og:image" content="/assets/img/task-manager-thumbnail.jpg">
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+        <!-- Remixicons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+        <!-- CSS -->
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <!-- Prism CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css">
+        <style>
+        .feature-card {
+            background: var(--container-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        </style>
+    </head>
+    <body>
+        <header class="header" id="header">
+            <!-- Same header as previous examples -->
+            <header class="header" id="header">
+                <nav class="nav container">
+                    <a href="index.html" class="nav__logo">
+                        <span class="nav__logo-circle">P</span>
+                        <span class="nav__logo-name">Portfolio.</span>
+                    </a>
+                    <div class="nav__menu" id="nav-menu">
+                        <span class="nav__title">Menu</span>
+                        <h3 class="nav__name">Projects</h3>
+                        <ul class="nav__list">
+                            <li class="nav__item">
+                                <a href="index.html" class="nav__link">Home</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="projects.html" class="nav__link active-link">All Projects</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#python" class="nav__link">Python</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="index.html#contact" class="nav__link nav__link-button">Contact</a>
+                            </li>
+                        </ul>
+                        <div class="nav__close" id="nav-close">
+                            <i class="ri-close-line"></i>
+                        </div>
+                    </div>
+                    <div class="nav__buttons">
+                        <i class="ri-moon-line change-theme" id="theme-button"></i>
+                        <div class="nav__toggle" id="nav-toggle">
+                            <i class="ri-menu-4-line"></i>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </header>
+        <main class="main" id="python">
+            <article class="blog-post-single section">
+                <div class="blog-post-single__container container">
+                    <div class="blog-post-single__header">
+                        <div class="blog-post-single__meta">
+                            <span class="blog-post-single__date">March 2023</span>
+                            <span class="blog-post-single__readtime">8 min read</span>
+                        </div>
+                        <h1 class="blog-post-single__title">Task Manager CLI: Python Priority Queues</h1>
+                        <div class="blog-post-single__tags">
+                            <span class="blog-post-single__tag">Python</span>
+                            <span class="blog-post-single__tag">CLI</span>
+                            <span class="blog-post-single__tag">Data Structures</span>
+                        </div>
+                    </div>
+                    <div class="screenshot-grid">
+                        <div class="screenshot">
+                            <img src="assets/img/TM.jpg" alt="Task Manager Main Menu">
+                        </div>
+                        <div class="screenshot">
+                            <img src="assets/img/TM.jpg" alt="Task List View">
+                        </div>
+                    </div>
+                    <div class="blog-post-single__content">
+                        <h2>Efficient Task Prioritization</h2>
+                        <p>This command-line application helps users manage tasks with three priority levels, featuring:</p>
+                        <div class="feature-card">
+                            <h3>
+                                <i class="ri-list-check-2"></i> Priority Queues
+                            </h3>
+                            <p>Tasks are automatically sorted into high, medium, and low priority queues</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>
+                                <i class="ri-save-line"></i> Persistent Storage
+                            </h3>
+                            <p>All tasks are saved to JSON file between sessions</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>
+                                <i class="ri-history-line"></i> Completion Tracking
+                            </h3>
+                            <p>Timestamps track when tasks are created and completed</p>
+                        </div>
+                        <h2>Technical Implementation</h2>
+                        <h3>Priority Queue System</h3>
+                        <pre>
+                            <code class="language-python">
+                                def complete_task(self):
+    # Get next task based on priority
+    if self.high_priority:
+        task_id = self.high_priority.popleft()
+    elif self.medium_priority:
+        task_id = self.medium_priority.popleft()
+    elif self.low_priority:
+        task_id = self.low_priority.popleft()
+    else:
+        print("No tasks available!")
+        return
+        
+    task = next((t for t in self.tasks if t['id'] == task_id), None)
+    if task:
+        task['completed'] = True
+        task['completed_at'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        self.save_tasks()
+                            </code>
+                        </pre>
+                        <h3>JSON Data Persistence</h3>
+                        <pre>
+                            <code class="language-python">
+                                def save_tasks(self):
+    data = {
+        'tasks': self.tasks,
+        'high_priority': list(self.high_priority),
+        'medium_priority': list(self.medium_priority),
+        'low_priority': list(self.low_priority)
+    }
+    with open('tasks.json', 'w') as f:
+        json.dump(data, f, indent=2)
+                            </code>
+                        </pre>
+                        <h2>Technical Stack</h2>
+                        <div class="tech-stack">
+                            <div class="tech-item">
+                                <i class="ri-terminal-line"></i> Python 3.10
+                            </div>
+                            <div class="tech-item">
+                                <i class="ri-stack-line"></i> Collections
+                            </div>
+                            <div class="tech-item">
+                                <i class="ri-database-2-line"></i> JSON
+                            </div>
+                            <div class="tech-item">
+                                <i class="ri-time-line"></i> Datetime
+                            </div>
+                        </div>
+                        <h2>Development Challenges</h2>
+                        <ul>
+                            <li>
+                                <strong>Queue Management:</strong> Implementing efficient priority-based task retrieval
+                            </li>
+                            <li>
+                                <strong>Data Integrity:</strong> Ensuring consistent state between queues and task list
+                            </li>
+                            <li>
+                                <strong>User Experience:</strong> Creating intuitive CLI interface with clear prompts
+                            </li>
+                        </ul>
+                        <h2>Lessons Learned</h2>
+                        <p>This project deepened my understanding of:</p>
+                        <ul>
+                            <li>Python's deque for efficient queue operations</li>
+                            <li>JSON serialization for persistent storage</li>
+                            <li>Command-line interface design principles</li>
+                            <li>Data structure optimization techniques</li>
+                        </ul>
+                    </div>
+                    <div class="blog-post-single__footer">
+                        <a href="https://github.com/yourusername/task-manager-cli" class="button" target="_blank">
+                            <i class="ri-github-line"></i>
+                            View Source Code
+                        </a>
+                        <div class="blog-post-single__share">
+                            <span>Share:</span>
+                            <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20Python%20Task%20Manager">
+                                <i class="ri-twitter-fill"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=yourportfolio.com/task-manager">
+                                <i class="ri-linkedin-fill"></i>
+                            </a>
+                            <a href="#" class="copy-link" onclick="copyToClipboard(event)">
+                                <i class="ri-link"></i>
+                                <span class="tooltip">Copy link</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <!-- Related Projects -->
+            <section class="related-posts section">
+                <div class="related-posts__container container">
+                    <h2 class="related-posts__title">More Python Projects</h2>
+                    <div class="related-posts__grid grid">
+                        <!-- Weather Dashboard Card -->
+                        <article class="blog-post" data-category="python">
+                            <div class="blog-post__image">
+                                <img src="/assets/img/weather.jpg" alt="Weather Dashboard" class="blog-post__img">
+                                <div class="blog-post__date">March 2025</div>
+                            </div>
+                            <div class="blog-post__content">
+                                <h3 class="blog-post__title">Weather Dashboard</h3>
+                                <a href="blog-weather.html" class="blog-post__link button button--flex button--small">
+                                    View Project
+                                    <i class="ri-arrow-right-line"></i>
+                                </a>
+                            </div>
+                        </article>
+                        <!-- Tracker Card -->
+                        <article class="blog-post" data-category="python">
+                            <div class="blog-post__image">
+                                <img src="/assets/img/track1.jpg" alt="Task Manager CLI" class="blog-post__img">
+                                <div class="blog-post__date">April 2025</div>
+                            </div>
+                            <div class="blog-post__content">
+                                <h3 class="blog-post__title">Expense Tracker</h3>
+                                <a href="blog-expense-tracker.html" class="blog-post__link button button--flex button--small">
+                                    View Project
+                                    <i class="ri-arrow-right-line"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!--==================== FOOTER ====================-->
+        <footer class="footer">
+            <div class="footer__container container grid">
+                <ul class="footer__links">
+                    <li>
+                        <a href="index.html" class="footer__link">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="blog.html" class="footer__link">Blog</a>
+                    </li>
+                    <li>
+                        <a href="index.html#contact" class="footer__link">Contact</a>
+                    </li>
+                </ul>
+                <span class="footer__copy">
+                    ©
+                    <span id="year"></span>
+                    All Rights Reserved
+                    <a href="#">Dev Kiarie.</a>
+                </span>
+            </div>
+        </footer>
+        <!--========== SCROLL UP ==========-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-s-line"></i>
+        </a>
+        <!--=============== SCROLLREVEAL ===============-->
+        <script src="/assets/js/scrollreveal.min.js"></script>
+        <!--=============== EMAIL JS ===============-->
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+        <!--=============== BLOG FILTER JS ===============-->
+        <script>
+        // Filter blog posts by category
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.blog-categories__button');
+            const blogPosts = document.querySelectorAll('.blog-post');
+
+            if (filterButtons.length) {
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+
+                        const filter = button.dataset.filter;
+
+                        blogPosts.forEach(post => {
+                            if (filter === 'all' || post.dataset.category === filter) {
+                                post.style.display = 'block';
+                            } else {
+                                post.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            }
+
+            // Update copyright year
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+        </script>
+        <!--=============== PRISM JS FOR CODE HIGHLIGHTING ===============-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    </body>
+</html>

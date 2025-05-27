@@ -442,15 +442,16 @@
          </div>
       </section>
 
-      <!--==================== BLOG CTA ====================-->
+      <!--==================== NEWSLETTER ====================-->
       <section class="blog-cta section">
          <div class="blog-cta__container container">
             <h2 class="blog-cta__title">Want More Technical Details?</h2>
             <p class="blog-cta__description">
                Subscribe to get notified when I publish new case studies and technical deep dives.
             </p>
-            <form id="newsletter-form" class="blog-cta__form">
-               <input type="email" name="user_email" placeholder="Your email address" class="blog-cta__input" required>
+            <form id="newsletter-form" class="blog-cta__form" action="https://formspree.io/f/xrbqnzyl" method="POST">
+               <input type="hidden" name="_subject" value="New Newsletter Subscriber">
+               <input type="email" name="email" placeholder="Your email address" class="blog-cta__input" required>
                <button type="submit" class="blog-cta__button button">Subscribe</button>
             </form>
             <p id="newsletter-message" class="blog-cta__message"></p>

@@ -153,6 +153,21 @@ const sr = ScrollReveal({
 sr.reveal(`.home__perfil, .about__image, .contact__mail`, {origin: 'right'})
 sr.reveal(`.home__name, .home__info, .about__container .section__title-1, .about__info, .contact__social, .contact__data`, {origin: 'left'})
 sr.reveal(`.services__card, .projects__card`, {interval: 100})
+sr.reveal('.profile-section', { 
+      delay: 300,
+      interval: 100 
+    });
+    
+    sr.reveal('.content-section', { 
+      interval: 150,
+      scale: 0.95 
+    });
+    
+    sr.reveal('.skill-item, .hobby-item', {
+      interval: 100,
+      origin: 'bottom',
+      distance: '20px'
+    });
 
 
 function copyToClipboard(e) {

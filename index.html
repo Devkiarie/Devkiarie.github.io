@@ -1,652 +1,732 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="description" content="Ian Kiarie - Full Stack Developer specializing in React, Next.js, and modern web technologies">
-   <meta name="keywords" content="React, Next.js, Frontend Developer, Full Stack, Plaid, Clerk, Sentry, Chart.js">
-
-   <!--=============== FAVICON ===============-->
-   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
-
-   <!--=============== REMIXICONS ===============-->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-
-   <!--=============== CSS ===============-->
-   <link rel="stylesheet" href="assets/css/styles.css">
-
-   <title>Ian Kiarie | Full Stack Developer</title>
-</head>
-<body>
-   <!--==================== HEADER ====================-->
-   <header class="header" id="header">
-   <nav class="nav container">
-      <a href="#" class="nav__logo">
-         <span class="nav__logo-circle">D</span>
-         <span class="nav__logo-name">Dev Kiarie.</span>
-      </a>
-
-      <div class="nav__menu" id="nav-menu">
-         <span class="nav__title">Menu</span>
-         <h3 class="nav__name">Portfolio</h3>
-
-         <ul class="nav__list">
-            <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-            <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-            <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-            <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
-            <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
-            <li class="nav__item"><a href="testimonials.html" class="nav__link">Testimonials</a></li>
-            <li class="nav__item"><a href="#contact" class="nav__link nav__link-button">Contact</a></li>
-         </ul>
-
-         <div class="nav__close" id="nav-close">
-            <i class="ri-close-line"></i>
-         </div>
-      </div>
-
-      <div class="nav__buttons">
-         <i class="ri-moon-line change-theme" id="theme-button"></i>
-         <div class="nav__toggle" id="nav-toggle">
-            <i class="ri-menu-4-line"></i>
-         </div>
-      </div>
-   </nav>
-</header>
-
-   <!--==================== MAIN ====================-->
-   <main class="main">
-      <!--==================== HOME ====================-->
-      <section class="home section" id="home">
-         <div class="home__container container grid">
-            <h1 class="home__name">
-               Ian Kiarie
-            </h1>
-
-            <div class="home__perfil">
-               <div class="home__image">
-                  <img src="/assets/img/home.jpg" alt="image" class="home__img">
-                  <div class="home__shadow"></div>
-
-                  <img src="/assets/img/curved-arrow.svg" alt="" class="home__arrow">
-                  <img src="/assets/img/random-lines.svg" alt="" class="home__line">
-
-                  <div class="geometric-box"></div>
-               </div>
-
-               <div class="home__social">
-                  <a href="https://www.instagram.com/dev_kiarie?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="home__social-link">
-                     <i class="ri-instagram-line"></i>
-                  </a>
-
-                  <a href="https://www.linkedin.com/in/ian-kiarie-72a26a26a" target="_blank" rel="noopener noreferrer" class="home__social-link">
-                     <i class="ri-linkedin-box-line"></i>
-                  </a>
-
-                  <a href="https://github.com/Devkiarie" target="_blank" rel="noopener noreferrer" class="home__social-link">
-                     <i class="ri-github-line"></i>
-                  </a>
-               </div>
-            </div>
-
-            <div class="home__info">
-               <p class="home__description">
-                  <b>Full Stack Developer</b> with expertise in <b>React</b>, <b>Next.js</b>, and modern web technologies. 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Ian Kiarie - Full Stack Developer specializing in React, Next.js, and modern web technologies">
+        <meta name="keywords" content="React, Next.js, Frontend Developer, Full Stack, Plaid, Clerk, Sentry, Chart.js">
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+        <!--=============== REMIXICONS ===============-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <title>Ian Kiarie | Full Stack Developer</title>
+    </head>
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">
+                    <span class="nav__logo-circle">D</span>
+                    <span class="nav__logo-name">Dev Kiarie.</span>
+                </a>
+                <div class="nav__menu" id="nav-menu">
+                    <span class="nav__title">Menu</span>
+                    <h3 class="nav__name">Portfolio</h3>
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" class="nav__link active-link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">About</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#skills" class="nav__link">Skills</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#projects" class="nav__link">Projects</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="blog.html" class="nav__link">Blog</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="testimonials.html" class="nav__link">Testimonials</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link nav__link-button">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="nav__close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </div>
+                <div class="nav__buttons">
+                    <i class="ri-moon-line change-theme" id="theme-button"></i>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-4-line"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!--==================== MAIN ====================-->
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home section" id="home">
+                <div class="home__container container grid">
+                    <h1 class="home__name">
+                        Ian Kiarie
+                    </h1>
+                    <div class="home__perfil">
+                        <div class="home__image">
+                            <img src="/assets/img/home.jpg" alt="image" class="home__img">
+                            <div class="home__shadow"></div>
+                            <img src="/assets/img/curved-arrow.svg" alt="" class="home__arrow">
+                            <img src="/assets/img/random-lines.svg" alt="" class="home__line">
+                            <div class="geometric-box"></div>
+                        </div>
+                        <div class="home__social">
+                            <a
+                                href="https://www.instagram.com/dev_kiarie?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="home__social-link"
+                            >
+                                <i class="ri-instagram-line"></i>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/ian-kiarie-72a26a26a"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="home__social-link"
+                            >
+                                <i class="ri-linkedin-box-line"></i>
+                            </a>
+                            <a
+                                href="https://github.com/Devkiarie"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="home__social-link"
+                            >
+                                <i class="ri-github-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="home__info">
+                        <p class="home__description">
+                            <b>Full Stack Developer</b> with expertise in
+                            <b>React</b>,
+                            <b>Next.js</b>
+                            , and modern web technologies. 
                   I build performant, scalable web applications with exceptional user experiences.
-               </p>
-
-               <a href="#about" class="home__scroll">
-                  <div class="home__scroll-box">
-                     <i class="ri-arrow-down-s-line"></i>
-                  </div>
-
-                  <span class="home__scroll-text">Scroll Down</span>
-               </a>
-            </div>
-         </div>
-      </section>
-
-      <!--==================== ABOUT ====================-->
-      <section class="about section" id="about">
-         <div class="about__container container grid">
-            <h2 class="section__title-1">
-               <span>
-                  About Me.
-               </span>
-            </h2>
-
-            <div class="about__perfil">
-               <div class="about__image">
-                  <img src="/assets/img/about2.jpg" alt="image" class="about__img">
-
-                  <div class="about__shadow"></div>
-
-                  <div class="geometric-box"></div>
-
-                  <img src="/assets/img/random-lines.svg" alt="" class="about__line">
-                  <div class="about__box"></div>
-               </div>
-            </div>
-
-            <div class="about__info">
-               <p class="about__description">
-                  Hi, I'm Ian. I'm a passionate developer with expertise in both frontend and backend technologies. 
+                        </p>
+                        <a href="#about" class="home__scroll">
+                            <div class="home__scroll-box">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                            <span class="home__scroll-text">Scroll Down</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!--==================== ABOUT ====================-->
+            <section class="about section" id="about">
+                <div class="about__container container grid">
+                    <h2 class="section__title-1">
+                        <span>
+                            About Me.
+                        </span>
+                    </h2>
+                    <div class="about__perfil">
+                        <div class="about__image">
+                            <img src="/assets/img/about2.jpg" alt="image" class="about__img">
+                            <div class="about__shadow"></div>
+                            <div class="geometric-box"></div>
+                            <img src="/assets/img/random-lines.svg" alt="" class="about__line">
+                            <div class="about__box"></div>
+                        </div>
+                    </div>
+                    <div class="about__info">
+                        <p class="about__description">
+                            Hi, I'm Ian. I'm a passionate developer with expertise in both frontend and backend technologies. 
                   I specialize in building modern web applications using React, Next.js, and Node.js.
-               </p>
-               
-               <p class="about__description">
-                  My technical toolkit includes integrations with <b>Plaid</b> for financial applications, 
-                  <b>Clerk.js</b> for authentication, <b>Chart.js</b> for data visualization, 
-                  and <b>Sentry</b> for error monitoring and performance tracking.
-               </p>
-
-               <ul class="about__list">
-                  <li class="about__item">
-                     <b>My Approach:</b> I focus on creating performant, accessible, and maintainable solutions 
+                        </p>
+                        <p class="about__description">
+                            My technical toolkit includes integrations with
+                            <b>Plaid</b>
+                            for financial applications,
+                            <b>Clerk.js</b> for authentication,
+                            <b>Chart.js</b>
+                            for data visualization, 
+                  and
+                            <b>Sentry</b>
+                            for error monitoring and performance tracking.
+                        </p>
+                        <ul class="about__list">
+                            <li class="about__item">
+                                <b>My Approach:</b>
+                                I focus on creating performant, accessible, and maintainable solutions 
                      that deliver real business value while providing exceptional user experiences.
-                  </li>
-               </ul>
-
-               <div class="about__buttons">
-                  <a href="#contact" class="button">
-                     <i class="ri-send-plane-line"></i> Contact Me
-                  </a>
-
-                  <a href="https://www.linkedin.com/in/ian-kiarie-72a26a26a" target="_blank" rel="noopener noreferrer" class="button__ghost">
-                     <i class="ri-linkedin-box-line"></i>
-                  </a>
-               </div>
-            </div>
-         </div>
-      </section>
-
-      <!--==================== SKILLS ====================-->
-      <section class="skills section" id="skills">
-         <h2 class="section__title-2">
-            <span>Technical Skills</span>
-         </h2>
-
-         <div class="skills__container container grid">
-            <div class="skills__group">
-               <h3 class="skills__category">Frontend</h3>
-               <div class="skills__items">
-                  <span class="skills__item">React, </span>
-                  <span class="skills__item">Next.js, </span>
-                  <span class="skills__item">JavaScript (ES6+), </span>
-                  <span class="skills__item">HTML5/CSS3, </span>
-                  <span class="skills__item">Tailwind CSS, </span>
-                  <span class="skills__item">Chart.js</span>
-               </div>
-            </div>
-
-            <div class="skills__group">
-               <h3 class="skills__category">Backend</h3>
-               <div class="skills__items">
-                  <span class="skills__item">Node.js</span>
-                  <span class="skills__item">Express</span>
-                  <span class="skills__item">REST APIs</span>
-                  <span class="skills__item">MongoDB</span>
-                  <span class="skills__item">Firebase</span>
-               </div>
-            </div>
-
-            <div class="skills__group">
-               <h3 class="skills__category">Tools & Services</h3>
-               <div class="skills__items">
-                  <span class="skills__item">Plaid API, </span>
-                  <span class="skills__item">Clerk.js, </span>
-                  <span class="skills__item">Sentry, </span>
-                  <span class="skills__item">Git/GitHub, </span>
-                  <span class="skills__item">Vercel, </span>
-                  <span class="skills__item">Figma</span>
-               </div>
-            </div>
-            <div class="skills__group">
-               <h3 class="skills__category">Languages</h3>
-               <div class="skills__items">
-                  <span class="skills__item">Javascript, </span>
-                  <span class="skills__item">python, </span>
-                  <span class="skills__item">C</span>
-               </div>
-            </div>
-         </div>
-      </section>
-
-      <!--==================== SERVICES ====================-->
-<section class="services section">
-   <h2 class="section__title-2">
-      <span>My Services</span>
-   </h2>
-
-   <div class="services__container container grid">
-      <article class="services__card">
-         <div class="services__border"></div>
-         <div class="services__content">
-            <div class="services__icon">
-               <div class="services__box"></div>
-               <i class="ri-reactjs-line"></i>
-            </div>
-            <h2 class="services__title">React/Next.js Development</h2>
-            <p class="services__description">
-               Modern, performant web applications with React, Next.js, and TypeScript. 
+                            </li>
+                        </ul>
+                        <div class="about__buttons">
+                            <a href="#contact" class="button">
+                                <i class="ri-send-plane-line"></i>
+                                Contact
+                            </a>
+                            <a href="/about.html" class="button">
+                                <i class="ri-information-line"></i>
+                                More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--==================== SKILLS ====================-->
+            <section class="skills section" id="skills">
+                <h2 class="section__title-2">
+                    <span>Technical Skills</span>
+                </h2>
+                <div class="skills__container container grid">
+                    <div class="skills__group">
+                        <h3 class="skills__category">Frontend</h3>
+                        <div class="skills__items">
+                            <span class="skills__item">React,</span>
+                            <span class="skills__item">Next.js,</span>
+                            <span class="skills__item">JavaScript (ES6+),</span>
+                            <span class="skills__item">HTML5/CSS3,</span>
+                            <span class="skills__item">Tailwind CSS,</span>
+                            <span class="skills__item">Chart.js</span>
+                        </div>
+                    </div>
+                    <div class="skills__group">
+                        <h3 class="skills__category">Backend</h3>
+                        <div class="skills__items">
+                            <span class="skills__item">Node.js</span>
+                            <span class="skills__item">Express</span>
+                            <span class="skills__item">REST APIs</span>
+                            <span class="skills__item">MongoDB</span>
+                            <span class="skills__item">Firebase</span>
+                        </div>
+                    </div>
+                    <div class="skills__group">
+                        <h3 class="skills__category">Tools & Services</h3>
+                        <div class="skills__items">
+                            <span class="skills__item">Plaid API,</span>
+                            <span class="skills__item">Clerk.js,</span>
+                            <span class="skills__item">Sentry,</span>
+                            <span class="skills__item">Git/GitHub,</span>
+                            <span class="skills__item">Vercel,</span>
+                            <span class="skills__item">Figma</span>
+                        </div>
+                    </div>
+                    <div class="skills__group">
+                        <h3 class="skills__category">Languages</h3>
+                        <div class="skills__items">
+                            <span class="skills__item">Javascript,</span>
+                            <span class="skills__item">python,</span>
+                            <span class="skills__item">C</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--==================== SERVICES ====================-->
+            <section class="services section">
+                <h2 class="section__title-2">
+                    <span>My Services</span>
+                </h2>
+                <div class="services__container container grid">
+                    <article class="services__card">
+                        <div class="services__border"></div>
+                        <div class="services__content">
+                            <div class="services__icon">
+                                <div class="services__box"></div>
+                                <i class="ri-reactjs-line"></i>
+                            </div>
+                            <h2 class="services__title">React/Next.js Development</h2>
+                            <p class="services__description">
+                                Modern, performant web applications with React, Next.js, and TypeScript. 
                Includes integrations with Clerk.js, Plaid, and Chart.js.
-            </p>
-            <div class="services__tags">
-               <span class="services__tag">React</span>
-               <span class="services__tag">Next.js</span>
-               <span class="services__tag">TypeScript</span>
-            </div>
-         </div>
-      </article>
-
-      <article class="services__card">
-         <div class="services__border"></div>
-         <div class="services__content">
-            <div class="services__icon">
-               <div class="services__box"></div>
-               <i class="ri-code-box-line"></i>
-            </div>
-            <h2 class="services__title">Full Stack Solutions</h2>
-            <p class="services__description">
-               Complete applications with Node.js backends, MongoDB databases, 
+                            </p>
+                            <div class="services__tags">
+                                <span class="services__tag">React</span>
+                                <span class="services__tag">Next.js</span>
+                                <span class="services__tag">TypeScript</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="services__card">
+                        <div class="services__border"></div>
+                        <div class="services__content">
+                            <div class="services__icon">
+                                <div class="services__box"></div>
+                                <i class="ri-code-box-line"></i>
+                            </div>
+                            <h2 class="services__title">Full Stack Solutions</h2>
+                            <p class="services__description">
+                                Complete applications with Node.js backends, MongoDB databases, 
                and modern authentication.
-            </p>
-            <div class="services__tags">
-               <span class="services__tag">Node.js</span>
-               <span class="services__tag">Express</span>
-               <span class="services__tag">MongoDB</span>
-            </div>
-         </div>
-      </article>
-
-      <article class="services__card">
-         <div class="services__border"></div>
-         <div class="services__content">
-            <div class="services__icon">
-               <div class="services__box"></div>
-               <i class="fab fa-python"></i>
-            </div>
-            <h2 class="services__title">Python & C Programming</h2>
-            <p class="services__description">
-               System programming, algorithms, and automation scripts in Python and C. 
+                            </p>
+                            <div class="services__tags">
+                                <span class="services__tag">Node.js</span>
+                                <span class="services__tag">Express</span>
+                                <span class="services__tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="services__card">
+                        <div class="services__border"></div>
+                        <div class="services__content">
+                            <div class="services__icon">
+                                <div class="services__box"></div>
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <h2 class="services__title">Python & C Programming</h2>
+                            <p class="services__description">
+                                System programming, algorithms, and automation scripts in Python and C. 
                Experience with Kivy for cross-platform apps.
-            </p>
-            <div class="services__tags">
-               <span class="services__tag">Python</span>
-               <span class="services__tag">C</span>
-               <span class="services__tag">Kivy</span>
-            </div>
-         </div>
-      </article>
-
-      <article class="services__card">
-         <div class="services__border"></div>
-         <div class="services__content">
-            <div class="services__icon">
-               <div class="services__box"></div>
-               <i class="ri-tools-line"></i>
-            </div>
-            <h2 class="services__title">API Integrations</h2>
-            <p class="services__description">
-               Specialized in Plaid for financial apps, Sentry for monitoring, 
+                            </p>
+                            <div class="services__tags">
+                                <span class="services__tag">Python</span>
+                                <span class="services__tag">C</span>
+                                <span class="services__tag">Kivy</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="services__card">
+                        <div class="services__border"></div>
+                        <div class="services__content">
+                            <div class="services__icon">
+                                <div class="services__box"></div>
+                                <i class="ri-tools-line"></i>
+                            </div>
+                            <h2 class="services__title">API Integrations</h2>
+                            <p class="services__description">
+                                Specialized in Plaid for financial apps, Sentry for monitoring, 
                and other third-party API integrations.
-            </p>
-            <div class="services__tags">
-               <span class="services__tag">Plaid</span>
-               <span class="services__tag">Sentry</span>
-               <span class="services__tag">REST</span>
-            </div>
-         </div>
-      </article>
-   </div>
-</section>
-
-      <!--==================== PROJECTS ====================-->
-      <section class="projects section" id="projects">
-         <h2 class="section__title-1">
-            <span>
-               My Projects.
-            </span>
-         </h2>
-
-         <div class="projects__container container grid">
-            <article class="projects__card">
-               <div class="projects__image">
-                  <img src="/assets/img/project-1.jpg" alt="image" class="projects__img">
-
-                  <a href="https://devkiarie.github.io/Club-Kiboko/" target="_blank" rel="noopener noreferrer" class="projects__button button">
-                     <i class="ri-arrow-right-up-line"></i>
-                  </a>
-               </div>
-
-               <div class="projects__content">
-                  <h3 class="projects__subtitle">Web-App</h3>
-                  <h2 class="projects__title">Fighter Game</h2>
-
-                  <p class="projects__description">
-                     A simple 2 player game based on HTML, JavaScript and CSS.
-                  </p>
-               </div>
-
-               <div class="projects__buttons">
-                  <a href="https://github.com/Devkiarie" target="_blank" rel="noopener noreferrer" class="projects__link">
-                  <i class="ri-github-line"></i> View
-               </a>
-               </div>
-            </article>
-
-            <article class="projects__card">
-               <div class="projects__image">
-                  <img src="/assets/img/project-2.jpg" alt="image" class="projects__img">
-
-                  <a href="https://devkiarie.github.io/qaphys.co/" target="_blank" rel="noopener noreferrer" class="projects__button button">
-                     <i class="ri-arrow-right-up-line"></i>
-                  </a>
-               </div>
-
-               <div class="projects__content">
-                  <h3 class="projects__subtitle">Website</h3>
-                  <h2 class="projects__title">E-commerce Website</h2>
-
-                  <p class="projects__description">
-                     E-commerce website based on HTML, CSS and JavaScript.
-                  </p>
-               </div>
-
-               <div class="projects__buttons">
-                  <a href="https://github.com/Devkiarie" target="_blank" rel="noopener noreferrer" class="projects__link">
-                  <i class="ri-github-line"></i> View
-               </a>
-               </div>
-            </article>
-
-            <article class="projects__card">
-               <div class="projects__image">
-                  <img src="/assets/img/project-3.jpg" alt="image" class="projects__img">
-
-                  <a href="https://devkiarie.github.io/Timeless-/" target="_blank" rel="noopener noreferrer" class="projects__button button">
-                     <i class="ri-arrow-right-up-line"></i>
-                  </a>
-               </div>
-
-               <div class="projects__content">
-                  <h3 class="projects__subtitle">Website</h3>
-                  <h2 class="projects__title">Watch Website</h2>
-
-                  <p class="projects__description">
-                     An aesthetic and classy watches website.
-                  </p>
-               </div>
-
-               <div class="projects__buttons">
-                  <a href="https://github.com/Devkiarie" target="_blank" rel="noopener noreferrer" class="projects__link">
-                  <i class="ri-github-line"></i> View
-               </a>
-               </div>
-            </article>
-
-            <article class="projects__card">
-               <div class="projects__image">
-                  <img src="/assets/img/project-4.jpg" alt="image" class="projects__img">
-
-                  <a href="https://devkiarie.github.io/sage-watches/" target="_blank" rel="noopener noreferrer" class="projects__button button">
-                     <i class="ri-arrow-right-up-line"></i>
-                  </a>
-               </div>
-
-               <div class="projects__content">
-                  <h3 class="projects__subtitle">Website</h3>
-                  <h2 class="projects__title">Watches Company Website</h2>
-
-                  <p class="projects__description">
-                     An elegant website displaying a watches company.
-                  </p>
-               </div>
-
-               <div class="projects__buttons">
-                  <a href="https://github.com/Devkiarie" target="_blank" rel="noopener noreferrer" class="projects__link">
-                  <i class="ri-github-line"></i> View
-               </a>
-               </div>
-            </article>
-
-            <article class="projects__card">
-               <div class="projects__image">
-                  <img src="/assets/img/project-5.jpg" alt="image" class="projects__img">
-
-                  <a href="https://devkiarie.github.io/everything-fabulous/" target="_blank" rel="noopener noreferrer" class="projects__button button">
-                     <i class="ri-arrow-right-up-line"></i>
-                  </a>
-               </div>
-
-               <div class="projects__content">
-                  <h3 class="projects__subtitle">Website</h3>
-                  <h2 class="projects__title">E-commerce Website</h2>
-
-                  <p class="projects__description">
-                     An aesthetic shopping/e-commerce website.
-                  </p>
-               </div>
-
-               <div class="projects__buttons">
-                  <a href="https://github.com/Devkiarie" target="_blank" rel="noopener noreferrer" class="projects__link">
-                  <i class="ri-github-line"></i> View
-               </a>
-               </div>
-            </article>
-
-            <article class="projects__card">
-               <div class="projects__image">
-                  <img src="/assets/img/project-6.jpg" alt="image" class="projects__img">
-
-                  <a href="https://munchy-meatshop.vercel.app/" target="_blank" rel="noopener noreferrer" class="projects__button button">
-                     <i class="ri-arrow-right-up-line"></i>
-                  </a>
-               </div>
-
-               <div class="projects__content">
-                  <h3 class="projects__subtitle">Website</h3>
-                  <h2 class="projects__title">Meat Ordering Website</h2>
-
-                  <p class="projects__description">
-                     Modern meat ordering platform built with React and Node.js.
-                  </p>
-               </div>
-
-               <div class="projects__buttons">
-                  <a href="https://github.com/Devkiarie" target="_blank" rel="noopener noreferrer" class="projects__link">
-                  <i class="ri-github-line"></i> View
-               </a>
-               </div>
-            </article>
-
-            <article class="projects__card">
-               <div class="projects__image">
-                  <img src="/assets/img/project-7.jpg" alt="image" class="projects__img">
-
-                  <a href="https://wilsmar-frontend.onrender.com/" target="_blank" rel="noopener noreferrer" class="projects__button button">
-                     <i class="ri-arrow-right-up-line"></i>
-                  </a>
-               </div>
-
-               <div class="projects__content">
-                  <h3 class="projects__subtitle">Website</h3>
-                  <h2 class="projects__title">Drink Ordering Website</h2>
-
-                  <p class="projects__description">
-                     Full-stack beverage ordering system with real-time updates.
-                  </p>
-               </div>
-
-               <div class="projects__buttons">
-                  <a href="https://github.com/Devkiarie" target="_blank" rel="noopener noreferrer" class="projects__link">
-                  <i class="ri-github-line"></i> View
-               </a>
-               </div>
-            </article>
-
-            <article class="projects__card">
-               <div class="projects__image">
-                  <img src="/assets/img/project-8.jpg" alt="image" class="projects__img">
-
-                  <a href="https://massmoverslimited.vercel.app" target="_blank" rel="noopener noreferrer" class="projects__button button">
-                     <i class="ri-arrow-right-up-line"></i>
-                  </a>
-               </div>
-
-               <div class="projects__content">
-                  <h3 class="projects__subtitle">Website</h3>
-                  <h2 class="projects__title">Logistics Company Website</h2>
-
-                  <p class="projects__description">
-                     Fullstack logistics company website with email, newsletter, 
+                            </p>
+                            <div class="services__tags">
+                                <span class="services__tag">Plaid</span>
+                                <span class="services__tag">Sentry</span>
+                                <span class="services__tag">REST</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <!--==================== PROJECTS ====================-->
+            <section class="projects section" id="projects">
+                <h2 class="section__title-1">
+                    <span>
+                        My Projects.
+                    </span>
+                </h2>
+                <div class="projects__container container grid">
+                    <article class="projects__card">
+                        <div class="projects__image">
+                            <img src="/assets/img/project-1.jpg" alt="image" class="projects__img">
+                            <a
+                                href="https://devkiarie.github.io/Club-Kiboko/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="projects__button button"
+                            >
+                                <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                        <div class="projects__content">
+                            <h3 class="projects__subtitle">Web-App</h3>
+                            <h2 class="projects__title">Fighter Game</h2>
+                            <p class="projects__description">
+                                A simple 2 player game based on HTML, JavaScript and CSS.
+                            </p>
+                        </div>
+                        <div class="projects__buttons">
+                            <a
+                                href="https://github.com/Devkiarie"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="projects__link"
+                            >
+                                <i class="ri-github-line"></i>
+                                View
+                            </a>
+                        </div>
+                    </article>
+                    <article class="projects__card">
+                        <div class="projects__image">
+                            <img src="/assets/img/project-2.jpg" alt="image" class="projects__img">
+                            <a
+                                href="https://devkiarie.github.io/qaphys.co/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="projects__button button"
+                            >
+                                <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                        <div class="projects__content">
+                            <h3 class="projects__subtitle">Website</h3>
+                            <h2 class="projects__title">E-commerce Website</h2>
+                            <p class="projects__description">
+                                E-commerce website based on HTML, CSS and JavaScript.
+                            </p>
+                        </div>
+                        <div class="projects__buttons">
+                            <a
+                                href="https://github.com/Devkiarie"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="projects__link"
+                            >
+                                <i class="ri-github-line"></i>
+                                View
+                            </a>
+                        </div>
+                    </article>
+                    <article class="projects__card">
+                        <div class="projects__image">
+                            <img src="/assets/img/project-3.jpg" alt="image" class="projects__img">
+                            <a
+                                href="https://devkiarie.github.io/Timeless-/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="projects__button button"
+                            >
+                                <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                        <div class="projects__content">
+                            <h3 class="projects__subtitle">Website</h3>
+                            <h2 class="projects__title">Watch Website</h2>
+                            <p class="projects__description">
+                                An aesthetic and classy watches website.
+                            </p>
+                        </div>
+                        <div class="projects__buttons">
+                            <a
+                                href="https://github.com/Devkiarie"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="projects__link"
+                            >
+                                <i class="ri-github-line"></i>
+                                View
+                            </a>
+                        </div>
+                    </article>
+                    <article class="projects__card">
+                        <div class="projects__image">
+                            <img src="/assets/img/project-4.jpg" alt="image" class="projects__img">
+                            <a
+                                href="https://devkiarie.github.io/sage-watches/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="projects__button button"
+                            >
+                                <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                        <div class="projects__content">
+                            <h3 class="projects__subtitle">Website</h3>
+                            <h2 class="projects__title">Watches Company Website</h2>
+                            <p class="projects__description">
+                                An elegant website displaying a watches company.
+                            </p>
+                        </div>
+                        <div class="projects__buttons">
+                            <a
+                                href="https://github.com/Devkiarie"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="projects__link"
+                            >
+                                <i class="ri-github-line"></i>
+                                View
+                            </a>
+                        </div>
+                    </article>
+                    <article class="projects__card">
+                        <div class="projects__image">
+                            <img src="/assets/img/project-5.jpg" alt="image" class="projects__img">
+                            <a
+                                href="https://devkiarie.github.io/everything-fabulous/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="projects__button button"
+                            >
+                                <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                        <div class="projects__content">
+                            <h3 class="projects__subtitle">Website</h3>
+                            <h2 class="projects__title">E-commerce Website</h2>
+                            <p class="projects__description">
+                                An aesthetic shopping/e-commerce website.
+                            </p>
+                        </div>
+                        <div class="projects__buttons">
+                            <a
+                                href="https://github.com/Devkiarie"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="projects__link"
+                            >
+                                <i class="ri-github-line"></i>
+                                View
+                            </a>
+                        </div>
+                    </article>
+                    <article class="projects__card">
+                        <div class="projects__image">
+                            <img src="/assets/img/project-6.jpg" alt="image" class="projects__img">
+                            <a
+                                href="https://munchy-meatshop.vercel.app/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="projects__button button"
+                            >
+                                <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                        <div class="projects__content">
+                            <h3 class="projects__subtitle">Website</h3>
+                            <h2 class="projects__title">Meat Ordering Website</h2>
+                            <p class="projects__description">
+                                Modern meat ordering platform built with React and Node.js.
+                            </p>
+                        </div>
+                        <div class="projects__buttons">
+                            <a
+                                href="https://github.com/Devkiarie"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="projects__link"
+                            >
+                                <i class="ri-github-line"></i>
+                                View
+                            </a>
+                        </div>
+                    </article>
+                    <article class="projects__card">
+                        <div class="projects__image">
+                            <img src="/assets/img/project-7.jpg" alt="image" class="projects__img">
+                            <a
+                                href="https://wilsmar-frontend.onrender.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="projects__button button"
+                            >
+                                <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                        <div class="projects__content">
+                            <h3 class="projects__subtitle">Website</h3>
+                            <h2 class="projects__title">Drink Ordering Website</h2>
+                            <p class="projects__description">
+                                Full-stack beverage ordering system with real-time updates.
+                            </p>
+                        </div>
+                        <div class="projects__buttons">
+                            <a
+                                href="https://github.com/Devkiarie"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="projects__link"
+                            >
+                                <i class="ri-github-line"></i>
+                                View
+                            </a>
+                        </div>
+                    </article>
+                    <article class="projects__card">
+                        <div class="projects__image">
+                            <img src="/assets/img/project-8.jpg" alt="image" class="projects__img">
+                            <a
+                                href="https://massmoverslimited.vercel.app"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="projects__button button"
+                            >
+                                <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                        <div class="projects__content">
+                            <h3 class="projects__subtitle">Website</h3>
+                            <h2 class="projects__title">Logistics Company Website</h2>
+                            <p class="projects__description">
+                                Fullstack logistics company website with email, newsletter, 
                      and chatbot functionality.
-                  </p>
-               </div>
-
-               <div class="projects__buttons">
-                  <a href="https://github.com/Devkiarie" target="_blank" rel="noopener noreferrer" class="projects__link">
-                  <i class="ri-github-line"></i> View
-               </a>
-               </div>
-            </article>
-         </div>
-      </section>
-
-      <!--==================== CONTACT ====================-->
-      <section class="contact section" id="contact">
-         <div class="contact__container grid">
-            <div class="contact__data">
-               <h2 class="section__title-2">
-                  <span>
-                     Contact me.
-                  </span>
-               </h2>
-
-               <p class="contact__description-1">
-                  Reach Out Via Email and we will get in touch.
-               </p>
-
-               <p class="contact__description-2">
-                  I need your <b>Name</b> and <b>Email Address</b>, but 
+                            </p>
+                        </div>
+                        <div class="projects__buttons">
+                            <a
+                                href="https://github.com/Devkiarie"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="projects__link"
+                            >
+                                <i class="ri-github-line"></i>
+                                View
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <!--==================== CONTACT ====================-->
+            <section class="contact section" id="contact">
+                <div class="contact__container grid">
+                    <div class="contact__data">
+                        <h2 class="section__title-2">
+                            <span>
+                                Contact me.
+                            </span>
+                        </h2>
+                        <p class="contact__description-1">
+                            Reach Out Via Email and we will get in touch.
+                        </p>
+                        <p class="contact__description-2">
+                            I need your
+                            <b>Name</b> and
+                            <b>Email Address</b>
+                            , but 
                   you won't receive anything other than your reply.
-               </p>
-
-               <div class="geometric-box"></div>
+                        </p>
+                        <div class="geometric-box"></div>
+                    </div>
+                    <div class="contact__mail">
+                        <h2 class="contact__title">
+                            Send me a message.
+                        </h2>
+                        <form action="" class="contact__form" id="contact-form">
+                            <div class="contact__group">
+                                <div class="contact__box">
+                                    <input
+                                        type="text"
+                                        name="user_name"
+                                        class="contact__input"
+                                        id="name"
+                                        required
+                                        placeholder="First Name"
+                                    >
+                                    <label for="name" class="contact__label">First Name</label>
+                                </div>
+                                <div class="contact__box">
+                                    <input
+                                        type="email"
+                                        name="user_email"
+                                        class="contact__input"
+                                        id="email"
+                                        required
+                                        placeholder="Email Adress"
+                                    >
+                                    <label for="email" class="contact__label">Email Adress</label>
+                                </div>
+                            </div>
+                            <div class="contact__box">
+                                <input
+                                    type="text"
+                                    name="user_subject"
+                                    class="contact__input"
+                                    id="subject"
+                                    required
+                                    placeholder="subject"
+                                >
+                                <label for="subject" class="contact__label">subject</label>
+                            </div>
+                            <div class="contact__box contact__area">
+                                <textarea
+                                    name="user_message"
+                                    id="message"
+                                    class="contact__input"
+                                    required
+                                    placeholder="message"
+                                ></textarea>
+                                <label for="message" class="contact__label">message</label>
+                            </div>
+                            <p class="contact__message" id="contact-message"></p>
+                            <button type="submit" class="contact__button button">
+                                <i class="ri-send-plane-line"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                    <div class="contact__social">
+                        <img src="/assets/img/curved-arrow.svg" alt="" class="contact__social-arrow">
+                        <div class="contact__social-data">
+                            <div>
+                                <p class="contact__social-description-1">
+                                    Don't want to Send
+                                    <br>
+                                    Emails ?
+                                </p>
+                                <p class="contact__social-description-2">
+                                    Write me on my socials
+                                </p>
+                            </div>
+                            <div class="contact__social-links">
+                                <a
+                                    href="https://x.com/Dev_kiarie/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="contact__social-link"
+                                >
+                                    <i class="ri-twitter-line"></i>
+                                </a>
+                                <a
+                                    href="https://www.instagram.com/dev_kiarie?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="contact__social-link"
+                                >
+                                    <i class="ri-instagram-line"></i>
+                                </a>
+                                <a
+                                    href="https://www.linkedin.com/in/ian-kiarie-72a26a26a"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="contact__social-link"
+                                >
+                                    <i class="ri-linkedin-box-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!--==================== FOOTER ====================-->
+        <footer class="footer">
+            <div class="footer__container container grid">
+                <ul class="footer__links">
+                    <li>
+                        <a href="#home" class="footer__link">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about" class="footer__link">About</a>
+                    </li>
+                    <li>
+                        <a href="#projects" class="footer__link">Projects</a>
+                    </li>
+                    <li>
+                        <a href="/blog.html" class="footer__link">blog</a>
+                    </li>
+                    <li>
+                        <a href="/about.html" class="footer__link">about</a>
+                    </li>
+                </ul>
+                <span class="footer__copy">
+                    ©
+                    <span id="year"></span>
+                    All Rights Reserved
+                    <a href="#">Dev Kiarie.</a>
+                </span>
             </div>
-
-            <div class="contact__mail">
-               <h2 class="contact__title">
-                     Send me a message.
-               </h2>
-
-               <form action="" class="contact__form" id="contact-form">
-                  <div class="contact__group">
-                     <div class="contact__box">
-                        <input type="text" name="user_name" class="contact__input" id="name" required placeholder="First Name">
-                        <label for="name" class="contact__label">First Name</label>
-                     </div>
-
-                     <div class="contact__box">
-                        <input type="email" name="user_email" class="contact__input" id="email" required placeholder="Email Adress">
-                        <label for="email" class="contact__label">Email Adress</label>
-                     </div>
-                  </div>
-
-                  <div class="contact__box">
-                     <input type="text" name="user_subject" class="contact__input" id="subject" required placeholder="subject">
-                     <label for="subject" class="contact__label">subject</label>
-                  </div>
-
-                  <div class="contact__box contact__area">
-                     <textarea name="user_message" id="message" class="contact__input" required placeholder="message"></textarea>
-                     <label for="message" class="contact__label">message</label>
-                  </div>
-
-                  <p class="contact__message" id="contact-message"></p>
-
-                  <button type="submit" class="contact__button button">
-                     <i class="ri-send-plane-line"></i> Send Message
-                  </button>
-               </form>
-            </div>
-
-            <div class="contact__social">
-               <img src="/assets/img/curved-arrow.svg" alt="" class="contact__social-arrow">
-
-               <div class="contact__social-data">
-                  <div>
-                     <p class="contact__social-description-1">
-                        Don't want to Send <br> Emails ?
-                     </p>
-
-                     <p class="contact__social-description-2">
-                        Write me on my socials
-                     </p>
-                  </div>
-
-                  <div class="contact__social-links">
-                     <a href="https://x.com/Dev_kiarie/" target="_blank" rel="noopener noreferrer" class="contact__social-link">
-                        <i class="ri-twitter-line"></i>
-                     </a>
-
-                     <a href="https://www.instagram.com/dev_kiarie?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="contact__social-link">
-                        <i class="ri-instagram-line"></i>
-                     </a>
-
-                     <a href="https://www.linkedin.com/in/ian-kiarie-72a26a26a" target="_blank" rel="noopener noreferrer" class="contact__social-link">
-                        <i class="ri-linkedin-box-line"></i>
-                     </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-   </main>
-
-   <!--==================== FOOTER ====================-->
-   <footer class="footer">
-      <div class="footer__container container grid">
-         <ul class="footer__links">
-            <li>
-               <a href="#home" class="footer__link">Home</a>
-            </li>
-            <li>
-               <a href="#about" class="footer__link">About</a>
-            </li>
-            <li>
-               <a href="#projects" class="footer__link">Projects</a>
-            </li>
-            <li>
-               <a href="/blog.html" class="footer__link">blog</a>
-            </li>
-         </ul>
-
-         <span class="footer__copy">
-            © <span id="year"></span> All Rights Reserved  
-            <a href="#">Dev Kiarie.</a>
-         </span>
-      </div>
-   </footer>
-
-   <!--========== SCROLL UP ==========-->
-   <a href="#" class="scrollup" id="scroll-up">
-      <i class="ri-arrow-up-s-line"></i>
-   </a>
-
-   <!--=============== SCROLLREVEAL ===============-->
-   <script src="/assets/js/scrollreveal.min.js"></script>
-   
-   <!--=============== EMAIL JS ===============-->
-   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-   <!--=============== MAIN JS ===============-->
-   <script src="assets/js/main.js"></script>
-   <script>
+        </footer>
+        <!--========== SCROLL UP ==========-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-s-line"></i>
+        </a>
+        <!--=============== SCROLLREVEAL ===============-->
+        <script src="/assets/js/scrollreveal.min.js"></script>
+        <!--=============== EMAIL JS ===============-->
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+        <script>
       // Update copyright year automatically
       document.getElementById('year').textContent = new Date().getFullYear();
-   </script>
-</body>
+        </script>
+    </body>
 </html>

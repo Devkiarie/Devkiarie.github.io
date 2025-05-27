@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Testimonials for Ian Kiarie's work">
+
+   <!--=============== FAVICON ===============-->
+   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+   <!--=============== REMIXICONS ===============-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" href="assets/css/styles.css">
+
+   <!-- Testimonials specific CSS -->
+   <style>
+      /* Testimonials Hero Section */
+      .testimonials-hero {
+         text-align: center;
+         padding: 3rem 0;
+      }
+      
+      /* Testimonial Slider/Carousel */
+      .testimonial-slider {
+         position: relative;
+         max-width: 800px;
+         margin: 0 auto;
+         padding: 2rem 0;
+      }
+      
+      .testimonial-slide {
+         background: var(--container-color);
+         padding: 2rem;
+         border-radius: 1rem;
+         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+         margin: 0 1rem;
+         display: none;
+      }
+      
+      .testimonial-slide.active {
+         display: block;
+         animation: fadeIn 0.5s ease;
+      }
+      
+      @keyframes fadeIn {
+         from { opacity: 0; }
+         to { opacity: 1; }
+      }
+      
+      .testimonial-header {
+         display: flex;
+         align-items: center;
+         margin-bottom: 1.5rem;
+      }
+      
+      .testimonial-avatar {
+         width: 60px;
+         height: 60px;
+         border-radius: 50%;
+         background: var(--first-color);
+         color: white;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-weight: bold;
+         font-size: 1.25rem;
+         margin-right: 1rem;
+      }
+      
+      .testimonial-author {
+         font-weight: var(--font-semi-bold);
+         margin-bottom: 0.25rem;
+         color: var(--title-color);
+      }
+      
+      .testimonial-org {
+         font-size: 0.875rem;
+         color: var(--text-color-light);
+      }
+      
+      .testimonial-stars {
+         color: #FFD700;
+         margin: 1rem 0;
+         font-size: 1.25rem;
+      }
+      
+      .testimonial-text {
+         font-style: italic;
+         line-height: 1.6;
+         color: var(--text-color);
+      }
+      
+      .slider-nav {
+         display: flex;
+         justify-content: center;
+         margin-top: 2rem;
+      }
+      
+      .slider-dot {
+         width: 12px;
+         height: 12px;
+         border-radius: 50%;
+         background: var(--text-color-light);
+         margin: 0 0.5rem;
+         cursor: pointer;
+         transition: all 0.3s ease;
+      }
+      
+      .slider-dot.active {
+         background: var(--first-color);
+         transform: scale(1.2);
+      }
+      
+      /* Testimonial Form Styling */
+      .testimonial-form {
+         max-width: 600px;
+         margin: 3rem auto;
+         background: var(--container-color);
+         padding: 2.5rem;
+         border-radius: 1rem;
+         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      }
+      
+      .form-group {
+         margin-bottom: 1.75rem;
+      }
+      
+      .form-label {
+         display: block;
+         margin-bottom: 0.5rem;
+         color: var(--title-color);
+         font-weight: var(--font-medium);
+      }
+      
+      .form-control {
+         width: 100%;
+         padding: 1rem;
+         border: 1px solid var(--border-color);
+         border-radius: 0.5rem;
+         background: var(--body-color);
+         color: var(--text-color);
+         font-family: inherit;
+         font-size: var(--normal-font-size);
+         transition: all 0.3s ease;
+      }
+      
+      .form-control:focus {
+         outline: none;
+         border-color: var(--first-color);
+         box-shadow: 0 0 0 3px rgba(var(--first-color-rgb), 0.1);
+      }
+      
+      textarea.form-control {
+         min-height: 150px;
+         resize: vertical;
+      }
+      
+      .rating-input {
+         display: flex;
+         justify-content: center;
+         margin: 1.5rem 0;
+      }
+      
+      .rating-input input {
+         display: none;
+      }
+      
+      .rating-input label {
+         font-size: 1.75rem;
+         color: var(--text-color-light);
+         cursor: pointer;
+         margin: 0 0.25rem;
+         transition: all 0.2s ease;
+      }
+      
+      .rating-input input:checked ~ label,
+      .rating-input label:hover,
+      .rating-input label:hover ~ label {
+         color: #FFD700;
+      }
+      
+      .form-submit-btn {
+         width: 100%;
+         padding: 1.25rem;
+         font-weight: var(--font-semi-bold);
+         transition: all 0.3s ease;
+      }
+      
+      .form-submit-btn:hover {
+         transform: translateY(-3px);
+         box-shadow: 0 10px 20px rgba(var(--first-color-rgb), 0.2);
+      }
+      
+      .form-message {
+         margin-top: 1.5rem;
+         padding: 1rem;
+         border-radius: 0.5rem;
+         text-align: center;
+         display: none;
+      }
+      
+      .form-message.success {
+         background: rgba(var(--first-color-rgb), 0.1);
+         color: var(--first-color);
+         display: block;
+      }
+      
+      .form-message.error {
+         background: rgba(255, 0, 0, 0.1);
+         color: red;
+         display: block;
+      }
+   </style>
+
+   <title>Testimonials | Dev Kiarie</title>
+</head>
+
+<body>
+   <!--==================== HEADER ====================-->
+   <header class="header" id="header">
+      <nav class="nav container">
+         <a href="index.html" class="nav__logo">
+            <span class="nav__logo-circle">B</span>
+            <span class="nav__logo-name">Dev Blog.</span>
+         </a>
+
+         <div class="nav__menu" id="nav-menu">
+            <span class="nav__title">Blog Menu</span>
+            <h3 class="nav__name">Technical Insights</h3>
+
+            <ul class="nav__list">
+               <li class="nav__item"><a href="index.html" class="nav__link">Portfolio</a></li>
+               <li class="nav__item"><a href="blog.html" class="nav__link">All Articles</a></li>
+               <li class="nav__item"><a href="testimonials.html" class="nav__link active-link">Testimonials</a></li>
+               <li class="nav__item"><a href="index.html#contact" class="nav__link nav__link-button">Contact</a></li>
+            </ul>
+
+            <div class="nav__close" id="nav-close">
+               <i class="ri-close-line"></i>
+            </div>
+         </div>
+
+         <div class="nav__buttons">
+            <i class="ri-moon-line change-theme" id="theme-button"></i>
+            <div class="nav__toggle" id="nav-toggle">
+               <i class="ri-menu-4-line"></i>
+            </div>
+         </div>
+      </nav>
+   </header>
+
+   <!--==================== MAIN ====================-->
+   <main class="main">
+      <!--==================== TESTIMONIALS HERO ====================-->
+      <section class="blog-hero section">
+         <div class="blog-hero__container container">
+            <h1 class="blog-hero__title">Client Testimonials</h1>
+            <p class="blog-hero__description">
+               What people say about working with me
+            </p>
+            <div class="blog-hero__stats">
+               <div class="blog-hero__stat">
+                  <span class="blog-hero__number" id="testimonial-count">0</span>
+                  <span class="blog-hero__label">Testimonials</span>
+               </div>
+               <div class="blog-hero__stat">
+                  <span class="blog-hero__number" id="average-rating">0.0</span>
+                  <span class="blog-hero__label">Average Rating</span>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!--==================== TESTIMONIALS SLIDER ====================-->
+      <section class="section">
+         <div class="container">
+            <div class="testimonial-slider">
+               <div class="testimonial-slides" id="testimonial-slides">
+                  <!-- Testimonials will be loaded here dynamically -->
+               </div>
+               <div class="slider-nav" id="slider-nav">
+                  <!-- Navigation dots will be added here -->
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!--==================== TESTIMONIAL FORM ====================-->
+      <section class="section">
+         <div class="container">
+            <div class="testimonial-form">
+               <h2 class="section__title">Share Your Experience</h2>
+               <p class="section__subtitle">Your feedback helps me improve my services</p>
+               
+               <form id="testimonial-form" action="https://formspree.io/f/xkgrdwqj" method="POST">
+                  <input type="hidden" name="_subject" value="New Testimonial Submission">
+                  <input type="hidden" name="_format" value="plain">
+                  
+                  <div class="form-group">
+                     <label for="name" class="form-label">Your Name*</label>
+                     <input type="text" id="name" name="name" class="form-control" required>
+                  </div>
+                  
+                  <div class="form-group">
+                     <label for="organization" class="form-label">Your Organization</label>
+                     <input type="text" id="organization" name="organization" class="form-control" placeholder="Company, Institution, etc.">
+                  </div>
+                  
+                  <div class="form-group">
+                     <label class="form-label">Your Rating*</label>
+                     <div class="rating-input">
+                        <input type="radio" id="star5" name="rating" value="5" required>
+                        <label for="star5"><i class="ri-star-fill"></i></label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4"><i class="ri-star-fill"></i></label>
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3"><i class="ri-star-fill"></i></label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2"><i class="ri-star-fill"></i></label>
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1"><i class="ri-star-fill"></i></label>
+                     </div>
+                  </div>
+                  
+                  <div class="form-group">
+                     <label for="message" class="form-label">Your Testimonial*</label>
+                     <textarea id="message" name="message" class="form-control" required placeholder="Share your experience working with me..."></textarea>
+                  </div>
+                  
+                  <div class="form-group">
+                     <label for="email" class="form-label">Your Email (Optional)</label>
+                     <input type="email" id="email" name="email" class="form-control" placeholder="Only needed if you'd like a response">
+                  </div>
+                  
+                  <button type="submit" class="button button--flex form-submit-btn">
+                     Submit Testimonial <i class="ri-send-plane-line"></i>
+                  </button>
+                  
+                  <div id="form-message" class="form-message"></div>
+               </form>
+            </div>
+         </div>
+      </section>
+
+      <!--==================== NEWSLETTER ====================-->
+      <section class="blog-cta section">
+         <div class="blog-cta__container container">
+            <h2 class="blog-cta__title">Want More Technical Details?</h2>
+            <p class="blog-cta__description">
+               Subscribe to get notified when I publish new case studies and technical deep dives.
+            </p>
+            <form id="newsletter-form" class="blog-cta__form" action="https://formspree.io/f/xrbqnzyl" method="POST">
+               <input type="hidden" name="_subject" value="New Newsletter Subscriber">
+               <input type="email" name="email" placeholder="Your email address" class="blog-cta__input" required>
+               <button type="submit" class="blog-cta__button button">Subscribe</button>
+            </form>
+            <p id="newsletter-message" class="blog-cta__message"></p>
+         </div>
+      </section>
+   </main>
+
+   <!--==================== FOOTER ====================-->
+   <footer class="footer">
+      <div class="footer__container container grid">
+         <ul class="footer__links">
+            <li><a href="index.html" class="footer__link">Portfolio</a></li>
+            <li><a href="blog.html" class="footer__link">Blog</a></li>
+            <li><a href="testimonials.html" class="footer__link">Testimonials</a></li>
+            <li><a href="index.html#contact" class="footer__link">Contact</a></li>
+         </ul>
+         <span class="footer__copy">
+            © <span id="year"></span> All Rights Reserved
+            <a href="#">Dev Kiarie.</a>
+         </span>
+      </div>
+   </footer>
+
+   <!--========== SCROLL UP ==========-->
+   <a href="#" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-s-line"></i>
+   </a>
+
+   <!--=============== SCROLLREVEAL ===============-->
+   <script src="/assets/js/scrollreveal.min.js"></script>
+
+   <!--=============== MAIN JS ===============-->
+   <script src="assets/js/main.js"></script>
+
+   <!--=============== TESTIMONIALS JS ===============-->
+   <script>
+      document.addEventListener('DOMContentLoaded', function() {
+         // Set current year
+         document.getElementById('year').textContent = new Date().getFullYear();
+         
+         // Sample testimonials data (you'll manually update this)
+         const testimonials = [
+            {
+               name: "Steve Mugo",
+               organization: "Munchy ",
+               rating: 5,
+               message: "Ian delivered our project ahead of schedule with exceptional quality. His attention to detail and problem-solving skills are outstanding. Would definitely work with him again!",
+               initials: "SM"
+            },
+            {
+               name: "Stacey Adalla",
+               organization: "Everything Fabulous",
+               rating: 4,
+               message: "Working with Ian was a great experience. He's responsive, knowledgeable, and delivered exactly what we needed. The project was completed on time and within budget.",
+               initials: "SA"
+            },
+            {
+               name: "Mary Wanjiru",
+               organization: "Wilsmar Wines",
+               rating: 5,
+               message: "The web application Ian built for us has transformed our business operations. His technical expertise and communication throughout the project were excellent. Highly recommended!",
+               initials: "MW"
+            },
+            {
+               name: "Bernoulis Kimathi",
+               organization: "Massmovers Limited",
+               rating: 5,
+               message: "Ian's work exceeded our expectations. He took the time to understand our business needs and delivered a solution that perfectly matched our requirements. A true professional.",
+               initials: "BK"
+            },
+            {
+               name: "Ruth Kabura",
+               organization: "Qaphy's",
+               rating: 4,
+               message: "Great developer with excellent problem-solving skills. Ian was able to quickly understand our complex requirements and implement an elegant solution. Will hire again for future projects.",
+               initials: "RK"
+            }
+         ];
+
+         // Calculate average rating
+         const averageRating = testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length;
+         
+         // Update stats
+         document.getElementById('testimonial-count').textContent = testimonials.length;
+         document.getElementById('average-rating').textContent = averageRating.toFixed(1);
+         
+         // Render testimonials slider
+         const slidesContainer = document.getElementById('testimonial-slides');
+         const sliderNav = document.getElementById('slider-nav');
+         
+         testimonials.forEach((testimonial, index) => {
+            const stars = '★'.repeat(testimonial.rating) + '☆'.repeat(5 - testimonial.rating);
+            
+            // Create slide
+            const slide = document.createElement('div');
+            slide.className = `testimonial-slide ${index === 0 ? 'active' : ''}`;
+            slide.innerHTML = `
+               <div class="testimonial-header">
+                  <div class="testimonial-avatar">${testimonial.initials}</div>
+                  <div>
+                     <div class="testimonial-author">${testimonial.name}</div>
+                     ${testimonial.organization ? `<div class="testimonial-org">${testimonial.organization}</div>` : ''}
+                  </div>
+               </div>
+               <div class="testimonial-stars" title="${testimonial.rating} out of 5 stars">
+                  ${stars.replace(/★/g, '<i class="ri-star-fill"></i>').replace(/☆/g, '<i class="ri-star-line"></i>')}
+               </div>
+               <div class="testimonial-text">"${testimonial.message}"</div>
+            `;
+            
+            slidesContainer.appendChild(slide);
+            
+            // Create navigation dot
+            const dot = document.createElement('div');
+            dot.className = `slider-dot ${index === 0 ? 'active' : ''}`;
+            dot.dataset.index = index;
+            sliderNav.appendChild(dot);
+            
+            // Add click event to dots
+            dot.addEventListener('click', () => {
+               showSlide(index);
+            });
+         });
+         
+         // Auto-rotate slides
+         let currentSlide = 0;
+         const slides = document.querySelectorAll('.testimonial-slide');
+         const dots = document.querySelectorAll('.slider-dot');
+         
+         function showSlide(index) {
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Show selected slide
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+         }
+         
+         function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+         }
+         
+         // Auto-rotate every 5 seconds
+         setInterval(nextSlide, 5000);
+         
+         // Form submission handling
+         const testimonialForm = document.getElementById('testimonial-form');
+         const formMessage = document.getElementById('form-message');
+         
+         if (testimonialForm) {
+            testimonialForm.addEventListener('submit', function(e) {
+               e.preventDefault();
+               
+               const submitButton = testimonialForm.querySelector('button[type="submit"]');
+               const originalText = submitButton.innerHTML;
+               
+               submitButton.disabled = true;
+               submitButton.innerHTML = '<i class="ri-loader-4-line animate-spin"></i> Sending...';
+               
+               // Submit form via Formspree
+               fetch(testimonialForm.action, {
+                  method: 'POST',
+                  body: new FormData(testimonialForm),
+                  headers: {
+                     'Accept': 'application/json'
+                  }
+               })
+               .then(response => {
+                  if (response.ok) {
+                     formMessage.textContent = 'Thank you for your testimonial! I will review it soon.';
+                     formMessage.className = 'form-message success';
+                     testimonialForm.reset();
+                  } else {
+                     throw new Error('Form submission failed');
+                  }
+               })
+               .catch(error => {
+                  formMessage.textContent = 'There was an error submitting your testimonial. Please try again.';
+                  formMessage.className = 'form-message error';
+               })
+               .finally(() => {
+                  submitButton.disabled = false;
+                  submitButton.innerHTML = originalText;
+                  formMessage.style.display = 'block';
+               });
+            });
+         }
+         
+         // Newsletter form handling
+         const newsletterForm = document.getElementById('newsletter-form');
+         const newsletterMessage = document.getElementById('newsletter-message');
+         
+         if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+               e.preventDefault();
+               
+               const submitButton = newsletterForm.querySelector('button[type="submit"]');
+               const originalText = submitButton.textContent;
+               
+               submitButton.disabled = true;
+               submitButton.textContent = 'Sending...';
+               
+               fetch(newsletterForm.action, {
+                  method: 'POST',
+                  body: new FormData(newsletterForm),
+                  headers: {
+                     'Accept': 'application/json'
+                  }
+               })
+               .then(response => {
+                  if (response.ok) {
+                     newsletterMessage.textContent = 'Thank you for subscribing!';
+                     newsletterMessage.style.color = 'var(--first-color)';
+                     newsletterForm.reset();
+                  } else {
+                     throw new Error('Network response was not ok');
+                  }
+               })
+               .catch(error => {
+                  newsletterMessage.textContent = 'There was a problem with your submission. Please try again.';
+                  newsletterMessage.style.color = 'red';
+               })
+               .finally(() => {
+                  submitButton.disabled = false;
+                  submitButton.textContent = originalText;
+               });
+            });
+         }
+      });
+   </script>
+</body>
+</html>

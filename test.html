@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Testimonials for Ian Kiarie's work">
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+        <!--=============== REMIXICONS ===============-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <!-- Testimonials specific CSS -->
+        <style>
+  /* Add to your existing styles */
+  .testimonial-form {
+    background: var(--container-color);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 3rem auto;
+    max-width: 700px;
+  }
+  
+  .form-group {
+    margin-bottom: 1.75rem;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    background: var(--body-color);
+    color: var(--text-color);
+    font-family: inherit;
+    transition: border 0.3s ease;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: var(--first-color);
+    box-shadow: 0 0 0 3px rgba(67, 160, 71, 0.2);
+  }
+  
+  textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+  }
+  
+  .rating-input {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+  }
+  
+  .rating-input label {
+    font-size: 2rem;
+    color: var(--text-color-light);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .rating-input label:hover {
+    transform: scale(1.2);
+    color: #FFD700;
+  }
+  
+  .rating-input input:checked ~ label,
+  .rating-input input:checked ~ label ~ label {
+    color: #FFD700;
+  }
+  
+  .form-submit-btn {
+    width: 100%;
+    padding: 1.25rem;
+    font-weight: var(--font-semi-bold);
+    transition: all 0.3s ease;
+  }
+  
+  .form-submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(67, 160, 71, 0.2);
+  }
+  
+  /* Testimonial cards enhancements */
+  .testimonial-card {
+    position: relative;
+    overflow: hidden;
+  }
+        </style>
+        <body>
+            <!--==================== HEADER ====================-->
+            <header class="header" id="header">
+                <nav class="nav container">
+                    <a href="index.html" class="nav__logo">
+                        <span class="nav__logo-circle">B</span>
+                        <span class="nav__logo-name">Dev Blog.</span>
+                    </a>
+                    <div class="nav__menu" id="nav-menu">
+                        <span class="nav__title">Blog Menu</span>
+                        <h3 class="nav__name">Technical Insights</h3>
+                        <ul class="nav__list">
+                            <li class="nav__item">
+                                <a href="index.html" class="nav__link">Portfolio</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="blog.html" class="nav__link">All Articles</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="testimonials.html" class="nav__link active-link">Testimonials</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="index.html#contact" class="nav__link nav__link-button">Contact</a>
+                            </li>
+                        </ul>
+                        <div class="nav__close" id="nav-close">
+                            <i class="ri-close-line"></i>
+                        </div>
+                    </div>
+                    <div class="nav__buttons">
+                        <i class="ri-moon-line change-theme" id="theme-button"></i>
+                        <div class="nav__toggle" id="nav-toggle">
+                            <i class="ri-menu-4-line"></i>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <main class="main">
+                <!--==================== TESTIMONIALS HERO ====================-->
+                <section class="blog-hero section">
+                    <div class="blog-hero__container container">
+                        <h1 class="blog-hero__title">Client Testimonials</h1>
+                        <p class="blog-hero__description">
+                            What people say about working with me
+                        </p>
+                        <div class="blog-hero__stats">
+                            <div class="blog-hero__stat">
+                                <span class="blog-hero__number" id="testimonial-count">15+</span>
+                                <span class="blog-hero__label">Testimonials</span>
+                            </div>
+                            <div class="blog-hero__stat">
+                                <span class="blog-hero__number">4.9</span>
+                                <span class="blog-hero__label">Average Rating</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Testimonials Grid Section -->
+                <section class="section">
+                    <div class="container">
+                        <div class="testimonials-container" id="testimonials-grid">
+                            <!-- Testimonials will be loaded here from GitHub -->
+                            <div class="loading-spinner">
+                                <i class="ri-loader-4-line animate-spin"></i>
+                                Loading testimonials...
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Enhanced Testimonial Form -->
+                <!-- Updated Testimonial Form Section -->
+                <section class="section">
+                    <div class="container">
+                        <div class="testimonial-form">
+                            <h2 class="section__title">Share Your Experience</h2>
+                            <p class="section__subtitle">Your feedback helps me improve my services</p>
+                            <form id="testimonial-form">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Your Name*</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        class="form-control"
+                                        required
+                                    >
+                                </div>
+                                <div class="form-group">
+                                    <label for="organization" class="form-label">Your Organization</label>
+                                    <input
+                                        type="text"
+                                        id="organization"
+                                        name="organization"
+                                        class="form-control"
+                                        placeholder="Company, Institution, etc."
+                                    >
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Your Rating*</label>
+                                    <div class="rating-input">
+                                        <input
+                                            type="radio"
+                                            id="star5"
+                                            name="rating"
+                                            value="5"
+                                            required
+                                        >
+                                        <label for="star5">
+                                            <i class="ri-star-fill"></i>
+                                        </label>
+                                        <input
+                                            type="radio"
+                                            id="star4"
+                                            name="rating"
+                                            value="4"
+                                        >
+                                        <label for="star4">
+                                            <i class="ri-star-fill"></i>
+                                        </label>
+                                        <input
+                                            type="radio"
+                                            id="star3"
+                                            name="rating"
+                                            value="3"
+                                        >
+                                        <label for="star3">
+                                            <i class="ri-star-fill"></i>
+                                        </label>
+                                        <input
+                                            type="radio"
+                                            id="star2"
+                                            name="rating"
+                                            value="2"
+                                        >
+                                        <label for="star2">
+                                            <i class="ri-star-fill"></i>
+                                        </label>
+                                        <input
+                                            type="radio"
+                                            id="star1"
+                                            name="rating"
+                                            value="1"
+                                        >
+                                        <label for="star1">
+                                            <i class="ri-star-fill"></i>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message" class="form-label">Your Testimonial*</label>
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        class="form-control"
+                                        required
+                                        placeholder="Share your experience working with me..."
+                                    ></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Your Email (Optional)</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        class="form-control"
+                                        placeholder="Only needed if you'd like a response"
+                                    >
+                                </div>
+                                <div class="form-buttons">
+                                    <button type="submit" class="button button--flex form-submit-btn">
+                                        Submit Testimonial
+                                        <i class="ri-send-plane-line"></i>
+                                    </button>
+                                    <p class="form-note">Your testimonial will be reviewed before appearing on the site</p>
+                                </div>
+                                <div id="testimonial-message" class="form-message"></div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+                <!-- Enhanced Newsletter Section -->
+                <!-- Updated Newsletter Section -->
+                <section class="blog-cta section">
+                    <div class="blog-cta__container container">
+                        <h2 class="blog-cta__title">Want More Technical Details?</h2>
+                        <p class="blog-cta__description">
+                            Subscribe to get notified when I publish new case studies and technical deep dives.
+                        </p>
+                        <form
+                            id="newsletter-form"
+                            class="blog-cta__form"
+                            action="https://formspree.io/f/xrbqwnny"
+                            method="POST"
+                        >
+                            <input type="hidden" name="_subject" value="New Newsletter Subscriber">
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Your email address"
+                                class="blog-cta__input"
+                                required
+                            >
+                            <button type="submit" class="blog-cta__button button">Subscribe</button>
+                        </form>
+                        <p id="newsletter-message" class="blog-cta__message"></p>
+                    </div>
+                </section>
+            </main>
+            <!--==================== FOOTER ====================-->
+            <footer class="footer">
+                <div class="footer__container container grid">
+                    <ul class="footer__links">
+                        <li>
+                            <a href="index.html" class="footer__link">Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="blog.html" class="footer__link">Blog</a>
+                        </li>
+                        <li>
+                            <a href="testimonials.html" class="footer__link">Testimonials</a>
+                        </li>
+                        <li>
+                            <a href="index.html#contact" class="footer__link">Contact</a>
+                        </li>
+                    </ul>
+                    <span class="footer__copy">
+                        ©
+                        <span id="year"></span>
+                        All Rights Reserved
+                        <a href="#">Dev Kiarie.</a>
+                    </span>
+                </div>
+            </footer>
+            <!--========== SCROLL UP ==========-->
+            <a href="#" class="scrollup" id="scroll-up">
+                <i class="ri-arrow-up-s-line"></i>
+            </a>
+            <!--=============== SCROLLREVEAL ===============-->
+            <script src="/assets/js/scrollreveal.min.js"></script>
+            <!--=============== MAIN JS ===============-->
+            <script src="assets/js/main.js"></script>
+            <!--=============== TESTIMONIALS JS ===============-->
+            <script>
+     document.addEventListener('DOMContentLoaded', function() {
+  // Set current year
+  document.getElementById('year').textContent = new Date().getFullYear();
+  
+  // GitHub API configuration
+  const GITHUB_USERNAME = 'Devkiarie';
+  const GITHUB_REPO = 'Devkiarie.github.io';
+  const GITHUB_TOKEN = ''; // You should handle this securely - see note below
+  
+  // Fetch and display testimonials
+  async function fetchTestimonials() {
+    const container = document.getElementById('testimonials-grid');
+    container.innerHTML = '<div class="loading-spinner"><i class="ri-loader-4-line animate-spin"></i> Loading testimonials...</div>';
+    
+    try {
+      const response = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/issues?labels=testimonial`);
+      if (!response.ok) throw new Error('Failed to fetch testimonials');
+      
+      const issues = await response.json();
+      
+      if (issues.length === 0) {
+        container.innerHTML = '<p class="no-testimonials">No testimonials yet. Be the first to submit one!</p>';
+        return;
+      }
+      
+      // Sort by newest first
+      issues.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+      
+      container.innerHTML = '';
+      
+      issues.forEach(issue => {
+        // Extract rating from issue body
+        const ratingMatch = issue.body.match(/Rating: (\d)/);
+        const rating = ratingMatch ? parseInt(ratingMatch[1]) : 5;
+        const stars = '★'.repeat(rating) + '☆'.repeat(5 - rating);
+        
+        // Extract name from title (format: "Testimonial from John Doe")
+        const name = issue.title.replace('Testimonial from ', '');
+        
+        // Extract organization and message
+        const bodyParts = issue.body.split('\n\n');
+        let organization = 'Not provided';
+        let message = issue.body;
+        
+        if (bodyParts.length >= 2) {
+          organization = bodyParts[0].replace('**Organization:** ', '');
+          message = bodyParts.slice(2).join('\n\n').replace('**Testimonial:**\n', '');
+        }
+        
+        // Create testimonial card
+        const card = document.createElement('div');
+        card.className = 'testimonial-card';
+        card.innerHTML = `
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">${name.split(' ').map(n => n[0]).join('')}</div>
+            <div>
+              <div class="testimonial-author">${name}</div>
+              <div class="testimonial-org">${organization}</div>
+              <div class="testimonial-date">${new Date(issue.created_at).toLocaleDateString()}</div>
+            </div>
+          </div>
+          <div class="testimonial-stars" title="${rating} out of 5 stars">
+            ${stars.replace(/★/g, '<i class="ri-star-fill"></i>').replace(/☆/g, '<i class="ri-star-line"></i>')}
+          </div>
+          <div class="testimonial-text">${message}</div>
+          ${issue.state === 'open' ? '' : '<div class="testimonial-pending">Pending review</div>'}
+        `;
+        
+        container.appendChild(card);
+      });
+      
+      // Update testimonial count
+      document.getElementById('testimonial-count').textContent = issues.length;
+      
+    } catch (error) {
+      console.error('Error fetching testimonials:', error);
+      container.innerHTML = '<p class="error-message">Unable to load testimonials. Please try again later.</p>';
+    }
+  }
+  
+  // Handle testimonial form submission
+  const testimonialForm = document.getElementById('testimonial-form');
+  if (testimonialForm) {
+    testimonialForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const submitButton = testimonialForm.querySelector('button[type="submit"]');
+      const messageEl = document.getElementById('testimonial-message');
+      const originalText = submitButton.innerHTML;
+      
+      submitButton.disabled = true;
+      submitButton.innerHTML = '<i class="ri-loader-4-line animate-spin"></i> Submitting...';
+      
+      try {
+        // Get form values
+        const name = document.getElementById('name').value;
+        const organization = document.getElementById('organization').value;
+        const rating = document.querySelector('input[name="rating"]:checked').value;
+        const message = document.getElementById('message').value;
+        const email = document.getElementById('email').value;
+        
+        // Format the GitHub issue
+        const title = `Testimonial from ${name}`;
+        const body = `**Organization:** ${organization || 'Not provided'}\n\n` +
+                     `**Rating:** ${rating}\n\n` +
+                     `**Testimonial:**\n${message}\n\n` +
+                     `**Email:** ${email || 'Not provided'}`;
+        
+        // Create the testimonial card immediately (before API call)
+        const tempId = 'temp-' + Date.now();
+        const testimonialsContainer = document.getElementById('testimonials-grid');
+        const tempCard = document.createElement('div');
+        tempCard.id = tempId;
+        tempCard.className = 'testimonial-card';
+        tempCard.innerHTML = `
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">${name.split(' ').map(n => n[0]).join('')}</div>
+            <div>
+              <div class="testimonial-author">${name}</div>
+              <div class="testimonial-org">${organization || 'Not provided'}</div>
+              <div class="testimonial-date">Just now</div>
+            </div>
+          </div>
+          <div class="testimonial-stars" title="${rating} out of 5 stars">
+            ${'<i class="ri-star-fill"></i>'.repeat(rating) + '<i class="ri-star-line"></i>'.repeat(5 - rating)}
+          </div>
+          <div class="testimonial-text">${message}</div>
+          <div class="testimonial-pending">Pending review</div>
+        `;
+        
+        // Insert at the top
+        if (testimonialsContainer.firstChild) {
+          testimonialsContainer.insertBefore(tempCard, testimonialsContainer.firstChild);
+        } else {
+          testimonialsContainer.appendChild(tempCard);
+        }
+        
+        // Submit to GitHub API
+        const response = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/issues`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `token ${GITHUB_TOKEN}`,
+            'Content-Type': 'application/json',
+            'Accept': 'application/vnd.github.v3+json'
+          },
+          body: JSON.stringify({
+            title: title,
+            body: body,
+            labels: ['testimonial']
+          })
+        });
+        
+        if (!response.ok) throw new Error('Failed to submit testimonial');
+        
+        const issue = await response.json();
+        
+        // Update the temporary card with real data
+        tempCard.innerHTML = `
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">${name.split(' ').map(n => n[0]).join('')}</div>
+            <div>
+              <div class="testimonial-author">${name}</div>
+              <div class="testimonial-org">${organization || 'Not provided'}</div>
+              <div class="testimonial-date">Just now</div>
+            </div>
+          </div>
+          <div class="testimonial-stars" title="${rating} out of 5 stars">
+            ${'<i class="ri-star-fill"></i>'.repeat(rating) + '<i class="ri-star-line"></i>'.repeat(5 - rating)}
+          </div>
+          <div class="testimonial-text">${message}</div>
+          <div class="testimonial-pending">Pending review</div>
+          <a href="${issue.html_url}" target="_blank" class="testimonial-link">View on GitHub</a>
+        `;
+        
+        // Show success message
+        messageEl.innerHTML = '<i class="ri-checkbox-circle-fill"></i> Thank you for your testimonial! It will be reviewed and published soon.';
+        messageEl.style.color = 'var(--first-color)';
+        
+        // Reset form
+        testimonialForm.reset();
+        
+        // Update testimonial count
+        const countEl = document.getElementById('testimonial-count');
+        if (countEl) {
+          const currentCount = parseInt(countEl.textContent) || 0;
+          countEl.textContent = currentCount + 1;
+        }
+        
+      } catch (error) {
+        console.error('Error submitting testimonial:', error);
+        
+        // Remove the temporary card if submission failed
+        const tempCard = document.getElementById(tempId);
+        if (tempCard) tempCard.remove();
+        
+        messageEl.innerHTML = '<i class="ri-error-warning-fill"></i> There was an error submitting your testimonial. Please try again.';
+        messageEl.style.color = 'red';
+      } finally {
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalText;
+      }
+    });
+  }
+  
+  // Handle newsletter form submission
+  const newsletterForm = document.getElementById('newsletter-form');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const submitButton = newsletterForm.querySelector('button[type="submit"]');
+      const messageEl = document.getElementById('newsletter-message');
+      const originalText = submitButton.textContent;
+      
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+      
+      try {
+        const response = await fetch(newsletterForm.action, {
+          method: 'POST',
+          body: new FormData(newsletterForm),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          messageEl.innerHTML = '<i class="ri-checkbox-circle-fill"></i> Thank you for subscribing!';
+          messageEl.style.color = 'var(--first-color)';
+          newsletterForm.reset();
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch (error) {
+        messageEl.innerHTML = '<i class="ri-error-warning-fill"></i> There was a problem with your submission. Please try again.';
+        messageEl.style.color = 'red';
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+      }
+    });
+  }
+  
+  // Initial fetch of testimonials
+  fetchTestimonials();
+});
+            </script>
+        </body>
+    </html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>AquaFlow HMI Case Study | Dev Kiarie</title>
+
+   <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+   <link rel="stylesheet" href="../assets/css/styles.css">
+
+   <meta property="og:title" content="AquaFlow - Industrial Water Management HMI">
+   <meta property="og:description" content="IoT water treatment system with ESP32, MQTT, React, and Docker">
+</head>
+
+<body>
+   <header class="header" id="header">
+      <nav class="nav container">
+            <a href="../" class="nav__logo">
+               <span class="nav__logo-circle">D</span>
+               <span class="nav__logo-name">Dev Kiarie.</span>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+               <span class="nav__title">Menu</span>
+               <h3 class="nav__name">Portfolio</h3>
+
+               <ul class="nav__list">
+               <li class="nav__item"><a href="../" class="nav__link">Home</a></li>
+               <li class="nav__item"><a href="../about.html" class="nav__link">About</a></li>
+               <li class="nav__item"><a href="./" class="nav__link active-link">Blog</a></li>
+               <li class="nav__item"><a href="../testimonials.html" class="nav__link">Testimonials</a></li>
+               <li class="nav__item"><a href="../#contact" class="nav__link nav__link-button">Contact</a></li>
+               </ul>
+
+               <div class="nav__close" id="nav-close">
+                  <i class="ri-close-line"></i>
+               </div>
+            </div>
+
+            <div class="nav__buttons">
+               <i class="ri-moon-line change-theme" id="theme-button"></i>
+               <div class="nav__toggle" id="nav-toggle">
+                  <i class="ri-menu-4-line"></i>
+               </div>
+            </div>
+         </nav>
+   </header>
+
+   <main class="main">
+      <article class="blog-post-single section">
+         <div class="blog-post-single__container container">
+            <div class="blog-post-single__header">
+               <div class="blog-post-single__meta">
+                  <span class="blog-post-single__date">May 2026</span>
+                  <span class="blog-post-single__readtime">12 min read</span>
+               </div>
+               <h1 class="blog-post-single__title">AquaFlow - Industrial Water Treatment HMI</h1>
+               <div class="blog-post-single__tags">
+                  <span class="blog-post-single__tag">ESP32</span>
+                  <span class="blog-post-single__tag">MQTT</span>
+                  <span class="blog-post-single__tag">React</span>
+                  <span class="blog-post-single__tag">Docker</span>
+                  <span class="blog-post-single__tag">Node.js</span>
+               </div>
+            </div>
+
+            <div class="blog-post-single__image">
+               <img src="../assets/img/project-aquaflow.svg" alt="AquaFlow HMI System">
+            </div>
+
+            <div class="blog-post-single__content">
+               <h2>Project Overview</h2>
+               <p>
+                  AquaFlow is a complete industrial water treatment monitoring and control system. It combines custom ESP32 firmware, MQTT telemetry, a Node.js/Fastify backend, and a React-based Human-Machine Interface (HMI) dashboard — all containerized with Docker for deployment flexibility.
+               </p>
+               <p>
+                  The physical system manages 5 tanks in a treatment cascade (T0 through T4), 3 pumps for inter-tank transfer, and multiple sensor types (ultrasonic + resistive water level). The HMI provides real-time visualization, manual pump control, and automated safety interlocks.
+               </p>
+
+               <h2>System Architecture</h2>
+               <p>
+                  The water flows through a closed loop: <strong>T0 (source) -> T1/T2 (primary) -> T3 (treatment) -> T4 (output)</strong>, with a return pump (T4 -> T1) for recirculation.
+               </p>
+               <ul>
+                  <li><strong>ESP32-S3 DevKitC-1</strong> — Firmware (C/Arduino), sensor reading, pump relay control, MQTT publishing</li>
+                  <li><strong>Mosquitto MQTT Broker</strong> — Message bus between firmware and server (500ms telemetry interval)</li>
+                  <li><strong>Node.js/Fastify Server</strong> — MQTT subscriber, WebSocket bridge to HMI, command relay, data logging</li>
+                  <li><strong>React HMI Dashboard</strong> — Real-time tank levels, pump states, manual controls, alarm history</li>
+                  <li><strong>Docker Compose</strong> — All services containerized (server :3001, HMI :8080, MQTT :1883)</li>
+               </ul>
+
+               <h2>Firmware Deep Dive</h2>
+
+               <h3>Sensor Strategy</h3>
+               <p>
+                  Two sensor types were tested and deployed:
+               </p>
+               <ul>
+                  <li><strong>Resistive water sensors</strong> (T1, T4) — Reliable, cheap, ADC-based. Each unit has different dry/wet baselines requiring individual calibration.</li>
+                  <li><strong>HC-SR04 ultrasonic</strong> (T2, T3) — Non-contact but unreliable in ESP32 FreeRTOS context. Standard <code>pulseIn()</code> fails because WiFi task preemption misses short echo pulses (~870us for 15cm).</li>
+               </ul>
+               <p>
+                  Solution for ultrasonics: ISR-based echo timing with hardware interrupts. The ISR captures the exact microsecond timestamps of rising/falling edges, immune to task scheduling.
+               </p>
+
+               <h3>Safety Interlocks</h3>
+               <p>
+                  Firmware implements hard safety rules that override all commands:
+               </p>
+               <ul>
+                  <li><strong>Dry-run guard:</strong> Pump won't start if source tank &lt; 10% (protects pump from running dry)</li>
+                  <li><strong>Overflow guard:</strong> Pump stops if destination tank &gt; 90%</li>
+                  <li><strong>Relay polarity:</strong> Active-HIGH (GPIO HIGH = pump ON). Documented because the relay module datasheet says active-LOW but the actual wiring is inverted.</li>
+               </ul>
+
+               <h3>Power/Ground Architecture</h3>
+               <p>
+                  A critical lesson learned: USB power + buck converter 5V simultaneously creates a ground loop that prevents relay GPIOs from driving properly. Solution: USB-only during development, buck converter powers relay/sensor/LCD through a star-point ground. Never connect both to ESP32 simultaneously.
+               </p>
+
+               <h2>HMI Dashboard</h2>
+               <p>
+                  The React dashboard provides:
+               </p>
+               <ul>
+                  <li>Real-time tank level visualization (animated fill levels)</li>
+                  <li>Pump status indicators with manual ON/OFF controls</li>
+                  <li>Historical data charts (level trends over time)</li>
+                  <li>Alarm panel (overflow warnings, dry-run alerts, sensor failures)</li>
+                  <li>System configuration (calibration values, safety thresholds)</li>
+               </ul>
+               <p>
+                  Data flows from ESP32 -> MQTT -> Fastify server -> WebSocket -> React at 500ms intervals, providing near-real-time updates.
+               </p>
+
+               <h2>Technical Stack</h2>
+               <ul>
+                  <li><strong>Firmware:</strong> ESP32-S3, Arduino framework, FreeRTOS, ISR-based sensors</li>
+                  <li><strong>Communication:</strong> MQTT (Mosquitto), WebSocket</li>
+                  <li><strong>Backend:</strong> Node.js, Fastify</li>
+                  <li><strong>Frontend:</strong> React, real-time WebSocket updates</li>
+                  <li><strong>Infrastructure:</strong> Docker Compose (3 containers)</li>
+                  <li><strong>OTA Updates:</strong> ArduinoOTA (aquaflow.local)</li>
+                  <li><strong>Hardware:</strong> Resistive water sensors, HC-SR04 ultrasonic, relay modules, I2C LCD (PCF8574)</li>
+               </ul>
+
+               <h2>Key Challenges</h2>
+
+               <h3>FreeRTOS vs. Timing-Critical Sensors</h3>
+               <p>
+                  The biggest firmware challenge. ESP32 runs WiFi, MQTT, and sensor tasks concurrently via FreeRTOS. Ultrasonic sensors need microsecond-precise timing for echo pulses. Task preemption during <code>pulseIn()</code> causes missed readings. ISR-based approach solved this completely.
+               </p>
+
+               <h3>Ground Loops in Mixed-Power Systems</h3>
+               <p>
+                  When USB (for programming) and buck converter (for relays/sensors) both power the ESP32, the different ground potentials create noise that makes GPIO outputs unreliable for relay driving. Star-point grounding and never connecting both power sources simultaneously was the fix.
+               </p>
+
+               <h3>Sensor Calibration Variance</h3>
+               <p>
+                  Every resistive water sensor has a different baseline. One reads 373 dry / 1685 wet, another reads 500 dry / 988 wet. Each requires individual calibration — there's no universal threshold.
+               </p>
+
+               <h2>Results</h2>
+               <ul>
+                  <li>5-tank water treatment system fully automated</li>
+                  <li>500ms telemetry providing near-real-time monitoring</li>
+                  <li>Safety interlocks preventing dry-run and overflow conditions</li>
+                  <li>Docker deployment — spin up the entire server stack with one command</li>
+                  <li>OTA firmware updates — no physical access needed for firmware changes</li>
+               </ul>
+
+               <h2>Lessons Learned</h2>
+               <ul>
+                  <li><code>pulseIn()</code> is fundamentally broken in FreeRTOS with WiFi — always use ISR for timing-critical operations</li>
+                  <li>Never trust relay module datasheets at face value — test actual polarity with a multimeter</li>
+                  <li>Star-point grounding is non-negotiable when mixing logic and power circuits</li>
+                  <li>Calibrate each sensor individually — "typical" values from datasheets are meaningless for precision work</li>
+                  <li>MQTT at 500ms is the sweet spot for industrial HMI — fast enough for human reaction, not so fast it floods the network</li>
+               </ul>
+            </div>
+
+            <div class="blog-post-single__navigation">
+               <a href="./" class="blog-post-single__back">
+                  <i class="ri-arrow-left-line"></i> Back to Blog
+               </a>
+            </div>
+         </div>
+      </article>
+   </main>
+
+   <footer class="footer">
+      <div class="footer__container container grid">
+         <ul class="footer__links">
+            <li><a href="../" class="footer__link">Portfolio</a></li>
+            <li><a href="./" class="footer__link">Blog</a></li>
+            <li><a href="../#contact" class="footer__link">Contact</a></li>
+         </ul>
+         <span class="footer__copy">
+            &copy; <span id="year"></span> All Rights Reserved
+            <a href="#">Dev Kiarie.</a>
+         </span>
+      </div>
+   </footer>
+
+   <a href="#" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-s-line"></i>
+   </a>
+
+   <script src="../assets/js/scrollreveal.min.js"></script>
+   <script src="../assets/js/main.js"></script>
+   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>

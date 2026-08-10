@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Kiarie Kreations Case Study | Dev Kiarie</title>
+
+   <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+   <link rel="stylesheet" href="../assets/css/styles.css">
+
+   <meta property="og:title" content="Kiarie Kreations - SaaS POS Platform">
+   <meta property="og:description" content="Multi-tenant POS and business intelligence for African SMBs">
+</head>
+
+<body>
+   <header class="header" id="header">
+      <nav class="nav container">
+            <a href="../" class="nav__logo">
+               <span class="nav__logo-circle">D</span>
+               <span class="nav__logo-name">Dev Kiarie.</span>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+               <span class="nav__title">Menu</span>
+               <h3 class="nav__name">Portfolio</h3>
+
+               <ul class="nav__list">
+               <li class="nav__item"><a href="../" class="nav__link">Home</a></li>
+               <li class="nav__item"><a href="../about.html" class="nav__link">About</a></li>
+               <li class="nav__item"><a href="./" class="nav__link active-link">Blog</a></li>
+               <li class="nav__item"><a href="../testimonials.html" class="nav__link">Testimonials</a></li>
+               <li class="nav__item"><a href="../#contact" class="nav__link nav__link-button">Contact</a></li>
+               </ul>
+
+               <div class="nav__close" id="nav-close">
+                  <i class="ri-close-line"></i>
+               </div>
+            </div>
+
+            <div class="nav__buttons">
+               <i class="ri-moon-line change-theme" id="theme-button"></i>
+               <div class="nav__toggle" id="nav-toggle">
+                  <i class="ri-menu-4-line"></i>
+               </div>
+            </div>
+         </nav>
+   </header>
+
+   <main class="main">
+      <article class="blog-post-single section">
+         <div class="blog-post-single__container container">
+            <div class="blog-post-single__header">
+               <div class="blog-post-single__meta">
+                  <span class="blog-post-single__date">July 2026</span>
+                  <span class="blog-post-single__readtime">18 min read</span>
+               </div>
+               <h1 class="blog-post-single__title">Kiarie Kreations - SaaS POS for African SMBs</h1>
+               <div class="blog-post-single__tags">
+                  <span class="blog-post-single__tag">Next.js 15</span>
+                  <span class="blog-post-single__tag">Supabase</span>
+                  <span class="blog-post-single__tag">Turborepo</span>
+                  <span class="blog-post-single__tag">M-Pesa</span>
+                  <span class="blog-post-single__tag">PWA</span>
+               </div>
+            </div>
+
+            <div class="blog-post-single__image">
+               <img src="../assets/img/project-kiarie-kreations.svg" alt="Kiarie Kreations Platform">
+            </div>
+
+            <div class="blog-post-single__content">
+               <h2>Project Overview</h2>
+               <p>
+                  Kiarie Kreations is a multi-tenant SaaS platform providing point-of-sale and business intelligence tools to African small and medium businesses. The thesis: POS is just the data capture layer — the real value is in analytics and AI-driven insights that help shop owners make better decisions.
+               </p>
+               <p>
+                  Built as a production-grade monorepo, the system handles M-Pesa mobile payments, Kenya Revenue Authority eTIMS tax compliance, offline-first PWA for unreliable connectivity, and a tiered subscription model from free to enterprise.
+               </p>
+
+               <h2>Architecture</h2>
+               <p>
+                  <strong>Turborepo + pnpm monorepo</strong> with multiple apps and shared packages:
+               </p>
+               <ul>
+                  <li><strong>apps/pos</strong> — The POS application (20+ routes, 58+ database migrations)</li>
+                  <li><strong>apps/www</strong> — Marketing site (static, Vercel-ready)</li>
+                  <li><strong>apps/dashboard</strong> — Owner analytics (planned)</li>
+                  <li><strong>@kk/shared</strong> — Event system, types, tier utilities (Swahili-named tiers)</li>
+                  <li><strong>@kk/db</strong> — Supabase client factory</li>
+                  <li><strong>@kk/ui</strong> — Design tokens and shared components</li>
+               </ul>
+
+               <h2>Key Features</h2>
+
+               <h3>M-Pesa Integration</h3>
+               <p>
+                  Native Safaricom M-Pesa STK push for payments. Customers pay by phone, the POS confirms in real-time via webhook callback. Handles the full flow: initiate, poll, confirm, receipt generation. Critical for Kenya where mobile money is the dominant payment method.
+               </p>
+
+               <h3>eTIMS Tax Compliance</h3>
+               <p>
+                  Integration with Kenya Revenue Authority's electronic Tax Invoice Management System. Every sale generates a tax-compliant invoice with QR code verification. This isn't optional — it's legally required for all VAT-registered businesses in Kenya since 2024.
+               </p>
+
+               <h3>Offline-First PWA</h3>
+               <p>
+                  Kenyan SMBs frequently deal with internet outages. The POS works fully offline — transactions queue locally and sync when connectivity returns. Service workers cache the entire app shell, and IndexedDB stores pending transactions.
+               </p>
+
+               <h3>Tiered Subscription System</h3>
+               <p>
+                  Five tiers (using Swahili names reflecting the brand's African identity):
+               </p>
+               <ul>
+                  <li><strong>Kijiji (Capture)</strong> — Free, 1 user. Basic POS functionality.</li>
+                  <li><strong>Biashara (Insight)</strong> — KES 2,999/mo. Sales analytics, 3 users.</li>
+                  <li><strong>Ukuaji (Predict)</strong> — KES 7,999/mo. AI forecasting, 10 users.</li>
+                  <li><strong>Nguvu (Advise)</strong> — KES 19,999/mo. Full AI advisory.</li>
+                  <li><strong>Taifa (Enterprise)</strong> — Custom pricing, unlimited users.</li>
+               </ul>
+
+               <h2>Technical Stack</h2>
+               <ul>
+                  <li><strong>Frontend:</strong> Next.js 15, TypeScript, Tailwind CSS</li>
+                  <li><strong>Backend/DB:</strong> Supabase (PostgreSQL + Auth + Realtime + Storage)</li>
+                  <li><strong>Monorepo:</strong> Turborepo + pnpm workspaces</li>
+                  <li><strong>Payments:</strong> Safaricom M-Pesa API (STK Push)</li>
+                  <li><strong>Tax:</strong> KRA eTIMS API integration</li>
+                  <li><strong>Offline:</strong> Service Workers + IndexedDB</li>
+                  <li><strong>Future:</strong> Python FastAPI for ML (demand forecasting, stockout prediction)</li>
+               </ul>
+
+               <h2>Key Challenges</h2>
+
+               <h3>M-Pesa Callback Reliability</h3>
+               <p>
+                  Safaricom's callback system is not perfectly reliable. Built a dual confirmation strategy: webhook callback (primary) + polling fallback (every 5s for 60s). If both fail, the transaction is marked pending for manual reconciliation.
+               </p>
+
+               <h3>Offline Sync Conflicts</h3>
+               <p>
+                  When multiple devices sync after an outage, inventory conflicts arise. Implemented a last-write-wins strategy for simple fields and CRDT-inspired merge for inventory quantities (additive operations only during offline mode).
+               </p>
+
+               <h3>Multi-Tenancy from Single-Tenant Origins</h3>
+               <p>
+                  The project evolved from a single-store POS (Lakewood). Retrofitting multi-tenancy required adding tenant_id to every table, implementing row-level security in Supabase, and building tenant-aware API middleware. Lesson: design for multi-tenancy from day one.
+               </p>
+
+               <h2>Results</h2>
+               <ul>
+                  <li>Production-ready POS with 20+ routes and 58+ migrations</li>
+                  <li>Full M-Pesa payment flow working end-to-end</li>
+                  <li>eTIMS-compliant invoicing</li>
+                  <li>Marketing site built and ready for Vercel deployment</li>
+                  <li>Designed for scale: multi-tenant architecture, tiered pricing, event-driven analytics pipeline</li>
+               </ul>
+
+               <h2>Lessons Learned</h2>
+               <ul>
+                  <li>Local payment APIs (M-Pesa, eTIMS) have sparse documentation — reverse engineering from community forums is often necessary</li>
+                  <li>Offline-first is not optional for African markets. Design for it or your product dies in the field</li>
+                  <li>Supabase RLS is powerful but tricky to debug — always test with the actual client library, not just SQL</li>
+                  <li>Naming tiers in Swahili was a branding win — users connect with it immediately</li>
+               </ul>
+            </div>
+
+            <div class="blog-post-single__navigation">
+               <a href="./" class="blog-post-single__back">
+                  <i class="ri-arrow-left-line"></i> Back to Blog
+               </a>
+            </div>
+         </div>
+      </article>
+   </main>
+
+   <footer class="footer">
+      <div class="footer__container container grid">
+         <ul class="footer__links">
+            <li><a href="../" class="footer__link">Portfolio</a></li>
+            <li><a href="./" class="footer__link">Blog</a></li>
+            <li><a href="../#contact" class="footer__link">Contact</a></li>
+         </ul>
+         <span class="footer__copy">
+            &copy; <span id="year"></span> All Rights Reserved
+            <a href="#">Dev Kiarie.</a>
+         </span>
+      </div>
+   </footer>
+
+   <a href="#" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-s-line"></i>
+   </a>
+
+   <script src="../assets/js/scrollreveal.min.js"></script>
+   <script src="../assets/js/main.js"></script>
+   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>

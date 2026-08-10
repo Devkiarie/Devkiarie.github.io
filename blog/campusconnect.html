@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CampusConnect Case Study | Dev Kiarie</title>
+
+   <!--=============== FAVICON ===============-->
+   <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
+
+   <!--=============== REMIXICONS ===============-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" href="../assets/css/styles.css">
+
+   <!--=============== OPEN GRAPH META TAGS ===============-->
+   <meta property="og:title" content="CampusConnect - Multi-Campus Social Network">
+   <meta property="og:description" content="Building a real-time social platform for Kenyan universities">
+   <meta property="og:image" content="assets/img/project-campusconnect.svg">
+</head>
+
+<body>
+   <!--==================== HEADER ====================-->
+   <header class="header" id="header">
+      <nav class="nav container">
+            <a href="../" class="nav__logo">
+               <span class="nav__logo-circle">D</span>
+               <span class="nav__logo-name">Dev Kiarie.</span>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+               <span class="nav__title">Menu</span>
+               <h3 class="nav__name">Portfolio</h3>
+
+               <ul class="nav__list">
+               <li class="nav__item"><a href="../" class="nav__link">Home</a></li>
+               <li class="nav__item"><a href="../about.html" class="nav__link">About</a></li>
+               <li class="nav__item"><a href="./" class="nav__link active-link">Blog</a></li>
+               <li class="nav__item"><a href="../testimonials.html" class="nav__link">Testimonials</a></li>
+               <li class="nav__item"><a href="../#contact" class="nav__link nav__link-button">Contact</a></li>
+               </ul>
+
+               <div class="nav__close" id="nav-close">
+                  <i class="ri-close-line"></i>
+               </div>
+            </div>
+
+            <div class="nav__buttons">
+               <i class="ri-moon-line change-theme" id="theme-button"></i>
+               <div class="nav__toggle" id="nav-toggle">
+                  <i class="ri-menu-4-line"></i>
+               </div>
+            </div>
+         </nav>
+   </header>
+
+   <!--==================== BLOG POST ====================-->
+   <main class="main">
+      <article class="blog-post-single section">
+         <div class="blog-post-single__container container">
+            <div class="blog-post-single__header">
+               <div class="blog-post-single__meta">
+                  <span class="blog-post-single__date">June 2026</span>
+                  <span class="blog-post-single__readtime">20 min read</span>
+               </div>
+               <h1 class="blog-post-single__title">CampusConnect - Building a Multi-Campus Social Network</h1>
+               <div class="blog-post-single__tags">
+                  <span class="blog-post-single__tag">Next.js 14</span>
+                  <span class="blog-post-single__tag">Express.js</span>
+                  <span class="blog-post-single__tag">PostgreSQL</span>
+                  <span class="blog-post-single__tag">Socket.IO</span>
+                  <span class="blog-post-single__tag">Redis</span>
+               </div>
+            </div>
+
+            <div class="blog-post-single__image">
+               <img src="../assets/img/project-campusconnect.svg" alt="CampusConnect Platform">
+            </div>
+
+            <div class="blog-post-single__content">
+               <h2>Project Overview</h2>
+               <p>
+                  CampusConnect is a full-stack social networking platform designed specifically for Kenyan university students. The goal was to create a space where students across multiple campuses could connect, collaborate, and share — with features tailored to campus life rather than generic social media.
+               </p>
+               <p>
+                  The platform currently supports 3 campuses (JKUAT, University of Nairobi, Kenyatta University) and is deployed live in production. It handles real-time messaging, campus-scoped feeds, event management, community channels, and AI-powered features — all built as a monorepo with a clear separation between frontend and backend.
+               </p>
+
+               <h2>Architecture</h2>
+               <p>
+                  The system is structured as a <strong>Turborepo + pnpm monorepo</strong> with clear boundaries:
+               </p>
+               <ul>
+                  <li><strong>apps/web</strong> — Next.js 14 frontend (App Router, Server Components)</li>
+                  <li><strong>apps/api</strong> — Express.js REST API with Socket.IO for real-time</li>
+                  <li><strong>database/</strong> — Prisma ORM with PostgreSQL (Neon serverless)</li>
+               </ul>
+               <p>
+                  Key architectural decisions that shaped the project:
+               </p>
+               <ul>
+                  <li><strong>Multi-campus feed scoping:</strong> Posts can target a specific campus or be broadcast globally. The feed API accepts a <code>scope</code> parameter (campus/general) so students see relevant content first.</li>
+                  <li><strong>Role-based access:</strong> 8 hierarchical roles from STUDENT up to SUPER_ADMIN, with campus-specific permissions (a Campus Admin at JKUAT can't moderate UoN content).</li>
+                  <li><strong>Real-time via Redis adapter:</strong> Socket.IO with Redis pub/sub ensures message delivery scales beyond a single server instance.</li>
+                  <li><strong>Non-blocking service init:</strong> External services (Meilisearch, workers) are wrapped in 5-second timeouts so the API always starts even if a dependency is unavailable.</li>
+               </ul>
+
+               <h2>Key Features</h2>
+
+               <h3>Real-Time Messaging</h3>
+               <p>
+                  Private and group messaging built on Socket.IO with Redis adapter for horizontal scaling. Messages are persisted to PostgreSQL and delivered in real-time. Typing indicators, read receipts, and online presence are all handled via WebSocket events.
+               </p>
+
+               <h3>Campus Map with Routing</h3>
+               <p>
+                  An interactive map (MapLibre GL) showing 10+ campus buildings with category-specific icons. For short distances (&lt;2km), direct Haversine paths are used; longer routes go through OSRM for proper pedestrian routing.
+               </p>
+
+               <h3>AI-Powered Features</h3>
+               <p>
+                  Integrated Google Gemini (1500 req/day free tier) for:
+               </p>
+               <ul>
+                  <li>Trending topic detection from post content</li>
+                  <li>Sentiment analysis on community discussions</li>
+                  <li>Smart reply suggestions in messaging</li>
+                  <li>Automatic summarization of long threads</li>
+               </ul>
+
+               <h3>Communities and Events</h3>
+               <p>
+                  Students can create and join communities (clubs, study groups, course channels). Each community has its own feed and channel system. Events support RSVP, calendar integration, and location tagging on the campus map.
+               </p>
+
+               <h2>Technical Stack</h2>
+               <ul>
+                  <li><strong>Frontend:</strong> Next.js 14, TypeScript, Tailwind CSS, MapLibre GL</li>
+                  <li><strong>Backend:</strong> Express.js, Socket.IO, Prisma ORM</li>
+                  <li><strong>Database:</strong> PostgreSQL 16 (Neon), Redis 7 (Upstash)</li>
+                  <li><strong>AI:</strong> Google Gemini API</li>
+                  <li><strong>Media:</strong> Cloudinary (image uploads + transformation)</li>
+                  <li><strong>Email:</strong> Resend (transactional emails)</li>
+                  <li><strong>Deployment:</strong> Vercel (frontend) + Fly.io (API) + Neon (DB)</li>
+               </ul>
+
+               <h2>Key Challenges</h2>
+
+               <h3>Prisma on Serverless Platforms</h3>
+               <p>
+                  Prisma v5.22.0 generates platform-specific binaries. On Render/Fly.io, the binary paths don't match monorepo layouts. Solution: explicitly run <code>npx prisma@5.22.0 generate --schema=database/prisma/schema.prisma</code> from the repo root during build.
+               </p>
+
+               <h3>Multi-Campus Data Isolation</h3>
+               <p>
+                  Balancing data isolation (campus-specific content) with discoverability (cross-campus events, general feed). Solved with a dual-scope feed system — every post has a visibility scope, and the API filters accordingly without duplicating data.
+               </p>
+
+               <h3>Real-Time at Scale on Free Tier</h3>
+               <p>
+                  Socket.IO with Redis adapter works well for horizontal scaling, but Upstash Redis (serverless) adds latency. Optimized by batching presence updates and using local memory for typing indicators with Redis only for cross-instance events.
+               </p>
+
+               <h2>Results</h2>
+               <ul>
+                  <li>Deployed and live at <a href="https://campusconnect-pi-ten.vercel.app" target="_blank">campusconnect-pi-ten.vercel.app</a></li>
+                  <li>3 campuses, 8 role levels, 10+ mapped buildings</li>
+                  <li>Full PWA — installable, offline caching for static assets</li>
+                  <li>Sub-second message delivery via WebSocket</li>
+                  <li>Zero-cost hosting stack (Vercel + Fly.io + Neon + Upstash free tiers)</li>
+               </ul>
+
+               <h2>Lessons Learned</h2>
+               <ul>
+                  <li>Monorepos shine for full-stack projects — shared types, single CI, atomic deploys</li>
+                  <li>Pin your ORM version. Prisma v7 broke everything; staying on v5.22.0 was the right call</li>
+                  <li>Non-critical services should never block startup — 5s timeout pattern saved many cold starts</li>
+                  <li>Build for multi-tenancy from day one, even if you start with one campus</li>
+               </ul>
+            </div>
+
+            <div class="blog-post-single__navigation">
+               <a href="./" class="blog-post-single__back">
+                  <i class="ri-arrow-left-line"></i> Back to Blog
+               </a>
+               <a href="https://campusconnect-pi-ten.vercel.app" target="_blank" class="blog-post-single__demo button">
+                  Live Demo <i class="ri-external-link-line"></i>
+               </a>
+            </div>
+         </div>
+      </article>
+   </main>
+
+   <!--==================== FOOTER ====================-->
+   <footer class="footer">
+      <div class="footer__container container grid">
+         <ul class="footer__links">
+            <li><a href="../" class="footer__link">Portfolio</a></li>
+            <li><a href="./" class="footer__link">Blog</a></li>
+            <li><a href="../#contact" class="footer__link">Contact</a></li>
+         </ul>
+         <span class="footer__copy">
+            &copy; <span id="year"></span> All Rights Reserved
+            <a href="#">Dev Kiarie.</a>
+         </span>
+      </div>
+   </footer>
+
+   <a href="#" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-s-line"></i>
+   </a>
+
+   <script src="../assets/js/scrollreveal.min.js"></script>
+   <script src="../assets/js/main.js"></script>
+   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>

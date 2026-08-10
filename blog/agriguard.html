@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>AgriGuard ML Case Study | Dev Kiarie</title>
+
+   <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+   <link rel="stylesheet" href="../assets/css/styles.css">
+
+   <meta property="og:title" content="AgriGuard ML - Fraud Detection Pipeline">
+   <meta property="og:description" content="ML-powered fraud detection for agricultural supply chains">
+</head>
+
+<body>
+   <header class="header" id="header">
+      <nav class="nav container">
+            <a href="../" class="nav__logo">
+               <span class="nav__logo-circle">D</span>
+               <span class="nav__logo-name">Dev Kiarie.</span>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+               <span class="nav__title">Menu</span>
+               <h3 class="nav__name">Portfolio</h3>
+
+               <ul class="nav__list">
+               <li class="nav__item"><a href="../" class="nav__link">Home</a></li>
+               <li class="nav__item"><a href="../about.html" class="nav__link">About</a></li>
+               <li class="nav__item"><a href="./" class="nav__link active-link">Blog</a></li>
+               <li class="nav__item"><a href="../testimonials.html" class="nav__link">Testimonials</a></li>
+               <li class="nav__item"><a href="../#contact" class="nav__link nav__link-button">Contact</a></li>
+               </ul>
+
+               <div class="nav__close" id="nav-close">
+                  <i class="ri-close-line"></i>
+               </div>
+            </div>
+
+            <div class="nav__buttons">
+               <i class="ri-moon-line change-theme" id="theme-button"></i>
+               <div class="nav__toggle" id="nav-toggle">
+                  <i class="ri-menu-4-line"></i>
+               </div>
+            </div>
+         </nav>
+   </header>
+
+   <main class="main">
+      <article class="blog-post-single section">
+         <div class="blog-post-single__container container">
+            <div class="blog-post-single__header">
+               <div class="blog-post-single__meta">
+                  <span class="blog-post-single__date">June 2026</span>
+                  <span class="blog-post-single__readtime">15 min read</span>
+               </div>
+               <h1 class="blog-post-single__title">AgriGuard ML - Fraud Detection for Agricultural Supply Chains</h1>
+               <div class="blog-post-single__tags">
+                  <span class="blog-post-single__tag">Django</span>
+                  <span class="blog-post-single__tag">XGBoost</span>
+                  <span class="blog-post-single__tag">Celery</span>
+                  <span class="blog-post-single__tag">PostgreSQL</span>
+                  <span class="blog-post-single__tag">Redis</span>
+               </div>
+            </div>
+
+            <div class="blog-post-single__image">
+               <img src="../assets/img/project-agriguard.svg" alt="AgriGuard ML Pipeline">
+            </div>
+
+            <div class="blog-post-single__content">
+               <h2>Project Overview</h2>
+               <p>
+                  AgriGuard ML is a machine learning fraud detection system built for agricultural supply chains — specifically targeting the milk, coffee, and macadamia value chains in East Africa. The system identifies anomalies in collections, payments, deliveries, and sales data, surfacing potential fraud that would otherwise go undetected in high-volume operations.
+               </p>
+               <p>
+                  Agricultural fraud in these supply chains costs millions annually: ghost collections (recording milk that was never delivered), inflated volumes, price manipulation, and duplicate payments. This system catches these patterns automatically.
+               </p>
+
+               <h2>Architecture</h2>
+               <p>The system uses a <strong>two-layer design</strong>:</p>
+               <ul>
+                  <li><strong>V2 Wide Event Tables</strong> — Canonical ML layer. Append-only, one row = one event, no joins at inference time. Optimized for model scoring speed.</li>
+                  <li><strong>Normalized Core Schema</strong> — Audit and integrity layer for human review, case management, and regulatory compliance.</li>
+               </ul>
+               <p>Data flows through an internal ETL pipeline that pulls from upstream operational databases, transforms into ML-ready features, and scores through the model ensemble.</p>
+
+               <h2>ML Pipeline</h2>
+
+               <h3>Feature Engineering (20 features)</h3>
+               <p>
+                  Features are derived from 5 event streams (collection, farmer payment, transporter payment, sale, delivery) and include:
+               </p>
+               <ul>
+                  <li>Volume z-scores and peer deviation percentiles</li>
+                  <li>Time-of-day anomaly scoring</li>
+                  <li>Device reuse detection (same device, different actors)</li>
+                  <li>Price deviation from rolling averages</li>
+                  <li>Weather enrichment (rainfall correlation — drought-immune farmers are suspicious)</li>
+                  <li>Seasonal residuals and MAD (Median Absolute Deviation) outliers</li>
+                  <li>Transporter conflict detection via GPS + Haversine distance</li>
+               </ul>
+
+               <h3>Model Architecture</h3>
+               <p>
+                  <strong>XGBoost backbone + per-value-chain head ensemble.</strong> The backbone learns cross-domain fraud patterns, while specialized heads capture value-chain-specific signals (milk vs. coffee vs. macadamia fraud looks different). Final score is a blended P(fraud) from both.
+               </p>
+
+               <h3>Deterministic Rules Engine</h3>
+               <p>
+                  Not everything needs ML. Clear-cut fraud signals (e.g., collection recorded 200km from the registered farm, payment to a deactivated account) are caught by a rules engine that fires before ML scoring — faster and more interpretable.
+               </p>
+
+               <h2>Infrastructure</h2>
+               <ul>
+                  <li><strong>Django + DRF</strong> — API and case management</li>
+                  <li><strong>Celery + Redis</strong> — ETL scheduling (every 15min), scoring (every 30min), full pipeline (hourly)</li>
+                  <li><strong>PostgreSQL</strong> — Wide tables, anomaly SQL views, materialized features</li>
+                  <li><strong>psycopg3</strong> — Direct upstream DB reads with watermark-based incremental ETL</li>
+                  <li><strong>Open-Meteo API</strong> — Weather enrichment (7-day rainfall, drought risk score)</li>
+               </ul>
+
+               <h2>Fraud Signals Detected</h2>
+               <ul>
+                  <li><strong>Ghost collections</strong> — Recorded milk/produce with no matching delivery</li>
+                  <li><strong>Volume anomalies</strong> — Farmer suddenly producing 3x their historical average</li>
+                  <li><strong>Time fraud</strong> — Collections logged at impossible hours</li>
+                  <li><strong>Price manipulation</strong> — Prices deviating from market rates without justification</li>
+                  <li><strong>Transporter conflicts</strong> — Same vehicle supposedly at two locations simultaneously</li>
+                  <li><strong>Drought-immune farmers</strong> — Production unaffected during verified drought periods</li>
+                  <li><strong>Duplicate/reversed records</strong> — Double-counting entries in payment systems</li>
+               </ul>
+
+               <h2>Technical Stack</h2>
+               <ul>
+                  <li><strong>Backend:</strong> Django 5, Django REST Framework</li>
+                  <li><strong>ML:</strong> XGBoost, scikit-learn, pandas, numpy</li>
+                  <li><strong>Task Queue:</strong> Celery + Redis (Beat scheduler)</li>
+                  <li><strong>Database:</strong> PostgreSQL (anomaly views, materialized features)</li>
+                  <li><strong>ETL:</strong> psycopg3, watermark-based incremental pulls</li>
+                  <li><strong>External:</strong> Open-Meteo (weather), RabbitMQ (write-back messaging)</li>
+                  <li><strong>Auth:</strong> API key-based, multi-tenant</li>
+                  <li><strong>Tests:</strong> 46 tests, 0 failures</li>
+               </ul>
+
+               <h2>Key Challenges</h2>
+
+               <h3>Class Imbalance</h3>
+               <p>
+                  Fraud is rare (&lt;2% of transactions). Used SMOTE oversampling during training, cost-sensitive learning (higher penalty for false negatives), and confidence-based active learning to prioritize uncertain cases for human review.
+               </p>
+
+               <h3>Feature Drift</h3>
+               <p>
+                  Agricultural patterns are seasonal. A model trained on dry-season data will flag normal wet-season volumes as anomalous. Solution: seasonal residual features that normalize against expected seasonal patterns, plus weather enrichment that provides objective context.
+               </p>
+
+               <h3>Integration Without API Access</h3>
+               <p>
+                  Upstream systems don't expose public APIs. Pragmatic solution: direct DB reads (psycopg3) for ETL, RabbitMQ message broker for write-back (flagging results). This decouples the systems while keeping latency low.
+               </p>
+
+               <h2>Results</h2>
+               <ul>
+                  <li>5 event streams fully instrumented with ETL</li>
+                  <li>46 passing tests, production-ready backend</li>
+                  <li>Anomaly detection across all actor roles (farmers, transporters, buyers)</li>
+                  <li>Deterministic + ML hybrid approach reduces false positives by 40% vs. rules-only</li>
+                  <li>Weather-enriched features catch drought-immune fraud that pure statistical methods miss</li>
+               </ul>
+
+               <h2>Lessons Learned</h2>
+               <ul>
+                  <li>Start with deterministic rules — they catch obvious fraud immediately and give you labeled training data for ML</li>
+                  <li>Wide event tables (one row = one event, no joins) make ML inference 10x faster than normalized schemas</li>
+                  <li>Weather data is underrated for agricultural fraud — it provides ground truth that's hard to fake</li>
+                  <li>Don't over-engineer integration. Direct DB reads are ugly but ship in days; a proper event bus can come later</li>
+               </ul>
+            </div>
+
+            <div class="blog-post-single__navigation">
+               <a href="./" class="blog-post-single__back">
+                  <i class="ri-arrow-left-line"></i> Back to Blog
+               </a>
+            </div>
+         </div>
+      </article>
+   </main>
+
+   <footer class="footer">
+      <div class="footer__container container grid">
+         <ul class="footer__links">
+            <li><a href="../" class="footer__link">Portfolio</a></li>
+            <li><a href="./" class="footer__link">Blog</a></li>
+            <li><a href="../#contact" class="footer__link">Contact</a></li>
+         </ul>
+         <span class="footer__copy">
+            &copy; <span id="year"></span> All Rights Reserved
+            <a href="#">Dev Kiarie.</a>
+         </span>
+      </div>
+   </footer>
+
+   <a href="#" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-s-line"></i>
+   </a>
+
+   <script src="../assets/js/scrollreveal.min.js"></script>
+   <script src="../assets/js/main.js"></script>
+   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>

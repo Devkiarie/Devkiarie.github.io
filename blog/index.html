@@ -7,13 +7,13 @@
    <meta name="description" content="Ian Kiarie's technical blog with project deep dives">
 
    <!--=============== FAVICON ===============-->
-   <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+   <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
 
    <!--=============== REMIXICONS ===============-->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
 
    <!--=============== CSS ===============-->
-   <link rel="stylesheet" href="assets/css/styles.css">
+   <link rel="stylesheet" href="../assets/css/styles.css">
 
    <title>Technical Blog | Dev Kiarie</title>
 </head>
@@ -22,7 +22,7 @@
    <!--==================== HEADER ====================-->
    <header class="header" id="header">
       <nav class="nav container">
-            <a href="index.html" class="nav__logo">
+            <a href="../" class="nav__logo">
                <span class="nav__logo-circle">D</span>
                <span class="nav__logo-name">Dev Kiarie.</span>
             </a>
@@ -32,11 +32,11 @@
                <h3 class="nav__name">Portfolio</h3>
 
                <ul class="nav__list">
-               <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
-               <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
-               <li class="nav__item"><a href="blog.html" class="nav__link active-link">Blog</a></li>
-               <li class="nav__item"><a href="testimonials.html" class="nav__link">Testimonials</a></li>
-               <li class="nav__item"><a href="index.html#contact" class="nav__link nav__link-button">Contact</a></li>
+               <li class="nav__item"><a href="../" class="nav__link">Home</a></li>
+               <li class="nav__item"><a href="../about.html" class="nav__link">About</a></li>
+               <li class="nav__item"><a href="./" class="nav__link active-link">Blog</a></li>
+               <li class="nav__item"><a href="../testimonials.html" class="nav__link">Testimonials</a></li>
+               <li class="nav__item"><a href="../#contact" class="nav__link nav__link-button">Contact</a></li>
                </ul>
 
                <div class="nav__close" id="nav-close">
@@ -64,7 +64,7 @@
             </p>
             <div class="blog-hero__stats">
                <div class="blog-hero__stat">
-                  <span class="blog-hero__number">11</span>
+                  <span class="blog-hero__number">15</span>
                   <span class="blog-hero__label">Projects</span>
                </div>
                <div class="blog-hero__stat">
@@ -86,8 +86,10 @@
                <button class="blog-categories__button active" data-filter="all">All Projects</button>
                <button class="blog-categories__button" data-filter="web">Web Development</button>
                <button class="blog-categories__button" data-filter="mobile">Mobile</button>
-               <button class="blog-categories__button" data-filter="game">game</button>
+               <button class="blog-categories__button" data-filter="game">Games</button>
                <button class="blog-categories__button" data-filter="python">Python/C</button>
+               <button class="blog-categories__button" data-filter="fullstack">Full Stack</button>
+               <button class="blog-categories__button" data-filter="iot">IoT</button>
             </div>
          </div>
       </section>
@@ -95,10 +97,126 @@
       <!--==================== BLOG POSTS ====================-->
       <section class="blog-posts section">
          <div class="blog-posts__container container grid">
+            <!-- CampusConnect -->
+            <article class="blog-post" data-category="fullstack">
+               <div class="blog-post__image">
+                  <img src="../assets/img/project-campusconnect.svg" alt="CampusConnect" class="blog-post__img">
+                  <div class="blog-post__date">June 2026</div>
+                  <div class="blog-post__readtime">20 min read</div>
+               </div>
+               <div class="blog-post__content">
+                  <h2 class="blog-post__title">CampusConnect - Multi-Campus Social Network</h2>
+                  <p class="blog-post__description">
+                     Full-stack social platform for Kenyan universities with real-time messaging, campus maps, AI features, and multi-campus feed scoping. Deployed and live.
+                  </p>
+                  <div class="blog-post__meta">
+                     <span class="blog-post__tech">Next.js 14</span>
+                     <span class="blog-post__tech">Express</span>
+                     <span class="blog-post__tech">PostgreSQL</span>
+                     <span class="blog-post__tech">Socket.IO</span>
+                     <span class="blog-post__tech">Redis</span>
+                  </div>
+                  <div class="blog-post__footer">
+                     <a href="campusconnect.html" class="blog-post__link button button--flex">
+                        Read Case Study <i class="ri-arrow-right-line"></i>
+                     </a>
+                     <a href="https://campusconnect-pi-ten.vercel.app" target="_blank" rel="noopener noreferrer"
+                        class="blog-post__demo">
+                        <i class="ri-external-link-line"></i> Live Demo
+                     </a>
+                  </div>
+               </div>
+            </article>
+
+            <!-- Kiarie Kreations -->
+            <article class="blog-post" data-category="fullstack">
+               <div class="blog-post__image">
+                  <img src="../assets/img/project-kiarie-kreations.svg" alt="Kiarie Kreations" class="blog-post__img">
+                  <div class="blog-post__date">July 2026</div>
+                  <div class="blog-post__readtime">18 min read</div>
+               </div>
+               <div class="blog-post__content">
+                  <h2 class="blog-post__title">Kiarie Kreations - SaaS POS Platform</h2>
+                  <p class="blog-post__description">
+                     Multi-tenant point-of-sale and business intelligence platform for African SMBs. M-Pesa payments, eTIMS tax compliance, offline PWA, and AI-powered analytics.
+                  </p>
+                  <div class="blog-post__meta">
+                     <span class="blog-post__tech">Next.js 15</span>
+                     <span class="blog-post__tech">Supabase</span>
+                     <span class="blog-post__tech">Turborepo</span>
+                     <span class="blog-post__tech">M-Pesa</span>
+                     <span class="blog-post__tech">PWA</span>
+                  </div>
+                  <div class="blog-post__footer">
+                     <a href="kiarie-kreations.html" class="blog-post__link button button--flex">
+                        Read Case Study <i class="ri-arrow-right-line"></i>
+                     </a>
+                     <a href="https://github.com/Devkiarie" target="_blank" rel="noopener noreferrer"
+                        class="blog-post__demo">
+                        <i class="ri-github-line"></i> Source Code
+                     </a>
+                  </div>
+               </div>
+            </article>
+
+            <!-- AgriGuard ML (Fraud Detection anonymized) -->
+            <article class="blog-post" data-category="fullstack">
+               <div class="blog-post__image">
+                  <img src="../assets/img/project-agriguard.svg" alt="AgriGuard ML" class="blog-post__img">
+                  <div class="blog-post__date">June 2026</div>
+                  <div class="blog-post__readtime">15 min read</div>
+               </div>
+               <div class="blog-post__content">
+                  <h2 class="blog-post__title">AgriGuard ML - Fraud Detection Pipeline</h2>
+                  <p class="blog-post__description">
+                     ML-powered fraud detection system for agricultural supply chains. XGBoost ensemble model, automated ETL, deterministic rules engine, and weather-enriched feature engineering.
+                  </p>
+                  <div class="blog-post__meta">
+                     <span class="blog-post__tech">Django</span>
+                     <span class="blog-post__tech">XGBoost</span>
+                     <span class="blog-post__tech">Celery</span>
+                     <span class="blog-post__tech">PostgreSQL</span>
+                     <span class="blog-post__tech">Redis</span>
+                  </div>
+                  <div class="blog-post__footer">
+                     <a href="agriguard.html" class="blog-post__link button button--flex">
+                        Read Case Study <i class="ri-arrow-right-line"></i>
+                     </a>
+                  </div>
+               </div>
+            </article>
+
+            <!-- AquaFlow HMI -->
+            <article class="blog-post" data-category="iot">
+               <div class="blog-post__image">
+                  <img src="../assets/img/project-aquaflow.svg" alt="AquaFlow HMI" class="blog-post__img">
+                  <div class="blog-post__date">May 2026</div>
+                  <div class="blog-post__readtime">12 min read</div>
+               </div>
+               <div class="blog-post__content">
+                  <h2 class="blog-post__title">AquaFlow - Industrial Water Management HMI</h2>
+                  <p class="blog-post__description">
+                     IoT water treatment system with ESP32 firmware, MQTT telemetry, React dashboard, and Docker-based server. Real-time tank monitoring and pump automation.
+                  </p>
+                  <div class="blog-post__meta">
+                     <span class="blog-post__tech">ESP32</span>
+                     <span class="blog-post__tech">MQTT</span>
+                     <span class="blog-post__tech">React</span>
+                     <span class="blog-post__tech">Docker</span>
+                     <span class="blog-post__tech">Node.js</span>
+                  </div>
+                  <div class="blog-post__footer">
+                     <a href="aquaflow.html" class="blog-post__link button button--flex">
+                        Read Case Study <i class="ri-arrow-right-line"></i>
+                     </a>
+                  </div>
+               </div>
+            </article>
+
             <!-- Mass Movers Project -->
             <article class="blog-post" data-category="web">
                <div class="blog-post__image">
-                  <img src="/assets/img/project-8.jpg" alt="Mass Movers Project" class="blog-post__img">
+                  <img src="../assets/img/project-8.jpg" alt="Mass Movers Project" class="blog-post__img">
                   <div class="blog-post__date">May 2024</div>
                   <div class="blog-post__readtime">15 min read</div>
                </div>
@@ -115,7 +233,7 @@
                      <span class="blog-post__tech">React</span>
                   </div>
                   <div class="blog-post__footer">
-                     <a href="blog-massmovers.html" class="blog-post__link button button--flex">
+                     <a href="massmovers.html" class="blog-post__link button button--flex">
                         Read Case Study <i class="ri-arrow-right-line"></i>
                      </a>
                      <a href="https://massmoverslimited.vercel.app" target="_blank" rel="noopener noreferrer"
@@ -129,7 +247,7 @@
             <!---Fighter Game-->
             <article class="blog-post" data-category="game">
                <div class="blog-post__image">
-                  <img src="/assets/img/project-1.jpg" alt="Mass Movers Project" class="blog-post__img">
+                  <img src="../assets/img/project-1.jpg" alt="Mass Movers Project" class="blog-post__img">
                   <div class="blog-post__date">April 2024</div>
                   <div class="blog-post__readtime">10 min read</div>
                </div>
@@ -145,7 +263,7 @@
                      <span class="blog-post__tech">Javascript</span>
                   </div>
                   <div class="blog-post__footer">
-                     <a href="/blog-club_kiboko.html" class="blog-post__link button button--flex">
+                     <a href="club-kiboko.html" class="blog-post__link button button--flex">
                         Read Case Study <i class="ri-arrow-right-line"></i>
                      </a>
                      <a href="https://devkiarie.github.io/Club-Kiboko/" target="_blank" rel="noopener noreferrer"
@@ -159,7 +277,7 @@
             <!----Qaphys-->
             <article class="blog-post" data-category="web">
                <div class="blog-post__image">
-                  <img src="/assets/img/project-2.jpg" alt="Qaphys E-commerce Project" class="blog-post__img">
+                  <img src="../assets/img/project-2.jpg" alt="Qaphys E-commerce Project" class="blog-post__img">
                   <div class="blog-post__date">August 2022</div>
                   <div class="blog-post__readtime">8 min read</div>
                </div>
@@ -175,7 +293,7 @@
                      <span class="blog-post__tech">JavaScript</span>
                   </div>
                   <div class="blog-post__footer">
-                     <a href="blog-qaphys.html" class="blog-post__link button button--flex">
+                     <a href="qaphys.html" class="blog-post__link button button--flex">
                         Read Case Study <i class="ri-arrow-right-line"></i>
                      </a>
                      <a href="https://devkiarie.github.io/qaphys.co/" target="_blank" rel="noopener noreferrer"
@@ -189,7 +307,7 @@
             <!----Everything fabulous-->
             <article class="blog-post" data-category="web">
                <div class="blog-post__image">
-                  <img src="/assets/img/project-5.jpg" alt="Everything Fabulous Project" class="blog-post__img">
+                  <img src="../assets/img/project-5.jpg" alt="Everything Fabulous Project" class="blog-post__img">
                   <div class="blog-post__date">November 2022</div>
                   <div class="blog-post__readtime">9 min read</div>
                </div>
@@ -205,7 +323,7 @@
                      <span class="blog-post__tech">HTML</span>
                   </div>
                   <div class="blog-post__footer">
-                     <a href="blog-everything_fabulous.html" class="blog-post__link button button--flex">
+                     <a href="everything-fabulous.html" class="blog-post__link button button--flex">
                         Read Case Study <i class="ri-arrow-right-line"></i>
                      </a>
                      <a href="https://devkiarie.github.io/everything-fabulous/" target="_blank"
@@ -220,7 +338,7 @@
             <!---Timeless-->
             <article class="blog-post" data-category="web">
                <div class="blog-post__image">
-                  <img src="/assets/img/project-3.jpg" alt="Watch Animations Project" class="blog-post__img">
+                  <img src="../assets/img/project-3.jpg" alt="Watch Animations Project" class="blog-post__img">
                   <div class="blog-post__date">October 2022</div>
                   <div class="blog-post__readtime">6 min read</div>
                </div>
@@ -235,10 +353,10 @@
                      <span class="blog-post__tech">HTML</span>
                   </div>
                   <div class="blog-post__footer">
-                     <a href="blog-timeless.html" class="blog-post__link button button--flex">
+                     <a href="timeless.html" class="blog-post__link button button--flex">
                         Read Case Study <i class="ri-arrow-right-line"></i>
                      </a>
-                     <a href=https://devkiarie.github.io/Timeless-/" target="_blank" rel="noopener noreferrer"
+                     <a href="https://devkiarie.github.io/Timeless-/" target="_blank" rel="noopener noreferrer"
                         class="blog-post__demo">
                         <i class="ri-external-link-line"></i> Live Demo
                      </a>
@@ -251,7 +369,7 @@
 
             <article class="blog-post" data-category="web">
                <div class="blog-post__image">
-                  <img src="/assets/img/project-4.jpg" alt="Watch Mode Toggle Project" class="blog-post__img">
+                  <img src="../assets/img/project-4.jpg" alt="Watch Mode Toggle Project" class="blog-post__img">
                   <div class="blog-post__date">March 2023</div>
                   <div class="blog-post__readtime">7 min read</div>
                </div>
@@ -266,7 +384,7 @@
                      <span class="blog-post__tech">CSS</span>
                   </div>
                   <div class="blog-post__footer">
-                     <a href="blog-sagewatches.html" class="blog-post__link button button--flex">
+                     <a href="sagewatches.html" class="blog-post__link button button--flex">
                         Read Case Study <i class="ri-arrow-right-line"></i>
                      </a>
                      <a href="https://devkiarie.github.io/sage-watches/" target="_blank" rel="noopener noreferrer"
@@ -282,7 +400,7 @@
 
             <article class="blog-post" data-category="web">
                <div class="blog-post__image">
-                  <img src="/assets/img/project-6.jpg" alt="Munchy Meat Ordering" class="blog-post__img">
+                  <img src="../assets/img/project-6.jpg" alt="Munchy Meat Ordering" class="blog-post__img">
                   <div class="blog-post__date">May 2024</div>
                   <div class="blog-post__readtime">11 min read</div>
                </div>
@@ -298,7 +416,7 @@
                      <span class="blog-post__tech">Paystack</span>
                   </div>
                   <div class="blog-post__footer">
-                     <a href="blog-munchy.html" class="blog-post__link button button--flex">
+                     <a href="munchy.html" class="blog-post__link button button--flex">
                         Read Case Study <i class="ri-arrow-right-line"></i>
                      </a>
                      <a href="https://munchy.vercel.app/" target="_blank" rel="noopener noreferrer"
@@ -314,7 +432,7 @@
 
             <article class="blog-post" data-category="web">
                <div class="blog-post__image">
-                  <img src="/assets/img/project-7.jpg" alt="Wilsmar Drink Platform" class="blog-post__img">
+                  <img src="../assets/img/project-7.jpg" alt="Wilsmar Drink Platform" class="blog-post__img">
                   <div class="blog-post__date">January 2025</div>
                   <div class="blog-post__readtime">12 min read</div>
                </div>
@@ -331,7 +449,7 @@
                      <span class="blog-post__tech">Node.js</span>
                   </div>
                   <div class="blog-post__footer">
-                     <a href="blog-wilsmar.html" class="blog-post__link button button--flex">
+                     <a href="wilsmar.html" class="blog-post__link button button--flex">
                         Read Case Study <i class="ri-arrow-right-line"></i>
                      </a>
                      <a href="https://wilsmar.vercel.app/" target="_blank" rel="noopener noreferrer"
@@ -345,7 +463,7 @@
             <!---Expense tracker-->
             <article class="blog-post" data-category="python">
               <div class="blog-post__image">
-                  <img src="/assets/img/track1.jpg" alt="Expense Tracker Pro" class="blog-post__img">
+                  <img src="../assets/img/track1.jpg" alt="Expense Tracker Pro" class="blog-post__img">
                   <div class="blog-post__date">April 2025</div>
                   <div class="blog-post__readtime">10 min read</div>
               </div>
@@ -362,7 +480,7 @@
                       <span class="blog-post__tech">Matplotlib</span>
                   </div>
                   <div class="blog-post__footer">
-                      <a href="blog-expense-tracker.html" class="blog-post__link button button--flex">
+                      <a href="expense-tracker.html" class="blog-post__link button button--flex">
                           Read Case Study <i class="ri-arrow-right-line"></i>
                       </a>
                       <a href="https://github.com/Devkiarie/python" target="_blank" rel="noopener noreferrer"
@@ -376,7 +494,7 @@
             <!---Weather-->
             <article class="blog-post" data-category="python">
     <div class="blog-post__image">
-        <img src="/assets/img/weather.jpg" alt="Weather Dashboard Pro" class="blog-post__img">
+        <img src="../assets/img/weather.jpg" alt="Weather Dashboard Pro" class="blog-post__img">
         <div class="blog-post__date">March 2025</div>
         <div class="blog-post__readtime">8 min read</div>
     </div>
@@ -393,7 +511,7 @@
             <span class="blog-post__tech">Pillow</span>
         </div>
         <div class="blog-post__footer">
-            <a href="blog-weather.html" class="blog-post__link button button--flex">
+            <a href="weather.html" class="blog-post__link button button--flex">
                 Read Case Study <i class="ri-arrow-right-line"></i>
             </a>
             <a href="https://github.com/Devkiarie/python" target="_blank" rel="noopener noreferrer"
@@ -407,7 +525,7 @@
             <!---CLI-->
             <article class="blog-post" data-category="python">
     <div class="blog-post__image">
-        <img src="/assets/img/TM.jpg" alt="Task Manager CLI" class="blog-post__img">
+        <img src="../assets/img/TM.jpg" alt="Task Manager CLI" class="blog-post__img">
         <div class="blog-post__date">February 2025</div>
         <div class="blog-post__readtime">6 min read</div>
     </div>
@@ -424,7 +542,7 @@
             <span class="blog-post__tech">Deque</span>
         </div>
         <div class="blog-post__footer">
-            <a href="blog-task-manager.html" class="blog-post__link button button--flex">
+            <a href="task-manager.html" class="blog-post__link button button--flex">
                 Read Case Study <i class="ri-arrow-right-line"></i>
             </a>
             <a href="https://github.com/Devkiarie/python" target="_blank" rel="noopener noreferrer"
@@ -462,7 +580,7 @@
       <section class="author-bio section">
          <div class="author-bio__container container grid">
             <div class="author-bio__image">
-               <img src="/assets/img/about5.jpg" alt="Ian Kiarie" class="author-bio__img">
+               <img src="../assets/img/about5.jpg" alt="Ian Kiarie" class="author-bio__img">
             </div>
             <div class="author-bio__content">
                <h2 class="author-bio__title">About the Author</h2>
@@ -472,10 +590,10 @@
                   challenges, and solutions I've discovered while building projects.
                </p>
                <div class="author-bio__links">
-                  <a href="index.html" class="author-bio__link button button--flex">
+                  <a href="../" class="author-bio__link button button--flex">
                      View Portfolio <i class="ri-arrow-right-line"></i>
                   </a>
-                  <a href="index.html#contact" class="author-bio__link button button--flex button--ghost">
+                  <a href="../#contact" class="author-bio__link button button--flex button--ghost">
                      Contact Me <i class="ri-send-plane-line"></i>
                   </a>
                </div>
@@ -488,9 +606,9 @@
    <footer class="footer">
       <div class="footer__container container grid">
          <ul class="footer__links">
-            <li><a href="index.html" class="footer__link">Portfolio</a></li>
-            <li><a href="blog.html" class="footer__link">Blog</a></li>
-            <li><a href="index.html#contact" class="footer__link">Contact</a></li>
+            <li><a href="../" class="footer__link">Portfolio</a></li>
+            <li><a href="./" class="footer__link">Blog</a></li>
+            <li><a href="../#contact" class="footer__link">Contact</a></li>
          </ul>
          <span class="footer__copy">
             © <span id="year"></span> All Rights Reserved
@@ -505,13 +623,13 @@
    </a>
 
    <!--=============== SCROLLREVEAL ===============-->
-   <script src="/assets/js/scrollreveal.min.js"></script>
+   <script src="../assets/js/scrollreveal.min.js"></script>
 
    <!--=============== EMAIL JS ===============-->
    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
    <!--=============== MAIN JS ===============-->
-   <script src="assets/js/main.js"></script>
+   <script src="../assets/js/main.js"></script>
 
    <!--=============== BLOG FILTER JS ===============-->
    <script>
